@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "就诊人信息填写",
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "van-field": "vant-weapp/field/index",
+    "van-button": "vant-weapp/button/index",
+    "van-radio": "vant-weapp/radio/index",
+    "van-radio-group": "vant-weapp/radio-group/index",
+    "van-icon": "vant-weapp/icon/index",
+    "van-popup": "vant-weapp/popup/index",
+    "van-dialog": "vant-weapp/dialog/index"
+  }
+}

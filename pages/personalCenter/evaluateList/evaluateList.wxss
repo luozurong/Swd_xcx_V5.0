@@ -1,0 +1,268 @@
+.order {
+  margin-top: 20rpx;
+  background: #fff;
+}
+
+.order .line {
+  margin-bottom: 20rpx;
+  border-bottom: 1px solid #f6f8fa;
+}
+
+/* 以下是tab样式区 */
+
+.order .van-tabs--card {
+  padding-top: 40px;
+  margin: 0 0px;
+}
+
+.order .van-tabs__scroll--card {
+  border-radius: 29rpx;
+  overflow: hidden;
+}
+
+.order .van-tabs__nav, .order scroll-view {
+  width: 360rpx;
+}
+
+.order scroll-view {
+  margin: 0 auto;
+}
+
+.order .tab_con .van-tabs__nav, .order .tab_con scroll-view {
+  width: 100%;
+}
+
+.order .tab_con .van-hairline--top-bottom:after {
+  border-width: 0px 0;
+}
+
+.order .tab_con .van-tabs--line {
+  padding-top: 32px;
+}
+
+.order .tab_con .van-tabs__line {
+  width: 15px !important;
+  height: 2px;
+  background-color: #3ac756;
+  border-radius: 2rpx;
+  left: 10rpx;
+  top: 24px;
+}
+
+.order .tab_con .van-tabs__wrap--scrollable .van-tab {
+  flex-basis: 14.3% !important;
+  padding: 0 0px;
+}
+.order .tab_con.tab_right .van-tabs__wrap--scrollable .van-tab {
+  flex-basis: 17% !important;
+}
+
+.order .tab_con .van-tabs--line .van-tabs__wrap {
+  height: 32px;
+}
+
+/* 以下是内容区 */
+
+.order .divide {
+  height: 20rpx;
+  background: #f6f8fa;
+}
+
+.order .order_con {
+  background: #f6f8fa;
+  padding-top: 20rpx;
+}
+
+.order .order_con .order_li {
+  width: 690rpx;
+  height: auto;
+  line-height: 1;
+  margin: 0rpx auto 20rpx;
+  background-color: #fff;
+  border-radius: 8rpx;
+}
+
+.order .order_con .order_li:last-child {
+  margin-bottom: 0;
+}
+
+.order .order_con .order_li .title {
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 20rpx 30rpx 25rpx;
+  color: #666;
+  border-bottom: 1px solid #ebebeb;
+  align-items: center;
+}
+.order .order_con .order_li .title>view{
+  flex-grow: 2;
+  display: flex;
+  align-items: center;
+}
+.order .order_con .order_li .title view view:first-child{
+ width: 120rpx;
+}
+.order .order_con .order_li .title view view:last-child{
+ word-break: break-all;
+ width: 430rpx;
+}
+
+.order .order_con .order_li .title .state {
+  color: #ff6e26;
+}
+
+.order .order_con .order_li .pic_con {
+  display: flex;
+  padding: 24rpx 20rpx 32rpx 25rpx;
+  border-bottom: 1px solid #ebebeb;
+}
+.order .order_con .order_li .pic_con>view:last-child{
+  flex-grow: 2;
+}
+.order .order_con .order_li .pic_con .goods_pic {
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 16rpx;
+  background-color: #fff;
+  border-radius: 8rpx;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.order .order_li .pic_con .goods_pic image {
+  width: 100%;
+  height: 100%;
+}
+
+.order .order_con .order_li .pic_con .name {
+  height: 130rpx;
+  font-size: 14px;
+  line-height: 18px;
+  color: #333;
+}
+.order .order_con .order_li .pic_con .name text.chu{
+  font-size: 20rpx;
+  background: #ff6e26;
+  color: #fff;
+  line-height: 1;
+  padding: 4rpx 6rpx;
+  float:left;
+  margin-top: 4rpx;
+  margin-right: 10rpx;
+  border-radius: 4rpx;
+}
+
+.order .order_con .order_li .pic_con .price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.order .order_con .order_li .pic_con .number {
+  color: #aeafb2;
+}
+
+.order .order_con .order_li .order_bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 106rpx;
+  padding: 0rpx 20rpx 0rpx 25rpx;
+  color: #aeafb2;
+}
+
+.order .order_con .order_li .order_bottom .van-button {
+  width: 140rpx;
+  height: 56rpx;
+  line-height: 54rpx;
+  padding: 0;
+  font-size: 12px;
+  color: #aeafb2;
+  border-radius: 28rpx;
+  border: solid 1px #aeafb2;
+  margin-left: 20rpx;
+}
+
+.order .order_con .order_li .order_bottom .text_color {
+  color: #ff6e26;
+}
+
+.order .order_con .order_li .order_bottom .btn_color .van-button {
+  width: 144rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #fff;
+  background-image: linear-gradient(90deg, #ffaf41 0%, #ff8441 100%),
+                      linear-gradient(#f89283, #f89283);
+  background-blend-mode: normal, normal;
+  border: none;
+}
+
+/* 问诊订单 */
+
+.order .order_con .order_li .portrait_con {
+  padding: 20rpx 22rpx 32rpx 25rpx;
+}
+
+.order .order_con .order_li .portrait_con .name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.order .order_con .order_li .portrait_con .left {
+  font-size: 16px;
+}
+
+.order .order_con .order_li .portrait_con .detail {
+  display: flex;
+  align-items: center;
+  margin-top: 24rpx;
+}
+
+.order .order_con .order_li .portrait_con .detail_pic {
+  width: 96rpx;
+  height: 96rpx;
+  margin-right: 14rpx;
+  background-color: #fff;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.order .order_con .portrait_con .detail_pic image {
+  width: 100%;
+  height: 100%;
+}
+.order .order_con .portrait_con .detail_right {
+  width: 530rpx;
+}
+
+.order .order_con .portrait_con .patient {
+  display: flex;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 22rpx;
+}
+.order .order_con .portrait_con .patient:last-child {
+  margin-bottom: 0rpx;
+}
+
+.order .order_con .portrait_con .patient .name {
+  display: inline-block;
+  width: 45px;
+  color: #333;
+  text-align: justify;
+  text-align-last: justify;
+}
+
+.order .order_con .portrait_con .patient .text_con {
+  display: block;
+  width: 428rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.order .order_con .border_top {
+  border-top: solid 1px #ebebeb;
+}

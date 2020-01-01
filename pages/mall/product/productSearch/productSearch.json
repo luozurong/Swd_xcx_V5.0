@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "搜索商品",
+  "usingComponents": {
+    "van-search": "vant-weapp/search",
+    "no-data": "../../../component/noData/noData"
+  }
+}

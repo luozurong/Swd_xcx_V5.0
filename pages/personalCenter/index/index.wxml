@@ -1,0 +1,159 @@
+<!--pages/personalCenter/index/index.wxml-->
+<skeleton wx:if="{{showSkeleton}}"></skeleton>
+<view class="myIndex skeleton">
+  <view class="myIndex_top">
+    <view class="msg">
+      <view class="pic_con skeleton-rect" bindtap="gotoPersonalInfo">
+        <image wx-if="{{dataSource.imageUrl}}" src="{{dataSource.imageUrl}}" mode="aspectFit" class="portrait"></image>
+        <image wx:else src="https://nfys-static.kinglian.cn/xcx/personalCenter/user.png" mode="aspectFit" class="portrait"></image>
+      </view>
+      <view>
+        <view class="name skeleton-rect" bindtap="gotoPersonalInfo">
+          <text>{{name}}</text>
+          <image src="https://nfys-static.kinglian.cn/xcx/personalCenter/edit_icon.png" mode="aspectFit" class="portrait"></image>
+        </view>
+        <view class="tag">
+          <text class="first" wx:if="{{dataSource.isEnterpriseUser}}">企业VIP</text>
+          <text class="second" wx:if="{{dataSource.isSign}}">医保签约</text>
+        </view>
+      </view>
+      <view class="position skeleton-rect">
+        <view class="set" bindtap="gotoSetting">
+          <image src="https://nfys-static.kinglian.cn/xcx/personalCenter/set_btn.png" mode="aspectFit"></image>
+        </view>
+        <!-- <view class="customer" bindtap="gotoservice">
+          <image src="../../../images/personalCenter/customer_service_icon.png" mode="aspectFit" class="portrait"></image>
+          <text>客服</text>
+        </view> -->
+        <button class="customer" open-type="contact">
+          <image src="../../../images/personalCenter/customer_service_icon.png" mode="aspectFit" class="portrait"></image>
+          <text>客服</text>
+        </button>
+      </view>
+    </view>
+    <view class="menu_con">
+      <view bindtap="gotoBalance" class="skeleton-rect">
+        <view>
+          <text class="num">{{dataSource.balance}}</text>
+          <text class="unit">元</text>
+        </view>
+        <view class="name">余额</view>
+      </view>
+      <view bindtap="gotoConsultNum" data-index="6" class="skeleton-rect">
+        <view>
+          <text class="num">{{dataSource.doctorConsultTimes}}</text>
+          <text class="unit">次</text>
+        </view>
+        <view class="name">名医咨询</view>
+      </view>
+      <view bindtap="gotoConsultNum" data-index="7" class="skeleton-rect">
+        <view>
+          <text class="num">{{dataSource.pharmacistConsultTimes}}</text>
+          <text class="unit">次</text>
+        </view>
+        <view class="name">药师咨询</view>
+      </view>
+      <view bindtap="gotoInsurance" class="skeleton-rect">
+        <view>
+          <text class="num">{{dataSource.insurance}}</text>
+          <text class="unit">个</text>
+        </view>
+        <view class="name">保险</view>
+      </view>
+      <view bindtap="gotoHealthBonus" class="skeleton-rect">
+        <view>
+          <text class="num">{{dataSource.healthBonus}}</text>
+          <text class="unit">元</text>
+        </view>
+        <view class="name">健康奖金</view>
+      </view>
+    </view>
+  </view>
+  <view class="myorder">
+    <view class="title">
+      <text class="skeleton-rect">我的订单</text>
+      <view class="right skeleton-rect" bindtap="gotoOrder" data-index="0">
+        <text>全部订单</text>
+        <image src="https://nfys-static.kinglian.cn/xcx/personalCenter/icon_order_detail_right.png" mode="aspectFit" class="portrait"></image>
+      </view>
+    </view>
+    <view class="order_menu">
+      <view class="order_li skeleton-rect" bindtap="gotoOrder" data-index="1">
+        <image src="https://nfys-static.kinglian.cn/xcx/personalCenter/order_dfk_icon.png" mode="aspectFit" class="portrait"></image>
+        <view>待付款</view>
+        <text class="num" wx:if="{{orderNum.waitPayAmount}}">{{orderNum.waitPayAmount}}</text>
+      </view>
+      <view class="order_li skeleton-rect" bindtap="gotoOrder" data-index="2">
+        <image src="https://nfys-static.kinglian.cn/xcx/personalCenter/order_dfh_icon.png" mode="aspectFit" class="portrait"></image>
+        <view>待发货</view>
+        <text class="num" wx:if="{{orderNum.waitSendAmount}}">{{orderNum.waitSendAmount}}</text>
+      </view>
+      <view class="order_li skeleton-rect" bindtap="gotoOrder" data-index="3">
+        <image src="https://nfys-static.kinglian.cn/xcx/personalCenter/order_dsh_icon.png" mode="aspectFit" class="portrait"></image>
+        <view>待收货</view>
+        <text class="num" wx:if="{{orderNum.waitDeliveryAmount}}">{{orderNum.waitDeliveryAmount}}</text>
+      </view>
+      <view class="order_li skeleton-rect" bindtap="gotoEvaluate">
+        <image src="https://nfys-static.kinglian.cn/xcx/personalCenter/order_dpj_icon.png" mode="aspectFit" class="portrait"></image>
+        <view>待评价</view>
+        <text class="num" wx:if="{{orderNum.waitEvaluateAmount}}">{{orderNum.waitEvaluateAmount}}</text>
+      </view>
+      <view class="order_li skeleton-rect" bindtap="gotoAfterSale">
+        <image src="https://nfys-static.kinglian.cn/xcx/personalCenter/order_sh_icon.png" mode="aspectFit" class="portrait"></image>
+        <view>售后</view>
+        <text class="num" wx:if="{{orderNum.inAfterSaleAmount}}">{{orderNum.inAfterSaleAmount}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="myorder service">
+    <view class="title skeleton-rect">
+      <text>医疗服务</text>
+      <view class="right"></view>
+    </view>
+    <view class="order_menu">
+      <view class="order_li skeleton-rect" bindtap="gotoWenzhen">
+        <image src="https://nfys-static.kinglian.cn/xcx/personalCenter/wdwz_icon.png" mode="aspectFit" class="portrait"></image>
+        <view>我的问诊</view>
+      </view>
+      <view class="order_li skeleton-rect" bindtap="gotoBingli">
+        <image src="https://nfys-static.kinglian.cn/xcx/personalCenter/wdbl_icon.png" mode="aspectFit" class="portrait"></image>
+        <view>我的病历</view>
+      </view>
+      <view class="order_li skeleton-rect" bindtap="gotoMydoctor">
+        <image src="https://nfys-static.kinglian.cn/xcx/personalCenter/wdys_icon.png" mode="aspectFit" class="portrait"></image>
+        <view>我的医生</view>
+      </view>
+      <view class="order_li skeleton-rect" bindtap="gotoHealthRecord">
+        <image src="https://nfys-static.kinglian.cn/xcx/personalCenter/jkda_icon.png" mode="aspectFit" class="portrait"></image>
+        <view>健康档案</view>
+      </view>
+      <view class="order_li skeleton-rect" bindtap="gotoCollection">
+        <image src="https://nfys-static.kinglian.cn/xcx/personalCenter/wdsc_icon.png" mode="aspectFit" class="portrait"></image>
+        <view>我的收藏</view>
+      </view>
+    </view>
+  </view>
+  <view class="myorder friends">
+    <view class="title skeleton-rect">
+      <text>亲友管理</text>
+      <view class="right" bindtap="gotoFamilyManage">
+        <text>管理</text>
+        <image src="https://nfys-static.kinglian.cn/xcx/personalCenter/icon_order_detail_right.png" mode="aspectFit" class="portrait"></image>
+      </view>
+    </view>
+    <view class="order_menu member">
+      <view class="order_li skeleton-rect" wx:for="{{memberList}}" wx:key="index" wx:for-item="item" bindtap="gotoAddFamilyManage" data-info="{{item}}" wx:if="{{index<4}}">
+        <image src="https://nfys-static.kinglian.cn/xcx/personalCenter/user.png" mode="aspectFit" class="portrait"></image>
+        <view>{{item.patientName}}</view>
+      </view>
+      <view class="order_li no_margin_right skeleton-rect" bindtap="gotoAddFamilyManage" data-info="">
+        <image src="https://nfys-static.kinglian.cn/xcx/personalCenter/add_family_btn.png" mode="aspectFit" class="portrait"></image>
+        <view>添加</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- <view wx:if="{{runUionidComponent}}">
+  <union-id></union-id>
+</view> -->

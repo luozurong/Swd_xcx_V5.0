@@ -1,0 +1,75 @@
+/* pages/personalCenter/healthRecord/examinationData.wxss */
+
+.examinationData {
+  background: #f6f8fa;
+  margin-bottom: 32rpx;
+}
+
+.examinationData .user_info {
+  width: 690rpx;
+  height: 140rpx;
+  margin: 20rpx auto;
+  line-height: 1;
+  font-size: 28rpx;
+  color: #333;
+  background-color: #fff;
+  border-radius: 8rpx;
+}
+
+.user_info .name {
+  padding: 28rpx 20rpx;
+  font-weight: bold;
+  font-size: 32rpx;
+}
+
+.user_info .date {
+  padding-left: 20rpx;
+}
+
+.examinationData .data_box {
+  width: 690rpx;
+  height: auto;
+  line-height: 1;
+  margin: 20rpx auto 0;
+  padding-bottom: 32rpx;
+  background-color: #fff;
+  border-radius: 8rpx;
+}
+
+.data_box .name {
+  padding: 16rpx 20rpx;
+  font-weight: bold;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.data_box .data {
+  padding: 0rpx 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.data_box .data_normal {
+  padding: 0rpx 20rpx;
+}
+
+.data_box .data_normal .data_li {
+  width: 100%;
+  padding-top: 24rpx;
+}
+
+.data_box .data_normal .data_li .marginR {
+  margin-left: 60rpx;
+}
+.data_box .data_normal .data_li .margin {
+  margin-right: 24rpx;
+}
+
+.data_box .data .data_li {
+  width: 50%;
+  padding-top: 24rpx;
+}
+
+.idcard_input {
+  width: 80%;
+  margin: 40rpx auto;
+}

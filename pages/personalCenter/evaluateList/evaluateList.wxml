@@ -1,0 +1,39 @@
+<view class="order" wx:if="{{!isNoData}}">
+  <view class="order_con" wx:for="{{records}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+    <view class="order_li" data-id="{{item.id}}" data-isApplyRefund="{{item.isApplyRefund}}" bindtap="gotoMallOrderDetail" data-index="0">
+      <view class="title">
+        <view>
+          <view>订单号：</view>
+          <view>{{item.scCode}}</view>
+        </view>
+        <text class="state">已完成</text>
+      </view>
+      <view class="pic_con" wx:for="{{item.comList}}" wx:for-index="i" wx:for-item="list" wx:key="i">
+        <view class="goods_pic">
+          <image data-columnId="{{list.columnId}}" data-id="{{list.commodityId}}"  catchtap="jumpProductDetail" src="{{list.imgUrl}}" mode="aspectFill"></image>
+        </view>
+        <view>
+          <view class="name">
+            <text class="chu" wx:if="{{list.isRx == 1}}">处方药</text>
+            <text>{{list.name}}</text>
+          </view>
+          <view class="price">
+            <text>¥{{list.price}}</text>
+            <text class="number">×{{list.qty}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="order_bottom">
+        <view></view>
+        <view>
+          <van-button wx:if="{{item.hasEntity == 1}}" round type="default" data-expressCom="{{item.expressCom}}" data-expressNo="{{item.expressNo}}" catchtap="gotoLogisticsInfo">查看物流</van-button>
+          <van-button wx:if="{{item.isApplyRefund == 0}}" round type="default" data-id="{{item.id}}" data-orderType="{{item.orderType}}" catchtap="gotoAfterSaleDetail">申请售后</van-button>
+          <van-button round type="default" data-id="{{item.id}}" catchtap="gotoEvaluate" class="btn_color">去评价</van-button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view>
+  <no-data wx:if="{{isNoData}}"  scene="noData" ></no-data>
+</view>  

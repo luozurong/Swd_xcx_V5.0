@@ -1,0 +1,43 @@
+/* pages/personalCenter/personalInfo/personalInfo.wxss */
+.personalInfo {
+}
+.personalInfo .van-cell {
+  height: 110rpx;
+  padding: 10px 10px 10px 15px;
+  align-items: center;
+  background: #ffffff;
+}
+.personalInfo .portrait {
+  width: 70rpx;
+  height: 70rpx;
+  margin-top: 12rpx; 
+  margin-right: 10rpx;
+  border-radius: 50%;
+}
+.personalInfo .van-cell .van-cell__right-icon-wrap {
+  margin-left: 10rpx;
+  color: #d2d2d4;
+}
+.personalInfo .null {
+  color: #aeafb2;
+}
+.personalInfo .btn {
+  position: fixed;
+  bottom: 56rpx;
+  left: 75rpx;
+  width: 600rpx;
+	height: 80rpx;
+  line-height: 80rpx;
+  font-size: 14px;
+	color: #ffffff;
+	background-image: linear-gradient(90deg, 
+		#73e539 0%, 
+		#3ac756 100%), 
+	linear-gradient(
+		#d2d2d4, 
+		#d2d2d4);
+	background-blend-mode: normal, 
+		normal;
+	border-radius: 40rpx;
+}
+

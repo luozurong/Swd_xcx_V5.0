@@ -1,0 +1,86 @@
+<!--pages/personalCenter/healthRecord/examinationData.wxml-->
+<!-- 1:血压2:血糖3:体温 4:血氧 5:血脂仪 6:血凝 7:尿酸 8:总胆固醇  100:心电监护仪 9:胎音仪  10:快速心电检测仪  11:便携式尿液分析仪   12:BMI  13:腰臀比  14:ECG 数据  15:ECG 波形  16:血红蛋白  17:肝功肾功生化九项 18:肝功生化八项 19:肾功生化七项 20:电解质七项 21:心肌酶五项 22:糖脂生化五项 23:综合Ⅰ生化十一项 24:综合Ⅱ生化八项 25:临床急诊 26:手表心率27:手表位置信息28计步 -->
+<view class="examinationData" wx:if="{{resData}}">
+  <view class="user_info">
+    <view class="name">体检人：{{resData.userName}}</view>
+    <view class="date">体检日期：{{resData.measureDate}}</view>
+  </view>
+  <view wx:if="{{resData.data}}">
+    <view wx:for="{{resData.data}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+      <view class="data_box" wx:if="{{item.type == 1}}">
+        <view class="name">血压</view>
+        <view class="data_normal">
+          <view class="data_li">无创血压：{{item.sp}}/{{item.dp}}mmHg</view>
+          <view class="data_li" wx:if="{{item.hr}}">脉率：{{item.hr}}次/分</view>
+        </view>
+      </view>
+      <view class="data_box" wx:if="{{item.type == 2}}">
+        <view class="name">血糖</view>
+        <view class="data_normal">
+          <view class="data_li" wx:if="{{item.status == 0}}">
+            <text wx:if="{{item.sp}}">{{item.sp}}mmol/L</text>
+            <text class="marginR">测量模式：空腹测量</text>
+          </view>
+          <view class="data_li" wx:if="{{item.status == 1}}">
+            <text wx:if="{{item.sp}}">{{item.sp}}mmol/L</text>
+            <text class="marginR">测量模式：随机测量</text>
+          </view>
+        </view>
+      </view>
+      <view class="data_box" wx:if="{{item.type == 7}}">
+        <view class="name">尿酸</view>
+        <view class="data">
+          <view class="data_li" wx:if="{{item.sp}}">{{item.sp}}mmol/24h</view>
+        </view>
+      </view>
+      <view class="data_box" wx:if="{{item.type == 8}}">
+        <view class="name">胆固醇</view>
+        <view class="data">
+          <view class="data_li">
+            <text wx:if="{{item.sp}}">{{item.sp}}mmol/L</text>
+          </view>
+        </view>
+      </view>
+      <view class="data_box" wx:if="{{item.type == 16}}">
+        <view class="name">血红蛋白</view>
+        <view class="data_normal">
+          <view class="data_li">
+            <text class="margin" wx:if="{{item.sp}}">{{item.sp}}g/dl</text>
+            <text class="margin" wx:if="{{item.dp}}">红细胞比容{{item.dp}}%</text>
+          </view>
+        </view>
+      </view>
+      <view class="data_box" wx:if="{{item.type == 12}}">
+        <view class="name">健康指数</view>
+        <view class="data_normal">
+          <view class="data_li">
+            <text class="margin" wx:if="{{item.sp}}">身高{{item.sp}}cm</text>
+            <text class="margin" wx:if="{{item.dp}}">体重{{item.dp}}kg</text>
+            <text class="margin" wx:if="{{item.hr}}">BMI {{item.hr}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="data_box" wx:if="{{item.type == 4}}">
+        <view class="name">血氧</view>
+        <view class="data_normal">
+          <view class="data_li" wx:if="{{item.sp}}">血氧饱和度：{{item.sp}}%</view>
+          <view class="data_li" wx:if="{{item.dp}}">脉率：{{item.dp}}次/分</view>
+        </view>
+      </view>
+      <view class="data_box" wx:if="{{item.type == 3}}">
+        <view class="name">体温</view>
+        <view class="data">
+          <view class="data_li" wx:if="{{item.sp}}">{{item.sp}}℃</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:else>
+  <no-data wx:if="{{isNoData}}" scene="noData"></no-data>
+</view>
+<van-dialog use-slot title="温馨提示" show="{{ show }}" show-cancel-button bind:close="onClose" bind:confirm="onConfirm">
+  <view class="idcard_input">
+    <van-field type="idcard" value="{{ idcard }}" placeholder="请输入身份证获取数据" border="{{ false }}" bind:change="onChange" />
+  </view>
+</van-dialog>

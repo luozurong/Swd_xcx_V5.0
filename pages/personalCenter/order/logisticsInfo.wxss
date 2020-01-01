@@ -1,0 +1,37 @@
+/* pages/personalCenter/order/logisticsInfo.wxss */
+.logisticsInfo_top {
+  width: 642rpx;
+	height: auto;
+  line-height: 1;
+  margin: 28rpx auto 0;
+  padding: 32rpx 24rpx;
+  font-size: 14px;
+  font-weight: bold;
+	color: #333333;
+	background-color: #ffffff;
+	border-radius: 8rpx;
+}
+.logisticsInfo_top .margin_bottom {
+  margin-bottom: 30rpx;
+}
+.logisticsInfo_top .left {
+  font-weight: normal;
+  margin-right: 26rpx;
+}
+.logisticsInfo_top .right {
+  font-weight: normal;
+  color: #000000;
+}
+.flow_path {
+  width: 690rpx;
+	height: auto;
+  margin: 20rpx auto 0;
+  padding: 20rpx 0 0 0;
+	background-color: #ffffff;
+	border-radius: 8rpx;
+}
+.flow_path .van-step__title view:last-of-type {
+  margin-top: 10rpx;
+  font-size: 12px;
+}
+

@@ -1,0 +1,14 @@
+/* pages/compnent/noData/noData.wxss */
+.noDataContainer{
+  font-size: 32rpx;
+  color: #aeafb2;
+  text-align: center;
+}
+.noDataImg image{
+  width: 300rpx;
+  height: 300rpx;
+  margin: 300rpx auto -50rpx;
+}
+.noDataTips{
+  font-size: 28rpx;
+}

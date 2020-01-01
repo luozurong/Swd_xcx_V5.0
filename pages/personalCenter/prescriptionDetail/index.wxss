@@ -1,0 +1,251 @@
+/* pages/personalCenter/prescriptionDetail/index.wxss */
+
+.pres_box {
+  position: relative;
+}
+
+.pres_box .goto_shop {
+  position: fixed;
+  left: 75rpx;
+  bottom: 50rpx;
+  width: 600rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #fff;
+  background-image: linear-gradient(90deg, #ffaf41 0%, #ff8441 100%),
+                      linear-gradient(#d2d2d4, #d2d2d4);
+  background-blend-mode: normal, normal;
+  border-radius: 40rpx;
+}
+
+.height_bottom {
+  height: 150rpx;
+}
+
+.prescription {
+  position: relative;
+  width: 690rpx;
+  height: auto;
+  line-height: 1;
+  margin: 30rpx auto;
+  background-color: #fff;
+  box-shadow: 0rpx 6rpx 10rpx 0rpx rgba(0, 0, 0, 0.1);
+}
+
+.prescription .head_logo {
+  padding: 30rpx 30rpx;
+  width: 350rpx;
+  height: 48rpx;
+}
+
+.prescription .title {
+  margin-top: 10rpx;
+  text-align: center;
+  font-weight: bold;
+  font-size: 32rpx;
+  color: #333;
+}
+
+.prescription .line_bold {
+  width: 630rpx;
+  height: 3rpx;
+  margin: 20rpx auto 0;
+  background-color: #333;
+  border-bottom: 1rpx solid #999;
+}
+
+.prescription .content_top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 30rpx 30rpx 10rpx 30rpx;
+}
+
+.prescription .content_top .content_li {
+  display: flex;
+  margin-bottom: 20rpx;
+  font-size: 20rpx;
+  color: #333;
+}
+
+.prescription .content_top .content_li .content_li_right {
+  margin-left: -10rpx;
+  text-align: center;
+  border-bottom: 1rpx solid #333;
+}
+
+.prescription .w_130 {
+  width: 130rpx;
+}
+
+.prescription .w_212 {
+  width: 212rpx;
+}
+
+.prescription .w_104 {
+  width: 104rpx;
+}
+
+.prescription .w_32 {
+  width: 32rpx;
+}
+
+.prescription .w_112 {
+  width: 112rpx;
+}
+
+.prescription .w_122 {
+  width: 122rpx;
+}
+
+.prescription .w_128 {
+  width: 128rpx;
+}
+
+.prescription .w_490 {
+  width: 490rpx;
+  text-align: left !important;
+  text-indent: 20rpx;
+}
+
+.prescription .w_480 {
+  width: 480rpx;
+  text-align: left !important;
+  text-indent: 20rpx;
+}
+
+.prescription .Rp {
+  padding-left: 30rpx;
+  font-weight: bold;
+  font-size: 36rpx;
+  color: #333;
+}
+
+.drug_box {
+  min-height: 380rpx;
+}
+
+.prescription .drug_li {
+  padding: 0 30rpx 0 60rpx;
+  font-size: 20rpx;
+  color: #999;
+}
+
+.prescription .drug_li .drug_li_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20rpx;
+  padding-bottom: 16rpx;
+}
+
+.prescription .drug_li .name {
+  font-weight: bold;
+  font-size: 24rpx;
+  color: #333;
+}
+
+.prescription .drug_li .usage {
+  text-indent: 36rpx;
+}
+
+.prescription .null_line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 36rpx 36rpx;
+  font-size: 20rpx;
+  color: #999;
+}
+
+.prescription .null_line .line {
+  margin: 0 10rpx;
+  font-size: 14rpx;
+  color: #dedede;
+}
+
+.prescription .tip_mid {
+  padding: 0 22rpx 0 30rpx;
+  font-size: 20rpx;
+  line-height: 30rpx;
+  color: #999;
+}
+
+.prescription .line_bold_bottom {
+  width: 630rpx;
+  height: 2rpx;
+  margin: 16rpx auto 0;
+  background-color: #999;
+}
+
+.prescription .content_top.content_bottom {
+  padding: 20rpx 30rpx 0rpx 30rpx;
+}
+
+.prescription .content_top.content_bottom .content_li {
+  position: relative;
+  margin-bottom: 22rpx;
+}
+
+.prescription .signature {
+  position: absolute;
+  top: -20rpx;
+  right: 20rpx;
+  width: 50rpx;
+  height: 38rpx;
+}
+
+.prescription .w_82 {
+  width: 82rpx;
+}
+
+.prescription .w_300 {
+  width: 300rpx;
+  text-align: left !important;
+  text-indent: 10rpx;
+}
+
+.prescription .w_195 {
+  width: 195rpx;
+}
+
+.prescription .w_252 {
+  width: 252rpx;
+  text-align: left !important;
+  text-indent: 10rpx;
+}
+
+.prescription .w_158 {
+  width: 160rpx;
+}
+
+.prescription .w_180 {
+  width: 180rpx;
+  text-align: left !important;
+  text-indent: 10rpx;
+}
+
+.prescription .tip_mid.tip_bottom {
+  margin-top: 0rpx;
+  padding-bottom: 30rpx;
+}
+
+/* 公章 */
+
+.cachet {
+  position: absolute;
+  top: 18rpx;
+  right: 222rpx;
+  width: 140rpx;
+  height: 140rpx;
+}
+
+.code {
+  position: absolute;
+  top: 30rpx;
+  right: 30rpx;
+  width: 163rpx;
+  height: 76rpx;
+}

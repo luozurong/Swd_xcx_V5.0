@@ -1,0 +1,10 @@
+<!--pages/personalCenter/insurance/insurance.wxml-->
+<view class="insurance">
+  <view class="insurance_li">
+    <view class="insurance_li_top">
+      <image src="../../../images/personalCenter/icon_insurance.png" mode="aspectFit" class="icon_insurance"></image>
+      <text>企业医疗保险</text>
+    </view>
+    <text class="text_con">企业员工可享有生育保险、意外伤亡险等保险项目。企业员工可享有生育保险、意外伤亡险等保险项目。</text>
+  </view>
+</view>

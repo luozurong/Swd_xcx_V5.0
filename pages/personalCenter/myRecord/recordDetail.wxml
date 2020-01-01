@@ -1,0 +1,72 @@
+<view class="contain">
+  <view wx:if="{{isCheck}}" class="isCheck">
+    药师正在审核中...
+  </view>
+  <view class="descript">
+    <view class="descriptTop" wx:if="{{patientName}}">
+      <view class="message">
+        <text class="patientName">{{patientName}}</text>
+        <view class="patientDe">
+          <text>{{patientGender}}</text>
+          <text wx:if="{{patientAge}}">/{{patientAge}}岁</text>
+        </view>
+      </view>
+      <view class="diagnose" wx:if="{{diagnoseDetail}}">
+        <view class="diagnose-title">诊断:
+          <text class="diognose-des">{{diagnoseDetail}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="drug" wx:if="{{drugList.length >0 }}">
+      <view class="drug-title">用药信息</view>
+      <view class="drug-content" wx:for="{{drugList}}" wx:key="index">
+        <view class="drug-title-name">
+          <view class="drug-name">{{index+1}}、{{item.apDrugName}}</view>
+          <view class="drug-num">×{{item.count}}</view>
+        </view>
+        <view class="drug-title-bottom">
+          <view wx:if="{{item.spec}}">规格：{{item.spec}}</view>
+          <view class="drug-title-content">
+            <view wx:if="{{item.usageName}}">用法：{{item.usageName}}</view>
+            <view wx:if="{{item.dosage}}">用量：{{item.dosage}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="medicalAdvice" wx:if="{{medicalAdvice}}">
+      <view class="drug-title">医嘱</view>
+      <view class="medicalAdviceContent">{{medicalAdvice}}</view>
+    </view>
+  </view>
+
+  <view wx:if="{{visitType=='10'}}" class="btnGroup">
+    <view class="allRecord" bindtap="goToMyRecord">
+      查看所有病历
+    </view>
+    <view class="recipe recipeGray" wx:if="{{isCheck}}">
+      处方详情
+    </view>
+    <view class="recipe" bindtap="topreDetail" wx:else>
+      处方详情
+    </view>
+    <view class="goBuyMedicine grayBuy" wx:if="{{haveRex ||drugList.length==0||drugSourceType==2}}">
+      去购药
+    </view>
+    <view class="goBuyMedicine" bindtap="goBuyMedicine" wx:else>
+      去购药
+    </view>
+  </view>
+
+  <view wx:else class="btnGroup">
+    <view class="allRecord" bindtap="goToMyRecord">
+      查看所有咨询总结
+    </view>
+    <view class="goBuyMedicine videoGoBuyMedicine grayBuy" wx:if="{{haveRex ||drugList.length==0 ||drugSourceType}}">
+      去购药
+    </view>
+    <view class="goBuyMedicine videoGoBuyMedicine" bindtap="goBuyMedicine" data-type="video" wx:else>
+      去购药
+    </view>
+  </view>
+
+</view>

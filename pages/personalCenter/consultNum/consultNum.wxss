@@ -1,0 +1,135 @@
+/* pages/personalCenter/consultNum/consultNum.wxss */
+.consultNum .van-tabs__line {
+  width: 30rpx!important;
+	height: 4rpx;
+	background: #3ac756;
+	border-radius: 2rpx;
+  top: 64rpx;
+  left: 48rpx;
+}
+.consultNum .van-tab.van-tab--active {
+  font-weight: bold;
+  font-size: 14px;
+  color: #333333;
+}
+.consultNum .van-tab {
+  color: #666666;
+}
+
+.consultNum .list_con {
+  line-height: 1;
+}
+/* 未使用---start */
+.consultNum  .list_con .list_con_li {
+  position: relative;
+  width: 690rpx;
+	height: auto;
+  margin: 20rpx auto 0;
+	background: #ffffff;
+	border-radius: 8rpx;
+}
+.consultNum .list_con .list_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 26rpx 40rpx 16rpx 32rpx;
+}
+.consultNum .list_con .list_title .list_title_left {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333333;
+}
+.consultNum .list_con .list_title .list_title_right {
+  color: #ff6e26;
+  font-size: 12px
+}
+.consultNum .list_con .list_title_right text {
+  font-size: 24px;
+}
+.consultNum .list_con .list_date {
+  display: flex;
+  align-items: center;
+  padding: 0rpx 32rpx;
+  font-size: 12px;
+  color: #666666;
+}
+.consultNum .list_con .list_date .tag {
+  display: inline-block;
+  width: 80rpx;
+	height: 28rpx;
+  line-height: 28rpx;
+  margin-right: 6rpx;
+  text-align: center;
+  font-size: 20rpx;
+	color: #ffffff;
+	background: #3ac756;
+	border-radius: 14rpx;
+}
+.consultNum .list_con .list_btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 80rpx;
+  margin-top: 26rpx; 
+  text-align: center;
+  font-size: 14px;
+	color: #aeafb2;
+  background: #ffffff;
+  border-top: solid 1px #ebebeb;
+}
+.consultNum .list_con .list_btn .line {
+  width: 1px;
+	height: 36rpx;
+	border-right: solid 1px #ebebeb;
+}
+.btn::after {
+    border: none;
+}
+.consultNum .list_con .list_btn .btn {
+  width: 230rpx;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+	color: #aeafb2;
+  background: #ffffff;
+}
+.consultNum .list_con .list_btn .use {
+  width: 230rpx;
+  position: relative;
+  color: #ff6e26;
+}
+.consultNum .list_con .list_btn .img_use {
+  position: absolute;
+  right: 30rpx;
+  width: 30rpx; 
+  height: 30rpx;
+}
+/* 未使用---end */
+
+/* 已使用---start */
+.consultNum .list_con .useful_type {
+  padding: 0rpx 32rpx;
+  margin-top: 40rpx;
+  font-size: 14px;
+  color: #aeafb2;
+}
+.consultNum .useful.list_con .list_title .list_title_right {
+  color: #aeafb2;
+}
+.consultNum .useful.list_con .list_date .tag {
+	background: #d2d2d4;
+}
+.consultNum .useful.list_con .img_used {
+  position: absolute;
+  right: 20rpx;
+  bottom: 27rpx;
+  width: 107rpx; 
+  height: 85rpx;
+}
+/* 已使用---end */
+
+.no_more_show {
+  text-align: center;
+  padding: 40rpx 0;
+  color: #aeafb2;
+}

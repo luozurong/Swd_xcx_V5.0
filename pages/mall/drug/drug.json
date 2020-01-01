@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "南风医生药房",
+  "onReachBottomDistance": 100,
+  "usingComponents": {
+    "no-data": "../../component/noData/noData",
+    "union-id": "../../component/unionId/unionId",
+    "fixed-icon": "../../component/fixedIcon/fixedIcon"
+  }
+}

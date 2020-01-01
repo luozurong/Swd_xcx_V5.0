@@ -1,0 +1,86 @@
+<view class="home-search">
+  <navigator hover-class="none" url="../product/productSearch/productSearch?columnType=1">
+    <view>
+      <image src='../../images/mall/search.png'></image>
+      <view>搜索您想要的商品</view> 
+    </view>
+  </navigator>
+</view>
+<view class="home-classify">
+  <view wx:for="{{chooseAttr}}" 
+  wx:for-index="index" 
+  wx:for-item="item" 
+  wx:key="index" 
+  bindtap="chooseClassify"
+  data-index="{{index}}"
+  class="{{paramsIndex == index ? 'home-classify-active': ''}}" wx:if="{{item.name}}">{{item.name}}</view>
+</view>
+<!-- <image class="home-column-pic"  src="http://yun-test.kinglian.net/xcx/mall/drugBanner.png"></image> -->
+<swiper class="swiper-wrap" indicator-dots="{{indicatorDots}}" circular="{{circular}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}" wx:for-index="index" wx:key="index">
+    <swiper-item>
+      <image mode='aspectFill' src="{{item.picUrl}}" class="slide-image" data-index="{{item.linkUrl}}" bindtap="bannerJump"/>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="home-product">
+  <view wx:for="{{records}}" id="item{{isChoose}}"  wx:for-item="item" wx:for-index="index" wx:key="index" data-commodityId="{{item.commodityId}}" data-id="{{item.columnId}}" data-isrx="{{item.isRx}}" bindtap="jumpProductDetail"   class="home-product-item">
+    <image class="home-product-pic" src="{{item.imgUrl}}"></image>
+    <view>
+      <image wx:if="{{item.inventory == 0}}" class="product-isEmpty" src="https://nfys-static.kinglian.cn/xcx/mall/no-product.png"></image>
+      <view class="home-product-view">
+        <view class="home-product-name">
+          <text class="chu" wx:if="{{item.isRx == 1}}">处方药</text> 
+          <text>{{item.name}}</text>
+        </view>
+        <view class="home-product-tip"> 
+          <text  wx:for="{{item.labelArr}}" wx:for-item="list" wx:for-index="i" wx:key="i" wx:if="{{list}}">{{list}}</text> 
+        </view>
+      </view>
+      <view class="home-product-wrap">
+        <view class="home-product-price" wx:if="{{item.price && item.specialPrice}}">
+          <text>
+            <text wx:if="{{item.specialPrice}}">{{item.specialPricePre}}</text>
+            <text wx:if="{{item.specialPrice}}">{{item.specialPriceNext}}</text>
+          </text>
+          <text class="home-product-yuan">
+            <text wx:if="{{item.price}}">{{item.price}}</text>
+          </text>
+        </view>
+        <view class="home-product-price" wx:if="{{item.price && !item.specialPrice}}">
+          <text>
+            <text wx:if="{{item.price}}">{{item.pricePre}}</text>
+            <text wx:if="{{item.price}}">{{item.priceNext}}</text>
+          </text>
+        </view>
+        <view class="home-product-cart">
+          <text>销量：{{item.sumVolume}}</text>
+          <image  wx:if="{{item.isRx != 1 && item.inventory > 0}}"  catchtap='addToCart' data-commodityId="{{item.commodityId}}" data-id='{{item.columnId}}' src="https://nfys-static.kinglian.cn/xcx/mall/add_cart_btn.png"></image>
+          <!-- <button  wx:if="{{item.isRx != 1 && item.inventory > 0}}" catchtap="getPhoneNumber" wx:if="{{!isLoginFlag}}" open-type="getPhoneNumber" plain="true" size='20' hover-class="none" bindgetphonenumber="getPhoneNumber"></button>-->
+        </view> 
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="drug-no-data">
+  <no-data wx:if="{{isEmpty}}"  scene="drugEmpty" ></no-data>
+</view>
+
+<view>
+  <fixed-icon shopCartNum="{{shopCartNum}}"></fixed-icon>
+</view>
+<!-- <view class="shop-cart-pic">
+  <view bindtap='jumpShopCart'>
+    <image src="https://nfys-static.kinglian.cn/xcx/mall/cart_num_btn.png" alt=""></image>
+    <text>{{shopCartNum}}</text>
+  </view>
+  <button wx:if="{{isLoginFlag  == false}}" open-type="getPhoneNumber" plain="true" size='20' hover-class="none" bindgetphonenumber="getPhoneNumber"></button>
+</view>
+<view class="my-order">
+  <view bindtap="jumpMy">我的</view>
+  <button wx:if="{{isLoginFlag == false}}" open-type="getPhoneNumber" plain="true" size='20' hover-class="none" bindgetphonenumber="getPhoneNumber"></button>
+</view>
+<view wx:if="{{runUionidComponent}}">
+  <union-id></union-id>
+</view> -->

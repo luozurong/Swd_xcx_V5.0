@@ -1,0 +1,225 @@
+<!--pages/personalCenter/order/mallOrderDetail.wxml-->
+<view class="mallOrderDetail" wx:if="{{orderData}}">
+  <view class="bg">
+    <image src="https://nfys-static.kinglian.cn/xcx/personalCenter/order_detail_bj.png" mode="aspectFit"></image>
+  </view>
+  <view class="mallOrderDetail_content">
+    <view class="order_orderStatus">
+      <view class="orderStatus" wx:if="{{orderData.orderStatus==0}}">
+        <image src="https://nfys-static.kinglian.cn/xcx/personalCenter/icon_order_detail_1.png" mode="aspectFit"></image>
+        <text>待付款</text>
+      </view>
+      <view class="orderStatus" wx:if="{{orderData.orderStatus==1}}">
+        <image src="https://nfys-static.kinglian.cn/xcx/personalCenter/icon_order_detail_4.png" mode="aspectFit"></image>
+        <text>待发货</text>
+      </view>
+      <view class="orderStatus" wx:if="{{orderData.orderStatus==2}}">
+        <image src="https://nfys-static.kinglian.cn/xcx/personalCenter/icon_order_detail_5.png" mode="aspectFit"></image>
+        <text>待收货</text>
+      </view>
+      <view class="orderStatus" wx:if="{{orderData.orderStatus==3}}">
+        <image src="https://nfys-static.kinglian.cn/xcx/personalCenter/icon_order_detail_2.png" mode="aspectFit"></image>
+        <text>已完成</text>
+      </view>
+      <view class="orderStatus" wx:if="{{orderData.orderStatus==4}}">
+        <image src="https://nfys-static.kinglian.cn/xcx/personalCenter/icon_order_detail_3.png" mode="aspectFit"></image>
+        <text>已取消</text>
+      </view>
+    </view>
+    <view class="order_logistics" wx:if="{{orderData.expressType == 0}}" bindtap="gotoLogisticsInfo" data-name="{{orderData.expressCom}}" data-id="{{orderData.expressNo}}" data-orderid="{{orderData.id}}">
+      <view class="pic_box">
+        <image src="https://nfys-static.kinglian.cn/xcx/personalCenter/icon_order_detail_logistics.png" mode="aspectFit"></image>
+      </view>
+      <view class="mid_msg">
+        <view class="tip">物流信息</view>
+        <view>{{orderData.expressDTOS[0].context}}</view>
+      </view>
+      <view class="right"><image src="https://nfys-static.kinglian.cn/xcx/personalCenter/icon_order_detail_right.png" mode="aspectFit"></image></view>
+    </view>
+    <view class="order_logistics" wx:if="{{orderData.expressType == 1}}" bindtap="gotoLogisticsInfo" data-name="null" data-id="null" data-orderid="{{orderData.id}}">
+      <view class="pic_box">
+        <image src="https://nfys-static.kinglian.cn/xcx/personalCenter/icon_order_detail_logistics.png" mode="aspectFit"></image>
+      </view>
+      <view class="mid_msg">
+        <view class="tip">配送信息</view>
+        <view>{{orderData.expressDTOS[0].context}}</view>
+      </view>
+      <view class="right"><image src="https://nfys-static.kinglian.cn/xcx/personalCenter/icon_order_detail_right.png" mode="aspectFit"></image></view>
+    </view>
+    <view class="address" wx:if="{{orderData.deliveryType == 0}}">
+      <view class="pic_box">
+        <image src="https://nfys-static.kinglian.cn/xcx/personalCenter/icon_order_detail_address.png" mode="aspectFit"></image>
+      </view>
+      <view>
+        <view>
+          <text class="name">{{orderData.receivingName}}</text>
+          <text>{{orderData.phone}}</text>
+        </view>
+        <view>
+          <text class="tag" wx:if="{{orderData.isDefaultSite == 1}}">默认</text>
+          <text class="address_msg">{{orderData.provinceName}}{{orderData.cityName}}{{orderData.districtName}}{{orderData.address}}</text>
+        </view>
+      </view>
+    </view>
+    <!-- 用药人信息 -->
+    <view class="confirm-patient" wx:if="{{orderData.inquiryType == 9}}" bindtap="jumpChatPage">
+      <image class="confirm-patient-icon" src="http://yun-test.kinglian.net/xcx/mall/patient_icon.png"></image>
+      <view class="confirm-patient-wrap">
+        <view>用药人信息</view>
+        <view>
+          <text class="confirm-patient-tip" wx:if="{{!orderData.patientInfo.name}}">请填写用药人信息</text>
+          <text>{{orderData.patientInfo.name}}</text>
+          <text wx:if="{{orderData.patientInfo.gender == 1}}">男</text>
+          <text wx:if="{{orderData.patientInfo.gender == 2}}">女</text>
+          <text wx:if="{{orderData.patientInfo.age}}">{{orderData.patientInfo.age}}岁</text>
+        </view>
+      </view>
+      <view  class="confirm-patient-more">
+        <view wx:if="{{!(orderStatusInquiry== 200 || orderStatusInquiry == 300) && rxAuditState != 1}}">医生正在开处方</view>
+        <view>
+          <text>查看问诊</text>
+          <image src="http://yun-test.kinglian.net/xcx/mall/more.png" alt></image>
+        </view>
+      </view>
+      
+    </view>
+    <view class="good_li">
+      <view class="tip">商品清单</view>
+      <view class="good_con" wx:for="{{orderData.comList}}" wx:for-item="list" wx:key="list.cid">
+        <view class="good_con_pic">
+          <image bindtap="jumpProductDetail" data-isrx="{{list.isRx}}" data-columnId="{{list.columnId}}" data-commodityId="{{list.commodityId}}" src="{{list.imgUrl}}" mode="scaleToFill"></image>
+        </view>
+        <view class="good_con_right">
+          <view class="title">
+            <text class="chu" wx:if="{{list.isRx == 1}}">处方药</text>
+            <text>{{list.name}}</text> 
+          </view>
+          <view class="price">
+            <text>¥{{list.price}}</text>
+            <text class="num">×{{list.qty}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="message">
+      <view class="tip">留言</view>
+      <view class="text">{{orderData.message}}</view>
+    </view>
+    <view class="price_box">
+      <view class="price_box_li">
+        <text>订单金额</text>
+        <text class="num color">¥{{orderData.sumPrice}}</text>
+      </view>
+      <view class="price_box_li">
+        <text>商品总价</text>
+        <text class="num">¥{{orderData.totalPrices}}</text>
+      </view>
+      <view class="price_box_li" wx:if="{{orderData.inquiryType == 9}}">
+        <text>问诊费</text>
+        <text class="num">¥{{orderData.inquiryPrice}}</text>
+      </view>
+      <view class="price_box_li" wx:if="{{orderData.deliveryType == 0}}">
+        <text>运费</text>
+        <text class="num">¥{{orderData.freight}}</text>
+      </view>
+    </view>
+    <view class="order_msg">
+      <view class="order_msg_li">
+        <text style="white-space:nowrap;">订单编号</text>
+        <text class="num">{{orderData.scCode}}</text>
+      </view>
+      <view class="order_msg_li">
+        <text>下单时间</text>
+        <text class="num">{{orderData.createTime}}</text>
+      </view>
+      <view class="order_msg_li" wx:if="{{orderData.orderStatus!=0 && orderData.orderStatus!=4}}">
+        <text>支付方式</text>
+        <text class="num" wx:if="{{orderData.payType == 0}}">支付宝</text>
+        <text class="num" wx:if="{{orderData.payType == 1}}">微信</text>
+        <text class="num" wx:if="{{orderData.payType == 2}}">余额</text>
+        <text class="num" wx:if="{{orderData.payType == 3}}">个人资产</text>
+      </view>
+      <view class="order_msg_li" wx:if="{{orderData.orderStatus!=0 && orderData.orderStatus!=4}}">
+        <text>付款时间</text>
+        <text class="num" wx:if="{{orderData.payTime}}">{{orderData.payTime}}</text>
+      </view>
+    </view>
+    <view class="btn_bottom" wx:if="{{orderData.orderStatus==0}}">
+      <view>
+        <!-- <text>共</text>
+        <text class="text_color">{{orderData.goodsNum}}</text>
+        <text>件商品，总计</text>
+        <text class="text_color">¥{{orderData.sumPrice}}</text> -->
+        <text class="text_color" v-if="{{timeOut}}">{{timeOut}}</text>
+      </view>
+      <view>
+        <van-button round type="default" bindtap="cancelMallOrder" data-id="{{orderData.id}}">取消订单</van-button>
+        <van-button round type="default" class="btn_color" catchtap="payfor" data-id="{{orderData.id}}">去支付</van-button>
+      </view>
+    </view>
+    <view class="btn_bottom" wx:if="{{orderData.orderStatus==1}}">
+      <view class="msg"></view>
+      <view>
+        <van-button round type="default" bindtap="cancelOrder" data-id="{{orderData.id}}">取消订单</van-button>
+      </view>
+    </view>
+    <view class="btn_bottom" wx:if="{{orderData.orderStatus==2}}">
+      <view class="msg"></view>
+      <view>
+        <van-button round type="default" class="btn_color" bindtap="confirmReceipt" data-id="{{orderData.id}}">确认收货</van-button>
+      </view>
+    </view>
+    <view class="btn_bottom" wx:if="{{orderData.isApplyRefund==0 && orderData.orderStatus==3 || orderData.isEvaluate==0 && orderData.orderStatus==3}}">
+      <view class="msg"></view>
+      <view>
+        <van-button wx:if="{{orderData.isApplyRefund == 0}}" round type="default" bindtap="gotoAfterSale" data-id="{{orderData.id}}" data-type="0">申请售后</van-button>
+        <van-button wx:if="{{orderData.isEvaluate == 0}}" round type="default" class="second" bindtap="gotoEvaluate" data-id="{{orderData.id}}">去评价</van-button>
+        <van-button wx:if="{{orderData.inquiryType != 9 && orderData.isSellOut != 1}}" round type="default" class="btn_color" bindtap="repurchase" data-id="{{orderData.id}}">再次购买</van-button>
+      </view>
+    </view>
+    <view class="btn_bottom" wx:if="{{orderData.orderStatus==4 && orderData.inquiryType != 9 && orderData.isSellOut != 1}}">
+      <view class="msg"></view>
+      <view>
+        <van-button round type="default" class="btn_color" bindtap="repurchase" data-id="{{orderData.id}}">重新购买</van-button>
+      </view>
+    </view>
+  </view>
+</view>
+<view style="height: 100vh;" wx:if="{{noDatashow}}">
+  <no-data scene="noData"></no-data>
+</view>
+<view class="order-cancel" wx:if="{{isCancelOrderFlag}}">
+  <view class="order-cancel-wrap">
+    <view class="order-cancel-title">确认取消订单</view>
+    <view class="order-cancel-disc">请选择取消订单的原因：</view>
+    <view class="order-cancel-main">
+      <view bindtap="chooseCancelReason" data-index="0">
+        <text>地址/电话等信息填写错误</text>
+        <image wx:if="{{chooseCancelReasonIndex == 0}}" src="https://nfys-static.kinglian.cn/xcx/mall/cart-select.png"></image>
+        <image wx:if="{{chooseCancelReasonIndex != 0}}" src="https://nfys-static.kinglian.cn/xcx/mall/cart-nor.png"></image>
+      </view>
+      <view bindtap="chooseCancelReason" data-index="1">
+        <text>活动/优惠未生效</text>
+        <image wx:if="{{chooseCancelReasonIndex == 1}}" src="https://nfys-static.kinglian.cn/xcx/mall/cart-select.png"></image>
+        <image wx:if="{{chooseCancelReasonIndex != 1}}" src="https://nfys-static.kinglian.cn/xcx/mall/cart-nor.png"></image>
+      </view>
+      <view bindtap="chooseCancelReason" data-index="2">
+        <text>商品降价了</text>
+        <image wx:if="{{chooseCancelReasonIndex == 2}}" src="https://nfys-static.kinglian.cn/xcx/mall/cart-select.png"></image>
+        <image wx:if="{{chooseCancelReasonIndex != 2}}" src="https://nfys-static.kinglian.cn/xcx/mall/cart-nor.png"></image>
+      </view>
+      <view bindtap="chooseCancelReason" data-index="3">
+        <text>拍错/多拍/不想要</text>
+        <image wx:if="{{chooseCancelReasonIndex == 3}}" src="https://nfys-static.kinglian.cn/xcx/mall/cart-select.png"></image>
+        <image wx:if="{{chooseCancelReasonIndex != 3}}" src="https://nfys-static.kinglian.cn/xcx/mall/cart-nor.png"></image>
+      </view>
+    </view>
+    <view class="order-cancel-btn">
+      <text bindtap="orderNoCancel">暂不取消</text>
+      <text bindtap="orderSureCancel">确认取消</text>
+    </view>
+  </view>
+</view>
+<view>
+  <efficacy isShow="{{isShow}}" efficacyOrderId="{{efficacyOrderId}}" listDatas="{{listDatas}}"></efficacy>
+</view>

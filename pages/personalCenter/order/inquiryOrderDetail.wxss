@@ -1,0 +1,238 @@
+/* pages/personalCenter/order/inquiryOrderDetail.wxss */
+image {
+  width: 100%;
+  height: 100%;
+}
+.inquiryOrderDetail {
+  position: relative;
+}
+.inquiryOrderDetail .bg {
+  width: 750rpx;
+	height: 150rpx;
+}
+.inquiryOrderDetail .bg image {
+  width: 100%;
+  height: 100%;
+}
+.inquiryOrderDetail_content {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.inquiryOrderDetail_content .orderStatus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+	color: #ffffff;
+
+}
+.inquiryOrderDetail_content .orderStatus image {
+  width: 22px;
+	height: 36rpx;
+  margin-right: 8rpx;
+}
+/* 底部按钮 */
+.inquiryOrderDetail_content .btn_bottom {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 666rpx;
+	height: 112rpx;
+  padding: 0 30rpx 0 54rpx;
+	background-color: #ffffff;
+	box-shadow: 0px -1px 1px 0px 
+		rgba(102, 102, 102, 0.05);
+}
+.inquiryOrderDetail_content .btn_bottom .msg {
+  font-size: 24rpx;
+	color: #ff6e26;
+}
+.inquiryOrderDetail_content .btn_bottom .van-button {
+  width: 176rpx;
+	height: 76rpx;
+  line-height: 76rpx;
+  margin-left: 25rpx;
+  font-size: 28rpx;
+	color: #aeafb2;
+	border-radius: 40rpx;
+	border: solid 1px #aeafb2;
+}
+.inquiryOrderDetail_content .btn_bottom .btn_color .van-button {
+  width: 180rpx;
+	height: 80rpx;
+  line-height: 80rpx;
+  margin-left: 25rpx;
+  color: #ffffff;
+  background-image: linear-gradient(90deg, 
+		#ffaf41 0%, 
+		#ff8441 100%), 
+	linear-gradient(
+		#f89283, 
+		#f89283);
+	background-blend-mode: normal, 
+		normal;
+	border-radius: 80rpx;
+	border: none;
+}
+
+/* 就诊人 */
+.inquiryOrderDetail_content .patient_con {
+  width: 646rpx;
+	height: auto;
+  padding: 32rpx 22rpx;
+  margin: 38rpx auto 0rpx;
+	background-color: #ffffff;
+	border-radius: 8rpx;
+}
+.inquiryOrderDetail_content .patient_con .patient_con_top {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+	color: #666666;
+}
+.inquiryOrderDetail_content .patient_con .patient_con_top .pic_con {
+  width: 96rpx;
+	height: 96rpx;
+  margin-right: 16rpx;
+  margin-bottom: 10rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.inquiryOrderDetail_content .patient_con .patient_con_top .name {
+  font-weight: bold;
+	font-size: 32rpx;
+	color: #333333;
+}
+.inquiryOrderDetail_content .patient_con .patient_con_top .tag {
+  position: absolute;
+  right: -22rpx;
+  width: 120rpx;
+	height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 24rpx;
+	color: #ffaf41;
+	background: #FFF7EC;
+  border-top-left-radius: 40rpx;
+  border-bottom-left-radius: 40rpx;
+}
+.inquiryOrderDetail_content .patient_con .patient_con_bottom {
+  display: flex;
+  text-align: center;
+}
+.inquiryOrderDetail_content .patient_con .bottom_left {
+  width: 84rpx;
+  text-align: justify;
+  text-align-last: justify;
+  font-size: 28rpx;
+	color: #333333;
+}
+.inquiryOrderDetail_content .patient_con .bottom_right {
+  width: 534rpx;
+  text-align: justify;
+  font-size: 28rpx;
+	font-weight: normal;
+	font-stretch: normal;
+	line-height: 42rpx;
+	color: #666666;
+}
+
+/* 订单信息 */
+.inquiryOrderDetail_content .order_con {
+  width: 646rpx;
+	height: auto;
+  padding: 0 22rpx 30rpx;
+  margin: 20rpx auto 132rpx;
+	background-color: #ffffff;
+	border-radius: 8rpx;
+}
+.inquiryOrderDetail_content .order_con .order_con_li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  line-height: 1;
+}
+.inquiryOrderDetail_content .order_con .order_con_li.li_top {
+  height: 94rpx;
+  margin-bottom: 29rpx;
+  line-height: 94rpx;
+  border-bottom: 1px solid #ebebeb;
+}
+.inquiryOrderDetail_content .order_con .li_top .name { 
+	color: #333333;
+} 
+.inquiryOrderDetail_content .order_con .li_top .num {
+   color: #ff6e26;
+}
+.inquiryOrderDetail_content .order_con .other {
+  margin-bottom: 30rpx;
+  color: #666666;
+}
+.inquiryOrderDetail_content .order_con .other:last-of-type {
+  margin-bottom: 0rpx;
+}
+.inquiryOrderDetail_content .order_con .other .right {
+  width: 500rpx;
+  color: #aeafb2;
+  text-align: right;
+  overflow: hidden;
+}
+
+/* 接诊医生 */
+.inquiryOrderDetail_content .patient_con.doctor {
+ margin-top: 20rpx; 
+}
+.inquiryOrderDetail_content .patient_con .flex {
+  display: flex;
+}
+.inquiryOrderDetail_content .patient_con .flex .patient_con_bottom {
+  width: 50%;
+} 
+.inquiryOrderDetail_content .patient_con .flex .bottom_right {
+  width: 200rpx;
+}
+
+/* 处方 */
+.inquiryOrderDetail_content .recipe_con {
+  width: 646rpx;
+	height: auto;
+  line-height: 1;
+  padding: 0 22rpx 16rpx 22rpx;
+  margin: 20rpx auto 0;
+  font-size: 28rpx;
+	background-color: #ffffff;
+	border-radius: 8rpx;
+}
+.inquiryOrderDetail_content .recipe_con .recipe_con_title {
+  padding: 39rpx 0 30rpx 0;
+}
+.inquiryOrderDetail_content .line {
+  width: 100%;
+  border-bottom: 1px soild #ff6e26;
+}
+.inquiryOrderDetail_content .recipe_con .recipe_con_li {
+  display: flex;
+  justify-content: space-between;
+  line-height: 32rpx;
+  margin-bottom: 38rpx;
+  border-bottom: 1px soild #ff6e26;
+}
+.inquiryOrderDetail_content .recipe_con .recipe_con_li .left {
+  width: 120rpx;
+  color: #666666;
+}
+.inquiryOrderDetail_content .recipe_con .recipe_con_li .right {
+  width: 520rpx;
+  text-align: right;
+}
+.inquiryOrderDetail_content .recipe_con .recipe_con_li.small .right {
+  width: 172rpx;
+  display: flex;
+  justify-content: flex-end;
+}

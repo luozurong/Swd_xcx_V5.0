@@ -1,0 +1,36 @@
+<view class="clearfix">
+  <image src="https://nfys-static.kinglian.cn/xcx/chat/patientBgImg.png" class="bgImg"></image>
+  <image src="{{patientImgPath}}" class="patientImg"></image>
+  <view class="patientContent">
+    <view class="patientDetails">
+      <text class="patientName">{{patientName}}</text>
+      <text class="patientAge">
+        <text wx:if="{{patientGender}}">{{patientGender}}/</text>
+        <text wx:if="{{ageText}}">{{ageText}}岁</text>
+      </text>
+    </view>
+    <view class="patientCell">
+      <text class="cellTitle">病情描述</text>
+      <text class="cellContent">{{healthInfo}}</text>
+    </view>
+    <view class="patientCell">
+      <text class="cellTitle">患病时长</text>
+      <text class="cellContent">{{sickTime}}</text>
+    </view>
+    <view class="patientCell">
+      <text class="cellTitle">既往病史</text>
+      <text class="cellContent">{{anamnesis}}</text>
+    </view>
+    <view class="patientCell">
+      <text class="cellTitle">过敏史</text>
+      <text class="cellContent">{{allergy}}</text>
+    </view>
+    <view class="patientCell">
+      <text class="cellTitle">家族史</text>
+      <text class="cellContent">{{familyGen}}</text>
+    </view>
+    <view class="patientImgBox" wx:if="{{listImageUrl.length > 0}}">
+      <image src="{{item}}" wx:for="{{listImageUrl}}" bindtap="priewImg" data-index='{{index}}'></image>
+    </view>
+  </view>
+</view>

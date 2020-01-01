@@ -1,0 +1,73 @@
+page {
+  height: 100%;
+}
+.contain {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  background:rgba(246,248,250,1);
+}
+.van-tabs__line {
+  width: 30rpx!important;
+  left: 32rpx!important;
+  top: 34px!important;
+}
+.van-hairline--top-bottom:after {
+  border-width: 0 0 1rpx!important;
+}  
+.comment {
+  padding-left: 29rpx;
+  margin-top: 20rpx;
+  margin-bottom: 125rpx;
+  box-sizing: border-box;
+  width:750rpx;
+  overflow: hidden;
+  background:rgba(255,255,255,1);
+}
+.comment-item {
+  display: flex;
+  width:720px;
+  box-shadow:0px 1px 0px 0px rgba(235,235,235,1);
+}
+.comment-icon {
+  width: 60rpx;
+  margin: 30rpx 20rpx 0 0;
+}
+.comment-icon image{
+  width:60rpx;
+  height:60rpx;
+  border-radius:50%;
+}
+.content {
+  width: 620rpx;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+}
+.content-msg {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 45rpx;
+  margin-bottom: 35rpx;
+}
+.msg-name {
+  font-size:32rpx;
+}
+.msg-time {
+  font-size:24rpx;
+  color:rgba(168,168,168,1);
+  line-height:40rpx;
+}
+.descript {
+  margin-bottom: 15rpx;
+}
+.descript-tag {
+  display: inline-block;
+  margin-bottom: 15rpx;
+  padding: 11rpx;
+  box-sizing: border-box;
+  text-align: center;
+  margin-right: 20rpx;
+  background:rgba(247,249,250,1);
+  color:rgba(102,102,102,1);
+  border-radius:8rpx;
+}

@@ -1,0 +1,124 @@
+page{
+  padding: 0;
+  margin: 0;
+}
+.pay-order{
+  margin: 20rpx 30rpx;
+  background: #fff;
+  border-radius: 8rpx;
+  padding: 17rpx 27rpx;
+  
+}
+.pay-order view{
+  line-height: 30rpx;
+}
+.pay-order view text{
+  display: inline-block;
+  padding: 14rpx 0;
+}
+.pay-order view text:first-child{
+  color: #666;
+}
+.pay-order view text:last-child{
+  margin-left: 34rpx;
+  color: #aeafb2;
+}
+.pay-order view text.pay-order-price{
+  color: #ff6e26;
+}
+.pay-serve{
+  display: flex;
+  align-items: center;
+  margin: 0 30rpx;
+  background: #fff;
+  border-radius: 8rpx;
+  padding: 23rpx 31rpx 31rpx 23rpx;
+}
+.pay-serve view{
+  flex-grow: 2;
+}
+.pay-serve view view:first-child{
+  color: #333333;
+  font-size: 28rpx;
+}
+.pay-serve view view:last-child{
+  color: #aeafb2;
+  margin-top: 4rpx;
+}
+.pay-serve image{
+  flex-shrink: 0;
+  width: 40rpx;
+	height: 40rpx;
+}
+.pay-type{
+  margin: 20rpx 30rpx 0;
+  border-radius: 8rpx;
+  background-color: #fff;
+  padding: 0 31rpx 0 24rpx
+}
+.pay-type-word{
+  padding: 27rpx 0;
+}
+.pay-type-icon{
+  width: 67rpx;
+	height: 67rpx;
+}
+.pay-type-item{
+  display: flex;
+  align-items: center;
+  border-top: 1rpx solid #e6e6e6;
+  padding: 26rpx 0;
+}
+.pay-type-item view{
+  flex-grow: 2;
+  display: flex;
+  align-items: center;
+}
+.pay-type-item view text{
+  font-size: 28rpx;
+	color: #333333;
+  font-weight: 600;
+}
+.pay-type-item view text.ye{
+  font-size: 28rpx;
+	color: #aeafb2;
+  margin-right: 7rpx;
+  font-weight: normal;
+}
+.pay-type-item view image{
+  flex-shrink: 0;
+  margin-right: 15rpx;
+}
+.pay-type-item>image{
+  width: 40rpx;
+	height: 40rpx;
+}
+.pay-fixed{
+  position: fixed;
+  left: 0;
+  bottom: 35rpx;
+  z-index: 100;
+  width: 100%;
+}
+.pay-fixed text{
+  display: block;
+  height: 80rpx;
+  margin: 0 75rpx;
+  box-sizing: border-box;
+  background-image: linear-gradient(90deg, 
+		#ffaf41 0%, 
+		#ff8441 100%), 
+	linear-gradient(
+		#f89283, 
+		#f89283);
+	background-blend-mode: normal, 
+		normal;
+	border-radius: 40px;
+  line-height: 80rpx;
+  text-align: center;
+  color: #fff;
+} 
+.yue{
+  font-size: 24rpx;
+  color: #ff6e26;
+}

@@ -1,0 +1,38 @@
+<view class="evaluate-wrap">
+  <view  class="evaluate-wrap-item" wx:for="{{comList}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+    <image src="{{item.imgUrl}}"></image>
+    <view>
+      <view class="evaluate-item-name">{{item.name}}</view>
+      <view class="evaluate-item-price">
+        <text>¥{{item.price}}</text>
+        <text>x{{item.qty}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="evaluate-star">
+  <view class="evaluate-star-main">
+    <text>商品评价</text>
+    <van-rate value="{{ value }}"  size="{{ 23 }}" color="#ffaf41" bind:change="onChange" />
+  </view>
+  <view class="evaluate-star-disc">
+    <text>评价描述</text>
+    <textarea bindblur="bindTextAreaBlur" maxlength="120" placeholder-style="color: #ccc" placeholder="请填写评价描述" />
+  </view>
+  <view class="evealuate-upload">
+    <view class="evealuate-upload-word">
+      <text>上传图片</text>
+      <text>(最多上传三张)</text>
+    </view>
+    <view class="evealuate-upload-pic">
+      <view class="evealuate-upload-item" wx:for="{{tempFilePaths}}" wx:item="item" wx:index="index" wx:key="index">
+        <image data-index="{{index}}" bindtap="deleteImag" src="../../images/mall/picDelete.png"></image>
+        <image data-index="{{index}}" bindtap="imgPreViewImage" mode="aspectFill" src="{{item}}"></image>
+      </view>
+      <image wx:if="{{tempFilePaths.length < 3}}" class="evealuate-upload-add" bindtap="addPic" src="../../images/mall/add.png"></image>
+    </view>
+  </view>
+</view>
+<view class="evealuate-upload-submit" bindtap="evealuateSubmit">提交</view>
+<view class="evealuate-upload-height"></view>
+ 

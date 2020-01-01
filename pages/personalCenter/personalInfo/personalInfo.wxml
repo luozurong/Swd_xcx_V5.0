@@ -1,0 +1,30 @@
+<!--pages/personalCenter/personalInfo/personalInfo.wxml-->
+<view class="personalInfo">
+  <van-cell-group title="">
+    <van-cell title="头像" is-link bindtap="switchHead">
+      <image wx:if="{{avatar}}" src="{{avatar}}" mode="aspectFit" class="portrait"></image>
+      <image wx:else src="https://nfys-static.kinglian.cn/xcx/personalCenter/user.png" mode="aspectFit" class="portrait"></image>
+    </van-cell>
+    <van-cell title="姓名">
+      <input value="{{realName}}" bindblur="watchRealName" maxlength="10" placeholder="请输入" placeholder-style="color:#aeafb2" />
+    </van-cell>
+    <van-cell title="昵称">
+      <input value="{{nickname}}" bindblur="watchNickname" maxlength="10" placeholder="请输入" placeholder-style="color:#aeafb2" />
+    </van-cell>
+    <van-cell title="性别" bindtap="selectSex">
+      <text class="null" wx:if="{{gender == -1 || !gender}}">请选择</text>
+      <text class="null" wx:elif="{{gender == 1}}">男</text>
+      <text class="null" wx:elif="{{gender == 2}}">女</text>
+    </van-cell>
+    <van-cell title="身份证">
+      <input value="{{sfzh}}" disabled="{{disabledIdcard}}" bindtap="noChange1" bindblur="watchSfzh" maxlength="18" placeholder="请输入" placeholder-style="color:#aeafb2" />
+    </van-cell>
+    <van-cell title="手机号">
+      <input value="{{phone}}" disabled="{{disabledPhone}}" bindtap="noChange2" bindblur="watchPhone" maxlength="11" placeholder="请输入" placeholder-style="color:#aeafb2" />
+    </van-cell>
+    <van-cell title="现住址">
+      <input value="{{address}}" bindblur="watchAddress" placeholder="请输入" placeholder-style="color:#aeafb2" />
+    </van-cell>
+  </van-cell-group>
+  <van-button type="default" custom-class="btn" bind:click="saveInfoBtn">保存</van-button>
+</view>

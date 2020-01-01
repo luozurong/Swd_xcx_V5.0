@@ -1,0 +1,47 @@
+<!--pages/personalCenter/healthRecord/basicInfo.wxml-->
+<view class="basicInfo">
+  <form bindsubmit="formSubmit">
+    <van-cell-group title="">
+      <van-cell title="头像" is-link bindtap="switchHead">
+        <image wx:if="{{basicInfoObj.userimg}}" src="{{basicInfoObj.userimg}}" mode="aspectFit" class="portrait"></image>
+        <image wx:else src="../../../images/personalCenter/user.png" mode="aspectFit" class="portrait"></image>
+      </van-cell>
+      <van-field name='username' value="{{ basicInfoObj.username }}" input-align="right" required clearable label="姓名" placeholder="请输入您的姓名" />
+      <van-field value="{{ basicInfoObj.sex }}" input-align="right" readonly label="性别" placeholder="请选择" is-link bindtap="selectSex" />
+      <van-field value="{{ basicInfoObj.birth }}" input-align="right" readonly label="出生日期" placeholder="请选择" is-link bindtap="selectBirth" />
+      <van-field value="{{ basicInfoObj.nation }}" input-align="right" readonly label="民族" placeholder="请选择" is-link bindtap="selectNation" />
+      <van-field value="{{ basicInfoObj.idcard }}" input-align="right" clearable label="身份证号" placeholder="请输入您的身份证号" />
+      <van-field value="{{ basicInfoObj.phone }}" input-align="right" required clearable label="联系电话" placeholder="请输入您的联系电话" />
+      <van-cell title="慢病分类" required class="classify">
+        <label bindtap='clicks' wx:for="{{checks}}" wx:key="{{checks}}" wx:for-index="index" data-index="{{index}}" class='{{item.checked?"is_checked":""}}'>
+          {{item.name}}
+        </label>
+      </van-cell>
+      <van-field value="{{ basicInfoObj.payMethods }}" input-align="right" readonly label="医疗费用支付方式" placeholder="请选择" is-link bindtap="selectPayMethods" />
+      <van-field value="{{ basicInfoObj.medicareCard }}" input-align="right" clearable label="医保卡号" placeholder="请输入您的医保卡号" />
+      <van-field value="{{ basicInfoObj.domicileAddress }}" input-align="right" readonly label="户籍地址" placeholder="请选择" is-link bindtap="selectAddress" />
+      <van-field value="{{ basicInfoObj.currentAddress }}" input-align="right" readonly label="现住址" placeholder="请选择" is-link bindtap="selectAddress" />
+      <van-cell class="inDetail">
+        <input value="{{ address }}" placeholder="详细地址：如道路、门牌号、小区、楼栋号、单元式等" />
+      </van-cell>
+    </van-cell-group>
+
+    <!-- ActionSheet 性别选择上拉菜单 -->
+    <van-action-sheet show="{{ showSex }}" actions="{{ actionsSex }}" bind:close="onCloseSex" bind:select="onSelectSex" />
+
+    <!-- Popup 出生日期选择弹出层 -->
+    <van-popup show="{{ showBirth }}" position="bottom" bind:close="onCloseBirth">
+      <van-datetime-picker type="date" value="{{ currentDate }}" bind:input="onInput" min-date="{{ minDate }}" max-date="{{ maxDate }}" formatter="{{ formatter }}" bind:cancel="onCloseBirth" bind:confirm="onSelectBirth" />
+    </van-popup>
+
+    <!-- ActionSheet 民族选择上拉菜单 -->
+    <van-action-sheet show="{{ showNation }}" actions="{{ actionsNation }}" bind:close="onCloseNation" bind:select="onSelectNation" />
+
+    <!-- ActionSheet 支付方式选择上拉菜单 -->
+    <van-action-sheet show="{{ showPayMethods }}" actions="{{ actionsPayMethods }}" bind:close="onClosePayMethods" bind:select="onSelectPayMethods" />
+
+    <view>
+      <van-button type="default" custom-class="btn" form-type="submit">保存</van-button>
+    </view>
+  </form>
+</view>

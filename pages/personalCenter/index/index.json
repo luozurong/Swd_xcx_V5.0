@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "我的",
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "union-id": "../../component/unionId/unionId",
+    "skeleton": "../../component/skeleton/skeleton"
+  }
+}

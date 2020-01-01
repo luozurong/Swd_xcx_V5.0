@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "待评价订单",
+  "usingComponents": {
+    "van-button": "vant-weapp/button/index",
+    "van-tab": "vant-weapp/tab/index",
+    "van-tabs": "vant-weapp/tabs/index",
+    "no-data": "../../../component/noData/noData"
+  }
+}

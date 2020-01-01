@@ -1,0 +1,49 @@
+<!--pages/personalCenter/healthRecord/selectAddress.wxml-->
+<view class="selectAddress">
+  <view class="title" wx:if="{{selectedData.length>0 && flagIndex > 1}}">
+    已选：<text wx:for="{{selectedData}}" wx:for-item="item" wx:key="index"> {{item}}</text>
+  </view>
+  <!-- 省 -->
+  <view wx:if="{{flagIndex == 1 && provinceData.length>0}}">
+    <van-cell-group>
+      <van-cell wx:for="{{provinceData}}" wx:for-item="cell" wx:key="cell.FNumber" data-index="{{cell.FNumber}}" data-name="{{cell.FName}}" bindtap="selectProvince" is-link>
+        <view slot="title">
+          <view class="van-cell-text">{{cell.FName}}</view>
+        </view>
+      </van-cell>
+    </van-cell-group>
+  </view>
+  <!-- 市 -->
+  <view class="selectAddress_li" wx:if="{{flagIndex == 2 && cityData.length>0}}">
+    <van-cell-group>
+      <van-cell wx:for="{{cityData}}" wx:for-item="cell" wx:key="cell.FNumber" data-index="{{cell.FNumber}}" data-name="{{cell.FName}}" bindtap="selectCity" is-link>
+        <view slot="title">
+          <view class="van-cell-text">{{cell.FName}}</view>
+        </view>
+      </van-cell>
+    </van-cell-group>
+    <van-button type="default" custom-class="btn" bindtap="retreat">重选上一级</van-button>
+  </view>
+  <!-- 县/区 -->
+  <view class="selectAddress_li" wx:if="{{flagIndex == 3 && prefectureData.length>0}}">
+    <van-cell-group>
+      <van-cell wx:for="{{prefectureData}}" wx:for-item="cell" wx:key="cell.FNumber" data-name="{{cell.FName}}" data-index="{{cell.FNumber}}" bindtap="selectPrefecture" is-link>
+        <view slot="title">
+          <view class="van-cell-text">{{cell.FName}}</view>
+        </view>
+      </van-cell>
+    </van-cell-group>
+    <van-button type="default" custom-class="btn" bindtap="retreat">重选上一级</van-button>
+  </view>
+  <!-- 镇/街道 -->
+  <view class="selectAddress_li" wx:if="{{flagIndex == 4 && townData.length>0}}">
+    <van-cell-group wx:if="{{flagIndex == 4}}">
+      <van-cell wx:for="{{townData}}" wx:for-item="cell" wx:key="cell.FNumber" data-index="{{cell.FNumber}}" data-name="{{cell.FName}}" bindtap="selectTown" is-link>
+        <view slot="title">
+          <view class="van-cell-text">{{cell.FName}}</view>
+        </view>
+      </van-cell>
+    </van-cell-group>
+    <van-button type="default" custom-class="btn" bindtap="retreat">重选上一级</van-button>
+  </view>
+</view>

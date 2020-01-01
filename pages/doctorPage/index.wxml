@@ -1,0 +1,148 @@
+<view class="contain" wx:if="{{loading}}">
+  <!-- 医生名片 -->
+  <view class="card">
+    <view class="pic">
+      <!-- <image src="http://yun-test.kinglian.net/xcx/doctor/doctor-icon.png"></image> -->
+      <image wx:if="{{dataSource.imgUrl}}" src="{{dataSource.imgUrl}}"></image>
+      <image wx:else src="https://nfys-static.kinglian.cn/xcx/mall/doctor_profile_photo@2x.png"></image>
+    </view>
+    <view class="attribute">
+      <view class="person-detail">
+        <view class="person-msg">
+          <view class="name">
+            <text>{{dataSource.name}}</text>
+            <text>{{dataSource.title}}</text>
+          </view>
+          <view class="office">
+            {{dataSource.hospital}} {{dataSource.department}}
+          </view>
+        </view>
+        <view class="share">
+          <view class="share-pic">
+            <button wx:if="{{!isLoginFlag}}" open-type="getPhoneNumber" plain="true" size='20' hover-class="none" bindgetphonenumber="getPhoneNumber" class="share-getPhone"></button>
+            <!-- <image src="http://yun-test.kinglian.net/xcx/doctor/follow-active.png" wx:if="{{dataSource.isAttention == 1 ? true : false}}" />
+            <image src="http://yun-test.kinglian.net/xcx/doctor/follow-active.png" wx:if="{{dataSource.isAttention == 0 ? true : false}}" />
+            <view>关注</view> -->
+          </view>
+          <view class="share-pic">
+            <button class="share-button" open-type='share'>anniu</button>
+            <image src="http://yun-test.kinglian.net/xcx/doctor/share.png" />
+            <view>分享</view>
+          </view>
+        </view>
+      </view>
+      <view class="person-honor">
+        <view class="honor-list">
+          <view class="list-tag">十强医院</view>
+          <view class="list-tag">特色科室</view>
+          <view class="list-tag">专科名医</view>
+        </view>
+        <view class="evaluate">
+          <view>接诊量
+            <text>{{dataSource.receiveCount}}</text>
+          </view>
+          <view>用户评分
+            <text>{{dataSource.userEvaluatedScore}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 专业描述 -->
+  <view class="specialty">
+    <view class="specialty-title">
+      <image src="http://yun-test.kinglian.net/xcx/doctor/skill_icon.png" /> 专业擅长
+    </view>
+    <view class="specialty-descript" hidden="{{isShow}}">
+      {{dataSource.skill}}
+      <text class="toshow" bindtap="changeShow"  wx:if="{{dataSource.skill.length > 40}}"><text style="color:black;">...</text>展开</text>
+    </view>
+    <view class="specialty-descript-hidden" hidden="{{!isShow}}">
+      {{dataSource.skill}}
+      <text class="getshow" bindtap="changeShow"  wx:if="{{dataSource.skill.length > 40}}">收起</text>
+    </view>
+    <view class="valite"></view>
+    <view class="specialty-title">
+      <image src="http://yun-test.kinglian.net/xcx/doctor/profiles_icon.png" /> 医生简介
+    </view>
+    <view class="specialty-intro" wx:if="{{dataSource.intro}}">
+      {{dataSource.intro}}
+    </view>
+  </view>
+  <!-- 医生专栏 -->
+  <view class="special-column" wx:if="{{dataSource.employeeTitleInfoRespArrayList.length > 0}}">
+    <view class="column-title">医生专栏</view>
+    <view class="column-list">
+      <view wx:for="{{dataSource.employeeTitleInfoRespArrayList}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+        <view class="column-item" data-id="{{item.id}}" wx:key="{{index}}" bindtap="tojumb">
+          <view class="item-des">
+            <view class="item-title">{{item.title}}</view>
+            <view class="item-data">
+              <text>{{item.createTime}}</text>
+              <text>浏览 {{item.viewNum}}</text>
+              <text>点赞 {{item.praise}}</text>
+            </view>
+          </view>
+          <view class="item-pic">
+            <image src="{{item.imgUrl}}"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 评价 -->
+  <view class="comment" >
+    <view class="comment-title" wx:if="{{dataSource.patientRatedBeanRespArrayList.length  > 0}}">
+      <view>患者评价</view>
+      <view class="show-all" bind:tap="toComment"> 全部
+        <van-icon name="arrow" style="vertical-align:middle;" />
+      </view>
+    </view>
+    <view class="comment-list">
+      <view class="comment-item" wx:for="{{dataSource.patientRatedBeanRespArrayList}}" wx:key="{{index}}">
+        <view class="comment-icon">
+          <image src="http://yun-test.kinglian.net/xcx/doctor/doctor-icon.png" />
+        </view>
+        <view class="content">
+          <view class="content-msg">
+            <view class="msg-name">{{item.patientName}}</view>
+            <view class="msg-time">{{item.ratedDate}}</view>
+          </view>
+          <view class="descript">
+            <view class="descript-tag">{{item.ratedContent}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="consult">
+    <view class="consult-left">
+      <image src="http://yun-test.kinglian.net/xcx/doctor/consult_icon.png" />
+      <view class="consult-text">图文咨询</view>
+      <view class="consult-price">￥<text class="price-num">{{dataSource.num ? dataSource.num : 0}}</text>.{{dataSource.decimals}}</view>
+    </view>
+    <!-- <view class="consult-right">
+      <button wx:if="{{!isLoginFlag}}" open-type="getPhoneNumber" plain="true" size='20' hover-class="none" bindgetphonenumber="getPhoneNumber" class="check-getPhone"></button>
+      <view bind:tap="jumpFillout">去咨询</view>
+    </view> -->
+    <view class="consult-right">
+      <!-- <button wx:if="{{!isLoginFlag}}" open-type="getPhoneNumber" plain="true" size='20' hover-class="none" bindgetphonenumber="getPhoneNumber" class="check-getPhone"></button> -->
+       <view bind:tap="jumpFillout">去咨询</view>
+    </view>
+  </view>
+  <van-popup show="{{ show }}" bind:close="onClose" position="bottom">
+    <view class="popup">
+      <view class="popup-title">
+        <view class="toshare-title">分享至</view>
+        <view class="tocancel" bind:tap="onClose">取消</view>
+      </view>
+      <view class="popup-share">
+        <button class="share-button" open-type='share'></button>
+        <view class="share-nav">
+          <image src="http://yun-test.kinglian.net/xcx/doctor/doctor_wechat.png" />
+          <view>微信好友</view>
+        </view>
+      </view>
+    </view>
+  </van-popup>
+</view>

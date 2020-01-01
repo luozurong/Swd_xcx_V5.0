@@ -1,0 +1,17 @@
+<!-- 快速清理失效商品 -->
+<view class="shopCart-cancel" wx:if="{{isShow}}">
+  <view>
+    <view class="shopCart-cancel-word">以下商品没货/下架啦！</view>
+    <view class="shopCart-cancel-wrap">
+      <view class="shopCart-cancel-item" wx:for="{{listDatas}}" wx:key="index" wx:index="index" wx:item="item">
+        <image src="{{item.imgUrl}}"></image>
+        <text>{{item.reason}}</text> 
+      </view>
+    </view>
+    <view class="shopCart-cancel-view"></view>
+    <view class="shopCart-cancel-btn">
+      <text bindtap="cancelBtn">取消</text>
+      <text bindtap="sureBtn">购买其他商品</text>
+    </view>
+  </view>
+</view>

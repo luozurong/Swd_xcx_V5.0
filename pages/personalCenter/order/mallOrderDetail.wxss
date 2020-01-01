@@ -1,0 +1,441 @@
+/* pages/personalCenter/order/mallOrderDetail.wxss */
+image {
+  width: 100%;
+  height: 100%;
+}
+.mallOrderDetail {
+  position: relative;
+}
+.mallOrderDetail .bg {
+  width: 750rpx;
+	height: 150rpx;
+}
+.mallOrderDetail .bg image {
+  width: 100%;
+  height: 100%;
+}
+.mallOrderDetail_content {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.mallOrderDetail_content .orderStatus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32rpx;
+  font-size: 18px;
+  font-weight: bold;
+	color: #ffffff;
+
+}
+.mallOrderDetail_content .orderStatus image {
+  width: 22px;
+	height: 18px;
+  margin-right: 4px;
+}
+.mallOrderDetail_content .address {
+  display: flex;
+  align-items: center;
+  width: 670rpx;
+  padding: 26rpx 20rpx 24rpx 0;
+  line-height: 1;
+  margin: 32rpx auto 0;
+	background-color: #ffffff;
+	border-radius: 8rpx;
+}
+.mallOrderDetail_content .address .pic_box {
+  display: flex;
+  align-items: center;
+  height: 86rpx;
+  margin-right: 22rpx;
+	border-right: solid 1px #ebebeb;
+}
+.mallOrderDetail_content .address image {
+  width: 31rpx;
+	height: 32rpx;
+  margin: 0 20rpx 0 22rpx;
+}
+.mallOrderDetail_content .address .name {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-right: 20rpx;
+	color: #333333;
+}
+.mallOrderDetail_content .address .tag {
+  display: inline-block;
+  width: 72rpx;
+	height: 40rpx;
+	line-height: 40rpx;
+  margin-top: 16rpx;
+  margin-right: 8rpx;
+  text-align: center;
+  font-size: 12px;
+	color: #ff6e26;
+	background: #FFF0E9;
+	border-radius: 8rpx;
+}
+.mallOrderDetail_content .address .address_msg {
+  line-height: 44rpx;
+  font-size: 14px;
+	color: #666666;
+}
+.mallOrderDetail_content .good_li {
+  width: 690rpx;
+	height: auto;
+  margin: 20rpx auto 0;
+	background-color: #ffffff;
+	border-radius: 8rpx;
+}
+.mallOrderDetail_content .good_li .tip {
+  padding: 32rpx 22rpx;
+}
+.mallOrderDetail_content .good_li .good_con {
+  display: flex;
+  padding-bottom: 30rpx;
+}
+.mallOrderDetail_content .good_li .good_con .good_con_pic {
+  width: 160rpx;
+	height: 160rpx;
+  margin: 0 16rpx 0 22rpx;
+	background-color: #d2d2d4;
+	border-radius: 8rpx;
+  overflow: hidden;
+}
+.mallOrderDetail_content .good_li .good_con .good_con_right {
+  width: 466rpx;
+  font-size: 14px;
+	color: #333333;
+}
+.mallOrderDetail_content .good_con_right .title {
+  height: 126rpx;
+}
+.mallOrderDetail_content .good_con_right .title text.chu{
+  float: left;
+  padding: 2rpx 6rpx;
+  margin-right: 10rpx;
+  background: #ff6e26;
+  color: #fff;
+  border-radius: 4rpx;
+  font-size: 20rpx;
+  margin-top: 2rpx;
+}
+.mallOrderDetail_content .good_con_right .price {
+  display: flex;
+  justify-content: space-between;
+}
+.mallOrderDetail_content .good_con_right .num {
+  font-size: 14px;
+	color: #aeafb2;
+}
+/* 留言 */
+.mallOrderDetail_content .message {
+  width: 646rpx;
+	height: auto;
+  padding: 26rpx 22rpx;
+  margin: 20rpx auto 0; 
+	background-color: #ffffff;
+	border-radius: 8rpx;
+}
+.mallOrderDetail_content .message .tip {
+  margin-bottom: 12rpx;
+  font-size: 14px;
+	color: #333333;
+}
+.mallOrderDetail_content .message .text {
+  font-size: 12px;
+  line-height: 20px;
+  color: #aeafb2;
+}
+.mallOrderDetail_content .price_box {
+  width: 646rpx;
+	height: auto;
+  line-height: 1;
+  padding: 30rpx 22rpx;
+  margin: 20rpx auto 0;
+	background-color: #ffffff;
+	border-radius: 8rpx;
+}
+.mallOrderDetail_content .price_box .price_box_li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32rpx;
+  font-size: 14px;
+  color: #333333;
+}
+.mallOrderDetail_content .price_box .price_box_li:last-of-type {
+  margin-bottom: 0rpx;
+}
+.mallOrderDetail_content .price_box .price_box_li .num {
+  font-size: 15px;
+}
+.mallOrderDetail_content .price_box .price_box_li .num.color {
+  color: #ff6e26;
+}
+
+.mallOrderDetail_content .order_msg {
+  width: 646rpx;
+	height: auto;
+  line-height: 1;
+  padding: 30rpx 22rpx;
+  margin: 20rpx auto 134rpx;
+	background-color: #ffffff;
+	border-radius: 8rpx;
+}
+.mallOrderDetail_content .order_msg .order_msg_li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+  font-size: 14px;
+  color: #666666;
+}
+.mallOrderDetail_content .order_msg .order_msg_li:last-of-type {
+  margin-bottom: 0rpx;
+}
+.mallOrderDetail_content .order_msg .order_msg_li .num {
+  font-size: 14px;
+  color: #aeafb2;
+}
+
+.mallOrderDetail_content .btn_bottom {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 690rpx;
+	height: 112rpx;
+  padding: 0 30rpx 0 30rpx;
+	background-color: #ffffff;
+	box-shadow: 0px -1px 1px 0px 
+		rgba(102, 102, 102, 0.05);
+}
+.mallOrderDetail_content .btn_bottom .msg {
+  font-size: 12px;
+	color: #ff6e26;
+}
+.mallOrderDetail_content .btn_bottom>view:last-child{
+  display: flex;
+}
+.mallOrderDetail_content .btn_bottom .van-button {
+  width: 176rpx;
+	height: 76rpx;
+  line-height: 76rpx;
+  margin-left: 25rpx;
+  padding: 0;
+  font-size: 28rpx;
+	color: #aeafb2;
+	border-radius: 40rpx;
+	border: solid 1px #aeafb2;
+}
+.mallOrderDetail_content .btn_bottom .btn_color .van-button {
+  width: 180rpx;
+	height: 80rpx;
+  line-height: 80rpx;
+  margin-left: 25rpx;
+  color: #ffffff;
+  background-image: linear-gradient(90deg, 
+		#ffaf41 0%, 
+		#ff8441 100%), 
+	linear-gradient(
+		#f89283, 
+		#f89283);
+	background-blend-mode: normal, 
+		normal;
+	border-radius: 40px;
+	border: none;
+}
+
+.mallOrderDetail_content .btn_bottom .second .van-button {
+  color: #ff6e26;
+  border: solid 1px #ff6e26;
+}
+
+/* 物流 */
+.mallOrderDetail_content .order_logistics {
+  display: flex;
+  align-items: center;
+  width: 690rpx;
+	min-height: 122rpx;
+  margin: 26rpx auto -8rpx;
+  padding: 20rpx 0;
+	background-color: #ffffff;
+	border-radius: 8rpx;
+  position: relative;
+}
+.mallOrderDetail_content .order_logistics .pic_box {
+  display: flex;
+  align-items: center;
+  height: 86rpx;
+  margin-right: 22rpx;
+  border-right: solid 1px #ebebeb;
+}
+.mallOrderDetail_content .order_logistics .pic_box image {
+  width: 31rpx;
+	height: 32rpx;
+  margin: 0 20rpx 0 22rpx;
+}
+.mallOrderDetail_content .order_logistics .tip {
+  font-size: 14px;
+  font-weight: bold;
+	color: #333333;
+}
+.mallOrderDetail_content .order_logistics .right {
+  position: absolute;
+  right: 25rpx;
+  width: 14rpx;
+	height: 26rpx;
+}
+.text_color {
+  color: #ff6e26;
+}
+.mid_msg {
+  width: 540rpx;
+}
+.order-cancel{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background: rgba(0,0,0,0.5);
+}
+.order-cancel-wrap{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 101;
+  height: 656rpx;
+  width: 100%;
+  background: #fff;
+  border-radius: 32rpx 32rpx 0 0;
+}
+.order-cancel-title{
+  text-align: center;
+  margin-top: 26rpx;
+  color: #333;
+  font-size: 32rpx;
+}
+.order-cancel-disc{
+  margin-left: 30rpx;
+  color: #aeafb2;
+  margin-top: 25rpx;
+}
+.order-cancel-main{
+  margin-top: 28rpx;
+}
+.order-cancel-main view{
+  height: 95rpx;
+  display: flex;
+  align-items: center;
+  margin: 0 0 0 30rpx;
+  padding-right: 30rpx;
+  border-top: 1rpx solid #ebebeb;
+}
+.order-cancel-main view:last-child{
+  border-bottom: 1rpx solid #ebebeb;
+}
+.order-cancel-main view text{
+  flex-grow: 2;
+}
+.order-cancel-main view image{
+  flex-shrink: 0; 
+  width: 44rpx;
+	height: 44rpx;
+}
+.order-cancel-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 118rpx;
+}
+.order-cancel-btn text{
+  width: 200rpx;
+	height: 80rpx;
+  border-radius: 40rpx;
+  margin: 0 20rpx;
+}
+.order-cancel-btn text:first-child{
+  border: 1px solid #ff8441;
+  line-height: 78rpx;
+  color: #ff8441;
+  text-align: center;
+}
+.order-cancel-btn text:last-child{
+  background-image: linear-gradient(90deg, 
+		#ffaf41 0%, 
+		#ff8441 100%), 
+	linear-gradient(
+		#f89283, 
+		#f89283);
+	background-blend-mode: normal, 
+		normal;
+  color: #fff;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.confirm-patient {
+  display: flex;
+  align-items: center;
+  margin: 20rpx 30rpx 0;
+  padding: 36rpx 0;
+  border-radius: 8rpx;
+  background: #fff;
+}
+.confirm-patient .confirm-patient-icon {
+  width: 30rpx;
+  height: 30rpx;
+  flex-shrink: 0;
+  margin-left: 24rpx;
+  margin-right: 24rpx;
+}
+.confirm-patient .confirm-patient-wrap {
+  flex-grow: 2;
+  border-left: 1rpx solid #ebebeb;
+  padding-left: 21rpx;
+}
+.confirm-patient .confirm-patient-wrap .confirm-patient-tip {
+  color: #999;
+}
+.confirm-patient .confirm-patient-wrap > view:first-child {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333333;
+}
+.confirm-patient .confirm-patient-wrap > view:last-child {
+  font-size: 28rpx;
+  color: #999;
+  padding-top: 10rpx;
+}
+.confirm-patient .confirm-patient-wrap > view:last-child text {
+  margin-right: 10rpx;
+}
+
+.confirm-patient .confirm-patient-more {
+  justify-content: flex-start;
+  flex-shrink: 0;
+  text-align: right;
+  color: #ff6e26;
+  margin-right: 24rpx;
+  padding-bottom: 5rpx;
+  box-sizing: border-box;
+}
+.confirm-patient .confirm-patient-more text{
+  color: #999999;
+  
+}
+.confirm-patient .confirm-patient-more view:last-child{
+  padding-top: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.confirm-patient .confirm-patient-more image{
+  width: 14rpx;
+  height: 26rpx;
+  margin-left: 10rpx;
+  padding-top: 5rpx;
+}

@@ -1,0 +1,47 @@
+<!--pages/authorization/authorization.wxml-->
+ <view class="downloadAPP">
+    <view class="logo">
+      <image src="https://nfys-static.kinglian.cn/xcx/download/logo.png" mode="aspectFit" />
+    </view>
+    <view class="title">
+      <image src="https://nfys-static.kinglian.cn/xcx/download/title.png" mode="aspectFit" />
+    </view>
+    <view class="content">
+      <view class="li">
+        <image src="https://nfys-static.kinglian.cn/xcx/download/bubble.png" mode="aspectFit" />
+        <text>复诊延方</text>
+      </view>
+      <view class="li">
+        <image src="https://nfys-static.kinglian.cn/xcx/download/bubble.png" mode="aspectFit" />
+        <text>慢病管理</text>
+      </view>
+      <view class="li">
+        <image src="https://nfys-static.kinglian.cn/xcx/download/bubble.png" mode="aspectFit" />
+        <text>慢病开药</text>
+      </view>
+      <view class="li">
+        <image src="https://nfys-static.kinglian.cn/xcx/download/bubble.png" mode="aspectFit" />
+        <text>药师咨询</text>
+      </view>
+      <view class="li">
+        <image src="https://nfys-static.kinglian.cn/xcx/download/bubble.png" mode="aspectFit" />
+        <text>名医咨询</text>
+      </view>
+      <view class="li">
+        <image src="https://nfys-static.kinglian.cn/xcx/download/bubble.png" mode="aspectFit" />
+        <text>套餐购买</text>
+      </view>
+    </view>
+    <view class="btn_box">
+      <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+        {{btnMsg}}
+      </button>
+    </view>
+    <view class="bottom">
+      <image src="https://nfys-static.kinglian.cn/xcx/download/pic_bottom.png" mode="aspectFit" />
+    </view>
+  </view>
+
+<view>
+  <union-id  hasUnionIdFlag="{{hasUnionIdFlag}}"></union-id>
+</view>

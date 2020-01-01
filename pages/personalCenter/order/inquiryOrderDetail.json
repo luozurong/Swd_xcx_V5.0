@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "订单详情",
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "van-button": "vant-weapp/button/index",
+    "van-icon": "vant-weapp/icon/index",
+    "no-data": "../../component/noData/noData"
+  }
+}

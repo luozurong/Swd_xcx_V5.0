@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "售后",
+  "usingComponents": {
+    "van-button": "vant-weapp/button/index",
+    "no-data": "../../component/noData/noData"
+  }
+}

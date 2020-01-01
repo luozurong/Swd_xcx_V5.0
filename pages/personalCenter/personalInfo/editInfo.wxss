@@ -1,0 +1,39 @@
+/* pages/personalCenter/personalInfo/editInfo.wxss */
+.editInfo input {
+  width: 750rpx;
+	height: 104rpx;
+  line-height: 104rpx;
+  margin-top: 4rpx;
+  padding: 0 58rpx;
+  font-size: 14px;
+	background-color: #ffffff;
+}
+.editInfo .van-cell {
+  margin-top: 4rpx;
+  padding: 0px 15px;
+}
+.editInfo .phone_input {
+  padding: 0 0rpx;
+}
+.van-button {
+  background: #3ac756;
+}
+.editInfo .code .van-cell__title,.van-cell__value {
+  line-height: 110rpx;
+}
+.editInfo .code input {
+  padding: 0 0rpx;
+}
+.editInfo .btn {
+  display: block;
+  width: 200rpx;
+	height: 64rpx;
+  margin: 34rpx auto 0;
+  line-height: 64rpx;
+  font-size: 14px;
+	color: #ffffff;
+	background-image: linear-gradient(90deg, 
+		#73e539 0%, 
+		#3ac756 100%);
+	border-radius: 32rpx;
+}

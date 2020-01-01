@@ -1,0 +1,83 @@
+<!--pages/personalCenter/afterSaleList/afterSaleList.wxml-->
+<view class="order">
+  <view class="order_con" wx:if="{{listData.length}}">
+    <scroll-view style="height: 98vh;" scroll-y bindscrolltoupper="mallOrderUpper" bindscrolltolower="mallOrderLower">
+      <view class="order_li" wx:for="{{listData}}" wx:for-item="item" wx:key="item.id" bindtap="gotoMallOrderDetail" data-id="{{item.id}}" wx:if="{{item.comList.length}}">
+        <view class="title" wx:if="{{orderStatus != '5'}}">
+          <view class="title_left">
+            <text wx:if="{{item.orderStatus=='5'}}">售后单号：</text>
+            <text wx:else class="title_left_l">订单号：</text>
+            <text class="title_left_l">{{item.scCode}}</text>
+          </view>
+          <text class="state" wx:if="{{item.orderStatus=='0'}}">待付款</text>
+          <text class="state" wx:if="{{item.orderStatus=='1'}}">待发货</text>
+          <text class="state" wx:if="{{item.orderStatus=='2'}}">待收货</text>
+          <text class="state" wx:if="{{item.orderStatus=='3'}}">已完成</text>
+          <text class="state" wx:if="{{item.orderStatus=='4'}}">已取消</text>
+          <text class="state" wx:if="{{item.orderStatus=='5'}}">售后</text>
+        </view>
+        <view class="title" wx:else>
+          <view class="title_left">
+            <text>售后单号：</text>
+            <text class="title_left_l">{{item.scCode}}</text>
+          </view>
+          <text class="state">{{item.status}}</text>
+        </view>
+        <view class="pic_con" wx:for="{{item.comList}}" wx:for-item="list" wx:key="list.commodityId">
+          <!-- <view class="goods_pic" catchtap="gotoMallDeatil" data-columnId="{{list.columnId}}" data-id="{{list.commodityId}}"> -->
+          <view class="goods_pic">
+            <image src="{{list.imgUrl}}" mode="scaleToFill"></image>
+          </view>
+          <view class="goods_right">
+            <view class="name">
+              <text class="chu" wx:if="{{list.isRx == 1}}">处方药</text>
+              <text>{{list.name}}</text>
+            </view>
+            <view class="price">
+              <text>¥{{list.price}}</text>
+              <text class="number" wx:if="{{orderStatus=='5'}}">×{{list.applyNumber}}</text>
+              <text class="number" wx:else>×{{list.qty}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="order_bottom">
+          <view class="order_bottom_disc" wx:if="{{orderStatus=='5'}}">
+            <text>问题描述：{{item.description}}</text>
+          </view>
+          <view class="order_bottom_disc" wx:elif="{{item.orderStatus=='5'}}">
+            <text>问题描述：{{item.receivingName}}</text>
+          </view>
+          <view wx:else class="order_num_price">
+            <text>共</text>
+            <text class="text_color">{{item.goodsNum}}</text>
+            <text>件商品，总计</text>
+            <text class="text_color">¥{{item.sumPrice}}</text>
+          </view>
+          <view wx:if="{{item.orderStatus=='0'}}">
+            <van-button round type="default" catchtap="cancelMallOrder" data-id="{{item.id}}">取消订单</van-button>
+            <van-button round type="default" class="btn_color" catchtap="payfor" data-id="{{item.id}}">去支付</van-button>
+          </view>
+          <view wx:if="{{item.orderStatus=='1'}}">
+            <van-button round type="default" catchtap="cancelOrder" data-id="{{item.id}}">取消订单</van-button>
+          </view>
+          <view wx:if="{{item.orderStatus=='2'}}">
+            <van-button wx:if="{{item.comList[0].hasEntity!=0}}" round type="default" catchtap="gotoLogisticsInfo" data-name="{{item.expressCom}}" data-id="{{item.expressNo}}">查看物流</van-button>
+            <van-button round type="default" class="btn_color" catchtap="confirmReceipt" data-id="{{item.id}}">确认收货</van-button>
+          </view>
+          <view wx:if="{{item.orderStatus=='3'}}">
+            <van-button wx:if="{{item.isApplyRefund=='0'}}" round type="default" class="first" catchtap="gotoAfterSale" data-id="{{item.id}}" data-type="0">申请售后</van-button>
+            <van-button wx:if="{{item.isEvaluate == 0}}" round type="default" class="second" catchtap="gotoEvaluate" data-id="{{item.id}}">去评价</van-button>
+            <van-button round type="default" catchtap="repurchase" class="btn_color" data-id="{{item.id}}">再次购买</van-button>
+          </view>
+          <view wx:if="{{item.orderStatus=='4'}}">
+            <van-button round type="default" class="btn_color" catchtap="repurchase" data-id="{{item.id}}">重新购买</van-button>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{nomoreShow}}" class="no_more_show">我也是有底线的</view>
+    </scroll-view>
+  </view>
+  <view style="height: 84vh;" wx:if="{{noDatashow}}">
+    <no-data scene="noData"></no-data>
+  </view>
+</view>

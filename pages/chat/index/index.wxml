@@ -1,0 +1,4 @@
+<!--pages/chat/index/index.wxml-->
+<web-view src="{{link}}">
+
+</web-view>

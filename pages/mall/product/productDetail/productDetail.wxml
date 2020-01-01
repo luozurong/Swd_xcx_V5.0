@@ -1,0 +1,176 @@
+<import src="../../wxParse/wxParse.wxml"/>
+
+<!-- 轮播图 -->
+<swiper class="swiper-wrap" indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" circular="{{circular}}" duration="{{duration}}">
+  <block wx-if="{{productDetailImgUrl.length > 0}}" wx:for="{{productDetailImgUrl}}" wx:for-index="index" wx:key="index">
+    <swiper-item>
+      <image src="{{item}}" class="swiper-wrap"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+<!-- 分享 -->
+<view  class="productDetail-wrap-share">
+    <button data-id="12" class="productDetail-share-button" open-type="share"></button>
+    <view>
+      <view>分享有礼</view>
+      <view>有机会获健康奖金</view>
+    </view> 
+</view>
+
+<!-- 栏目价格 -->
+<view class="product-price" wx:if="{{productDetail.columnId != -1}}">
+  <view class="home-product-price" wx:if="{{productDetail.price && productDetail.specialPrice}}">
+    <text>
+      <text>{{productDetail.specialPricePre}}</text>
+      <text>{{productDetail.specialPriceNext}}</text>
+    </text>
+    <text class="home-product-pre">{{productDetail.price}}</text>
+  </view>
+  <view class="home-product-price" wx:if="{{productDetail.price && !productDetail.specialPrice}}">
+    <text>
+      <text>{{productDetail.pricePre}}</text>
+      <text>{{productDetail.priceNext}}</text>
+    </text>
+  </view>
+</view>
+
+<!-- 普通商品价格 -->
+<view class="product-price" wx:if="{{productDetail.columnId == -1}}">
+  <view class="home-product-price" wx:if="{{productDetail.price && productDetail.salePrice}}">
+    <text>
+      <text>{{productDetail.salePricePre}}</text>
+      <text>{{productDetail.salePriceNext}}</text>
+    </text>
+    <text class="home-product-pre">{{productDetail.price}}</text>
+  </view>
+  <view class="home-product-price" wx:if="{{productDetail.price && !productDetail.salePrice}}">
+    <text>
+      <text>{{productDetail.pricePre}}</text>
+      <text>{{productDetail.priceNext}}</text>
+    </text>
+  </view>
+</view>
+
+<!-- 商品详情信息 -->
+<view class="productDetail-wrap">
+  <view class="productDetail-wrap-container">
+    <view class="productDetail-wrap-name" >
+      <text class="chu" wx:if="{{isRx == 1}}">处方药</text>
+      <text>{{productDetail.name}}</text>
+    </view>
+  </view>
+  <view class="home-product-tip"> 
+    <text wx:for="{{labelArr}}" wx:key="index" wx:if="{{item != ''}}">{{item}}</text> 
+  </view>
+  <view class="home-product-wrap">
+    <view class="home-product-cart">
+      <text>销量：{{productDetail.sumVolume}}</text>
+      <text>库存：{{productDetail.inventory}}</text>
+    </view>
+    <view class="home-product-ship" wx:if="{{productDetail.discountsInfo != null}}">{{productDetail.discountsInfo}}</view>
+  </view>
+</view>
+
+<!-- 商品规格参数 -->
+<view class="product-content-wrap" wx:if="{{productDetail.commNorm ||  productDetail.manufacturer || productDetail.approvalNumber}}">
+  <view class="product-content-header">
+    <text  class="product-content-line"></text>
+    <text class="product-content-name">商品参数</text>
+    <text class="product-content-line"></text>
+  </view>
+  <view>
+    <view class="productDetail-can">
+      <view wx:if="{{productDetail.commNorm}}">
+        <view>商品规格</view>
+        <view>{{productDetail.commNorm ? productDetail.commNorm : ''}}</view>
+      </view>
+      <view  wx:if="{{productDetail.manufacturer}}">
+        <view>生产厂家</view>
+        <view>{{productDetail.manufacturer ? productDetail.manufacturer : ''}}</view>
+      </view>
+      <view  wx:if="{{productDetail.approvalNumber}}">
+        <view>批准文号</view>
+        <view>{{productDetail.approvalNumber ? productDetail.approvalNumber : ''}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 商品规格参数 -->
+<view class="product-content-wrap">
+  <view class="product-content-header">
+    <text  class="product-content-line"></text>
+    <text class="product-content-name">商品详情</text>
+    <text class="product-content-line"></text>
+  </view>
+  <view><template is="wxParse" data="{{wxParseData:details.nodes}}"/></view> 
+</view>
+
+<!-- 普通商品固定栏 -->
+<view class="productDetail-fixed" wx:if="{{isRx != 1 && source != 'serviceConsult' }}">
+  <view class="productDetail-fixed-floor1">
+    <view>
+      <button class="customer" open-type="contact" hover-class="none">
+        <image src="../../../images/mall/service.png"></image>
+        <view>在线客服</view>
+      </button>
+    </view>
+  </view>
+  <view class="productDetail-fixed-floor2 {{(productDetail.inventory == 0 || productDetail.status != 0) ? 'active' : ''}}" bindtap="addShopCart">
+    <text>加入购物车</text>
+    <!-- <button wx:if="{{!isLoginFlag}}"  open-type="getPhoneNumber" plain="true"  hover-class="none" bindgetphonenumber="getPhoneNumber"></button> -->
+  </view>
+  <view class="productDetail-fixed-floor3 {{(productDetail.inventory == 0 || productDetail.status != 0) ? 'active' : ''}}">
+    <text bindtap="jumpOrderConfirm">立即购买</text>
+    <!-- <button wx:if="{{!isLoginFlag}}"  open-type="getPhoneNumber" plain="true"  hover-class="none" bindgetphonenumber="getPhoneNumber"></button> -->
+  </view>
+</view>
+<!-- <view class="shop-cart-pic" wx:if="{{source != 'serviceConsult' }}">
+  <navigator hover-class="none" url="../../shopCart/shopCart">
+    <image src="http://yun-test.kinglian.net/xcx/mall/cart_num_btn.png" alt=""></image>
+    <text>{{shopCartNum}}</text>
+  </navigator>
+ <button wx:if="{{!isLoginFlag}}" open-type="getPhoneNumber" plain="true"  hover-class="none" bindgetphonenumber="getPhoneNumber"></button>
+</view>
+<view class="my-order">
+  <view bindtap="jumpMy">我的</view>
+  <button wx:if="{{!isLoginFlag}}" open-type="getPhoneNumber" plain="true" size='20' hover-class="none" bindgetphonenumber="getPhoneNumber"></button>
+</view> -->
+
+<!-- 凭方开药 -->
+<view class="product-chu" wx:if="{{isRx == 1}}">
+  <view class="product-customer">
+    <button class="customer" open-type="contact" hover-class="none">
+      <image src="../../../images/mall/service.png"></image>
+      <text>在线客服</text>
+    </button>
+  </view>
+  <!-- <view class="product-zixun">
+    <image src="http://yun-test.kinglian.net/xcx/mall/zixun.png"></image>
+    <text>咨询药师</text>
+  </view> -->
+  <view class="product-other">
+    <view class="product-add-cart" wx:if="{{requirementListQty < 1}}" bindtap="jumpRequirementList">需求清单</view>
+    <view class="product-add-cart" wx:if="{{requirementListQty > 0}}" bindtap="jumpRequirementList">需求清单({{requirementListQty}})</view>
+    <view class="product-go-pay {{(productDetail.inventory == 0 || productDetail.status != 0) ? 'active' : ''}}" bindtap="addRequirementList">加入需求单</view>
+  </view>
+</view>
+
+<!-- 领取服务 -->
+<view class="productDetail-serve" wx:if="{{source == 'serviceConsult' }}">
+  <view>领取服务</view>
+</view>
+
+
+<!-- 获取uinionid -->
+<view wx:if="{{runUionidComponent}}">
+  <union-id></union-id>
+</view>
+
+<view wx:if="{{isRx != 1}}">
+  <fixed-icon shopCartNum="{{shopCartNum}}"></fixed-icon>
+</view>
+
+<view class="product-div-height"></view>

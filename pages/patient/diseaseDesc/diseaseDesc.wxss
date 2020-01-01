@@ -1,0 +1,180 @@
+/* pages/patient/diseaseDesc/diseaseDesc.wxss */
+.diseaseDesc {
+  background: #ffffff;
+}
+.diseaseDesc .line {
+  border-bottom: 1px solid #ebebeb;
+  opacity: 0.5;
+}
+.diseaseDesc_li {
+  margin-bottom: 20rpx;
+}
+.diseaseDesc_li .title {
+  padding: 32rpx 30rpx 20rpx 30rpx;
+  font-size: 14px;
+  font-weight: bold;
+	color: #333333;
+}
+.diseaseDesc_li .textarea {
+  width: 646rpx;
+	height: 184rpx;
+  padding: 22rpx 18rpx;
+  margin: 0 auto;
+	background-color: #f6f8fa;
+	border-radius: 8rpx;
+  overflow: hidden
+}
+.requirementListParams .input {
+  width: 666rpx;
+	height: 64rpx;
+  padding: 7rpx 8rpx 0;
+  margin: 0 auto;
+	background-color: #f6f8fa;
+	border-radius: 8rpx;
+  overflow: hidden;
+  box-sizing: border-box
+}
+.diseaseDesc_li .textarea textarea {
+  display: inline-block;
+  width: 100%;
+	height: 100%;
+  font-size: 14px;
+	line-height: 36rpx;
+}
+.diseaseDesc_li .textarea.small_height {
+  height: 76rpx;
+}
+
+/* 疾病时长 */
+.diseaseDesc .options_con {
+  font-size: 14px;
+  padding: 12rpx 30rpx 16rpx 30rpx;
+}
+.diseaseDesc .options_con.small {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 30rpx 16rpx 30rpx;
+}
+.diseaseDesc .options {
+  display: inline-block;
+  margin-right: 20rpx;
+  padding: 2rpx 16rpx;
+  color: #aeafb2;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 8rpx;
+  border: solid 1px #ebebeb;
+}
+
+.diseaseDesc .options_con.small .options {
+  min-width: 56rpx;
+  padding: 2rpx 9rpx;
+}
+
+.diseaseDesc .options_con.small .options.options_active {
+  padding: 4rpx 11rpx;
+}
+
+.diseaseDesc .options:last-of-type {
+  margin-right: 0;
+}
+
+.diseaseDesc .options_active {
+  padding: 4rpx 18rpx;
+  color: #3ac756;
+  border: none;
+  background-color: #EBF9EE;
+}
+
+/* 图片上传 */
+.diseaseDesc .diseaseDesc_pic {
+  width: 690rpx;
+  margin: 42rpx auto 0;
+  padding: 36rpx 0 32rpx;
+  font-size: 12px;
+	line-height: 36rpx;
+	color: #666666;
+  border-top: 1px solid #ebebeb;
+}
+.uploader-img {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20rpx 0;
+}
+.uploader-list {
+  position: relative;
+  width: 145rpx;
+	height: 145rpx;
+  margin-right: 22rpx;
+  margin-bottom: 22rpx;
+	background-color: #ebebeb;
+}
+.uploader-list image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.uploader-list .delete {
+  position: absolute;
+  left: -7px;
+  top: -7px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+.upAdd {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 143rpx;
+	height: 143rpx;
+  border-radius: 10rpx;
+  border: 1px solid #EFEFEF;
+}
+
+/* 底部按钮 */
+.diseaseDesc_btn {
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  background: #F6F8FA;
+}
+.diseaseDesc_btn .van-button {
+  width: 600rpx;
+	height: 80rpx;
+  margin: 20rpx auto;
+  line-height: 80rpx;
+  color: #ffffff;
+	background-image: linear-gradient(90deg, 
+		#73e539 0%, 
+		#3ac756 100%), 
+	linear-gradient(
+		#ff6e26, 
+		#ff6e26);
+	background-blend-mode: normal, 
+		normal;
+	border-radius: 38rpx;
+}
+.mainSuit{
+  padding: 0 30rpx;
+  margin-top: 20rpx; 
+}
+.mainSuit text{
+  display: inline-block;
+  height: 48rpx;
+  line-height: 48rpx;
+  padding: 0 17rpx;
+  border: 1rpx solid #ebebeb;
+  color: #aaa;
+  margin-right: 20rpx;
+  border-radius: 4rpx;
+  margin-bottom: 20rpx;
+}
+.mainSuit .mainSuit-active{
+  color: #3ac756;
+  border: 1rpx solid  #3ac756;
+  background-color: #EBF9EE;
+}

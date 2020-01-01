@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-icon": "vant-weapp/icon",
+    "no-data": "../../component/noData/noData"
+  },
+  "navigationBarTitleText": "收货地址"
+}

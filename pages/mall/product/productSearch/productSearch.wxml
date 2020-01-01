@@ -1,0 +1,79 @@
+<view class="productSearch-search-wrap">
+  <van-search
+  value="{{ name }}"
+  placeholder="请输入搜索关键词"
+  show-action
+  focus="{{true}}"
+  bind:search="onSearch"
+  bind:cancel="onCancel"
+  bind:focus="onfocus"
+/>
+<view class="productSearch-search-pic">
+  <image src="../../../images/mall/search.png"></image> 
+</view>
+</view>
+
+<view class="productSearch-history" wx:if="{{historyFlag}}">
+  <view class="productSearch-history-header" wx:if="{{historyArr.length > 0}}">
+    <text>搜索历史</text>
+    <image src="http://yun-test.kinglian.net/xcx/mall/del_history_btn.png" bindtap="productSearchDelete"></image>
+  </view>
+  <view class="productSearch-history-label">
+    <text wx:for="{{historyArr}}" wx:for-index="index" wx:for-item="item" wx:key="index" data-name="{{item}}" bindtap="productSearchLabel">{{item}}</text>
+  </view>
+</view>
+<view class="home-product"  wx:if="{{!historyFlag}}">
+  <view class="home-product-item" bindtap="jumpProductDetail" data-columnId="{{item.columnId}}" data-isrx="{{item.isRx}}" data-id="{{item.id}}" wx:for="{{records}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+  <view class="navigator">
+    <!-- <navigator hover-class="none" url="../productDetail/productDetail?comId={{item.id}}&columnId=-1&shareUserId=0"> -->
+      <image src="{{item.imgUrl}}"></image>
+      <view>
+        <view class="home-product-view">
+          <view class="home-product-name">
+            <text class="chu" wx:if="{{item.isRx == 1}}">处方药</text>
+            <text>{{item.name}}</text>
+          </view>
+          <view class="home-product-tip"> 
+            <text wx:for="{{item.labelArr}}" wx:key="index" wx:for-item="list" wx:if="{{list}}">{{list}}</text> 
+          </view>
+        </view>
+        <view class="home-product-wrap">
+          <view class="home-product-price" wx:if="{{!item.columnId && item.price && item.salePrice}}">
+            <text>
+              <text>{{item.salePricePre}}</text>
+              <text>{{item.salePriceNext}}</text>
+            </text>
+            <text class="home-product-pre">{{item.price}}</text>
+          </view>
+          <view class="home-product-price" wx:if="{{!item.columnId && item.price && !item.salePrice}}">
+            <text>
+              <text>{{item.pricePre}}</text>
+              <text>{{item.priceNext}}</text>
+            </text>
+          </view>
+
+          <view class="home-product-price" wx:if="{{item.columnId && item.price && item.specialPrice}}">
+            <text>
+              <text>{{item.specialPricePre}}</text>
+              <text>{{item.specialPriceNext}}</text>
+            </text>
+            <text class="home-product-pre">{{item.price}}</text>
+          </view>
+          <view class="home-product-price" wx:if="{{item.columnId && item.price && !item.specialPrice}}">
+            <text>
+              <text>{{item.pricePre}}</text>
+              <text>{{item.priceNext}}</text>
+            </text>
+          </view>
+          <view class="home-product-cart">
+            <text>销量:{{item.sumVolume}}</text>
+          </view>
+        </view>
+      </view>
+      </view>
+    <!-- </navigator> -->
+  </view>
+</view>
+<view>
+  <no-data wx:if="{{isNoData && !historyFlag}}"  scene="noData" ></no-data>
+</view>

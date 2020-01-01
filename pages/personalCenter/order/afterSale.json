@@ -1,0 +1,16 @@
+{
+  "navigationBarTitleText": "申请售后",
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "van-button": "vant-weapp/button/index",
+    "van-icon": "vant-weapp/icon/index",
+    "van-checkbox": "vant-weapp/checkbox/index",
+    "van-checkbox-group": "vant-weapp/checkbox-group/index",
+    "van-field": "vant-weapp/field/index",
+    "van-action-sheet": "vant-weapp/action-sheet/index",
+    "van-cell": "vant-weapp/cell/index",
+    "van-cell-group": "vant-weapp/cell-group/index",
+    "van-radio": "vant-weapp/radio/index",
+    "van-radio-group": "vant-weapp/radio-group/index"
+  }
+}

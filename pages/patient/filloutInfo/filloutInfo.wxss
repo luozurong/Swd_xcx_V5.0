@@ -1,0 +1,230 @@
+/* pages/patient/filloutInfo/filloutInfo.wxss */
+
+.filloutInfo .line {
+  border-bottom: 1px solid #ebebeb;
+  opacity: 0.5;
+}
+/* 历史就诊人----开始 */
+.filloutInfo .history {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20rpx 30rpx 0 30rpx;
+}
+.filloutInfo .history .history_li {
+  display: flex;
+  align-items: center;
+  min-width: 200rpx;
+  padding-right: 10rpx;
+	height: 132rpx;
+  margin-bottom: 26rpx;
+  font-size: 12px;
+	color: #666666;
+	background-color: #ffffff;
+	border-radius: 8rpx;
+}
+.filloutInfo .history .history_li:nth-child(3n-1) {
+  margin-left: 26rpx;
+  margin-right: 26rpx;
+}
+.filloutInfo .history .history_li .history_icon {
+  margin: 0 8rpx 0 18rpx;
+}
+.filloutInfo .history .history_li .name {
+  margin-bottom: 16rpx;
+  font-size: 14px;
+	line-height: 1;
+	letter-spacing: 1px;
+	color: #333333;
+}
+.filloutInfo .history .history_li .sex {
+	line-height: 1;
+	letter-spacing: 1px;
+}
+.filloutInfo .history .history_li .sex .age {
+  margin-left: 10rpx;
+}
+.filloutInfo .history .history_li.history_add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.filloutInfo .history .history_li.history_add .history_icon {
+  margin: 18rpx 0 0 0;
+}
+/* 历史就诊人----结束 */
+
+/* 表单内容区域----开始 */
+.form_con {
+  padding-bottom: 130rpx;
+}
+.filloutInfo .van-cell { 
+  padding: 18px 30rpx;
+}
+
+.filloutInfo .van-cell__title {
+  -webkit-flex: unset;
+  flex: unset;
+  display: inline-block;
+  min-width: 60px !important;
+  padding-right: 24px;
+  text-align-last: justify;
+  text-align: justify;
+  font-size: 14px;
+  color: #333;
+}
+
+.filloutInfo .van-cell--required::before {
+  position: absolute;
+  top: 20px;
+  left: 75px;
+  font-size: 14px;
+  color: #f44;
+  content: "*";
+}
+
+.filloutInfo .van-cell--required {
+  overflow: visible;
+}
+
+.filloutInfo .van-cell:after {
+  content: " ";
+  position: absolute;
+  pointer-events: none;
+  box-sizing: border-box;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  top: auto;
+  left: 15px;
+  right: 0;
+  bottom: 0;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  border-bottom: 1px solid #eee;
+}
+
+.filloutInfo .van-cell {
+  position: relative;
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.filloutInfo .birth {
+  color: #333;
+  font-size: 14px;
+}
+.filloutInfo .options {
+  display: inline-block;
+  width: 80rpx;
+  height: 48rpx;
+  margin-right: 20rpx;
+  line-height: 48rpx;
+  font-size: 14px;
+  color: #aeafb2;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 8rpx;
+  border: solid 1px #d2d2d4;
+}
+
+.filloutInfo .options:last-of-type {
+  margin-right: 0;
+}
+
+.filloutInfo .options_active {
+  color: #3ac756;
+  border: solid 1px #3ac756;
+}
+/* 表单内容区域----结束 */
+
+/* 按钮---开始 */
+.filloutInfo .confirm_button {
+  position: fixed;
+  bottom: 40rpx;
+  left: 75rpx;
+  z-index: 99;
+}
+.filloutInfo .confirm_button .van-button {
+  width: 600rpx;
+	height: 80rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+	color: #fffefe;
+	background-image: linear-gradient(90deg, 
+		#73e539 0%, 
+		#3ac756 100%), 
+	linear-gradient(
+		#3ac756, 
+		#3ac756);
+	background-blend-mode: normal, 
+		normal;
+	border-radius: 40rpx;
+}
+/* 按钮---结束 */
+
+/* 出生日期 */
+.filloutInfo .picker {
+  width: 522rpx;
+  font-size: 14px;
+  color:#aeafb2;
+}
+
+
+/* 协议遮罩层 */
+.filloutInfo .popup_con {
+  width: 690rpx;
+	height: 1084rpx;
+  line-height: 1;
+	background-color: #ffffff;
+}
+.filloutInfo .van-popup--center {
+  border-radius: 10rpx;
+}
+.filloutInfo .popup_con .title {
+  padding: 60rpx 0 30rpx 0;
+  text-align: center;
+  font-weight: bold;
+	font-size: 18px;
+	color: #333333;
+}
+.filloutInfo .scroll_view {
+  width: 620rpx;
+  height: 864rpx;
+  padding: 0 35rpx;
+  line-height: 30px;
+  font-size: 14px;
+  text-align: justify;
+	color: #333333;
+  overflow: hidden;
+}
+::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+.filloutInfo .scroll_view .text_title {
+  color: #3ac756;
+}
+.filloutInfo .btn {
+  display: flex;
+  height: 88rpx;
+  line-height: 88rpx;
+  overflow: hidden;
+  border-top: 1px solid #d2d2d4;
+}
+.filloutInfo .btn button {
+  width: 50%;
+  font-size: 17px;
+	color: #aeafb2;
+  background: #ffffff;
+  border-radius: 0;
+}
+.filloutInfo .btn .right {
+  color: #007aff;
+  border-left: 1px solid #d2d2d4;
+}
+.filloutInfo .btn button::after {
+  border: none;
+}

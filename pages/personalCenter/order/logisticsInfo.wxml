@@ -1,0 +1,26 @@
+<!--pages/personalCenter/order/logisticsInfo.wxml-->
+<view class="logisticsInfo">
+  <view class="logisticsInfo_top" wx:if="{{expressType == '1'}}">
+    <view class="margin_bottom">
+      <text class="left">快递公司</text>
+      <text>{{resData.comZh}}</text>
+    </view>
+    <view>
+      <text class="left">物流单号</text>
+      <text class="right">{{resData.nu}}</text>
+    </view>
+  </view>
+  <view class="logisticsInfo_top" wx:if="{{expressType == '0'}}">
+    <view class="margin_bottom">
+      <text class="left">配送健管师</text>
+      <text>{{resData.comZh}}</text>
+    </view>
+    <view>
+      <text class="left">联系电话</text>
+      <text class="right">{{resData.nu}}</text>
+    </view>
+  </view>
+  <view class="flow_path">
+    <van-steps steps="{{ steps }}" direction="vertical" active-color="#ff6e26" />
+  </view>
+</view>

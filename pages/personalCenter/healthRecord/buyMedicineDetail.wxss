@@ -1,0 +1,73 @@
+/* pages/personalCenter/healthRecord/buyMedicineDetail.wxss */
+.buyMedicineDetail_con {
+  width: 650rpx;
+	height: auto;
+  line-height: 1;
+  margin: 20rpx auto;
+  padding: 0 20rpx;
+	background-color: #ffffff;
+	border-radius: 8rpx;
+}
+.buyMedicineDetail_con .content_top {
+  display: flex;
+  justify-content: space-between;
+  padding: 32rpx 0 35rpx 0;
+  font-size: 12px;
+	color: #aeafb2;
+  border-bottom: 1px solid #ebebeb;
+}
+.buyMedicineDetail_con .content_top .title {
+  font-weight: bold;
+	font-size: 14px;
+	color: #333333;
+}
+.buyMedicineDetail_con .drug_box {
+}
+.buyMedicineDetail_con .drug_box .drug_li {
+  border-bottom: 1px solid #ebebeb;
+}
+.buyMedicineDetail_con .drug_box .drug_li .name {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24rpx;
+	font-size: 16px;
+	color: #333333;
+}
+.buyMedicineDetail_con .drug_box .drug_li .name .left {
+  font-weight: bold;
+	font-size: 28rpx;
+}
+.buyMedicineDetail_con .drug_box .drug_li .usually_name {
+  margin-top: 12rpx;
+  font-size: 14px;
+	color: #666666;
+}
+.buyMedicineDetail_con .drug_box .drug_li .spec {
+  margin-top: 28rpx;
+  font-size: 12px;
+	color: #aeafb2;
+}
+.buyMedicineDetail_con .drug_box .drug_li .price {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx;
+  padding-bottom: 28rpx;
+	font-size: 12px;
+	color: #aeafb2;
+}
+.buyMedicineDetail_con .drug_box .drug_li .price .right {
+	font-size: 14px;
+	color: #333333;
+}
+
+.buyMedicineDetail_con .drug_box .total {
+  display: flex;
+  justify-content: space-between;
+  padding: 36rpx 0 36rpx 0;
+  font-size: 12px;
+	color: #666666;
+}
+.buyMedicineDetail_con .drug_box .total .price {
+  font-size: 18px;
+	color: #ff6e26;
+}

@@ -1,0 +1,95 @@
+<!--pages/patient/diseaseDesc/diseaseDesc.wxml-->
+<view class="diseaseDesc">
+  <view class="line"></view>
+  <view class="diseaseDesc_li  requirementListParams" wx:if="{{inquiryType == 9}}">
+    <view class="title">1、请确认线下医院已确诊的疾病</view>
+    <view class="input">
+      <input bindblur="diagnoseBlur" value="{{formData.diagnose}}" placeholder="感冒头疼咳嗽..."/>
+    </view>
+    <view class="mainSuit">
+      <text wx:for="{{mainSuit}}"
+       class="{{item.flag ? 'mainSuit-active' : ''}}"
+       bindtap="chooseSuit"  
+       data-index="{{index}}" 
+       wx:index="index" 
+       wx:item="item" 
+       wx:key="index">{{item.name}}</text>
+    </view>
+  </view>
+  <view class="diseaseDesc_li">
+    <view class="title">{{inquiryType == 9 ? 2 : 1}}、您目前哪里不舒服</view>
+    <view class="textarea">
+      <textarea bindinput="watchMainSuit" placeholder="请详细描述您的病情、病症，以便医生更好的为您诊断"></textarea>
+    </view>
+  </view>
+  <view class="diseaseDesc_li">
+    <view class="title">{{inquiryType == 9 ? 3 : 2}}、请选择患病时长</view>
+    <view class="options_con">
+      <text class="options options{{item == timeItem?'_active':''}}" wx:for="{{diseaseTime}}" wx:key="{{index}}" bindtap='bindTime' data-classify="{{item}}">{{item}}</text>
+    </view>
+  </view>
+  <view class="diseaseDesc_li">
+    <view class="title">{{inquiryType == 9 ? 4 : 3}}、请选择过敏史及异常反应情况</view>
+    <view class="options_con small">
+      <text>请选择既往病史</text>
+      <view>
+        <text class="options options{{item == medicalHistoryItem?'_active':''}}" wx:for="{{medicalHistory}}" wx:key="{{index}}" bindtap='bindMedicalHistory' data-classify="{{item}}">{{item}}</text>
+      </view>
+    </view>
+    <view class="textarea small_height" wx:if="{{medicalHistoryItem == '其他'}}">
+      <textarea bindinput="watchMedicalHistory" value="{{formData.medicalHistory}}" placeholder="请输入其他既往病史"></textarea>
+    </view>
+    <view class="options_con small">
+      <text>请选择过敏史</text>
+      <view>
+        <text class="options options{{item == allergicHistoryItem?'_active':''}}" wx:for="{{allergicHistory}}" wx:key="{{index}}" bindtap='bindAllergicHistory' data-classify="{{item}}">{{item}}</text>
+      </view>
+    </view>
+    <view class="textarea small_height" wx:if="{{allergicHistoryItem == '其他'}}">
+      <textarea bindinput="watchAllergy" value="{{formData.allergy}}" placeholder="请输入其他过敏史"></textarea>
+    </view>
+    <view class="options_con small">
+      <text>是否有家族史？</text>
+      <view>
+        <text class="options options{{item == familyHistoryItem?'_active':''}}" wx:for="{{judgeList}}" wx:key="{{index}}" bindtap='bindfamilyHistory' data-classify="{{item}}">{{item}}</text>
+      </view>
+    </view>
+    <view class="textarea small_height" wx:if="{{familyHistoryItem == '是'}}">
+      <textarea bindinput="watchFamilyMedicalHistory" value="{{formData.familyMedicalHistory}}" placeholder="请输入家族史"></textarea>
+    </view>
+    <view class="options_con small">
+      <text>上次用药是否出现过异常反应？</text>
+      <view>
+        <text class="options options{{item == abnormalItem?'_active':''}}" wx:for="{{judgeList }}" wx:key="{{index}}" bindtap='bindAbnormal' data-classify="{{item}}">{{item}}</text>
+      </view>
+    </view>
+    <view class="options_con small" wx:if="{{isLactation == 2}}">
+      <text>您当前是否怀孕活哺乳期？</text>
+      <view>
+        <text class="options options{{item == lactationItem?'_active':''}}" wx:for="{{judgeList }}" wx:key="{{index}}" bindtap='bindLactation' data-classify="{{item}}">{{item}}</text>
+      </view>
+    </view>
+    <view class="options_con small">
+      <text>肝肾功能是否不正常？</text>
+      <view>
+        <text class="options options{{item == hepatorenalItem?'_active':''}}" wx:for="{{judgeList }}" wx:key="{{index}}" bindtap='bindHepatorenal' data-classify="{{item}}">{{item}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="diseaseDesc_pic">
+    <view>请上传相关就诊资料（病例、检验检查）</view>
+    <view>以便医生更准确的为您确诊</view>
+    <view class='uploader-img' wx:if="{{pics}}">
+      <view class='uploader-list' wx:for="{{pics}}" wx:key="item.length">
+        <image src='{{item}}' data-index="{{index}}" mode="aspectFill" bindtap='previewImg1' />
+        <van-icon class='delete' data-index="{{index}}" name="clear" size="16px" color="#CCCCCC" bindtap='deleteImg' />
+      </view>
+      <view class='upAdd' bindtap='chooseImg'>
+        <van-icon name="plus" size="36px" color="#CCCCCC" />
+      </view>
+    </view>
+  </view>
+  <view class="diseaseDesc_btn" catchtap="submit">
+    <van-button round type="default">提交</van-button>
+  </view>
+</view>

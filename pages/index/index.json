@@ -1,0 +1,11 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "van-button": "vant-weapp/button",
+    "van-toast": "vant-weapp/toast",
+    "union-id": "../../component/unionId/unionId",
+    "skeleton": "../../component/skeleton/skeleton"
+  },
+  "backgroundTextStyle": "dark",
+  "navigationBarTitleText": "南风医生"
+}

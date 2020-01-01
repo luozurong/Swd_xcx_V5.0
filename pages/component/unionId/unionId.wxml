@@ -1,0 +1,14 @@
+<view class="unionid-fixed" wx:if="{{hasUnionIdFlag}}">
+  <view class="unionid-fixed-wrap">
+    <view class="unionid-fixed-title">微信登录</view>
+    <view class="unionid-fixed-msg">
+      <view>用微信授权登录，使用南风医生</view>
+      <view>小程序完整功能，安全快捷</view>
+    </view>
+    <view class="unionid-fixed-submit">
+      <view bindtap="jumpBack">
+        <button> 暂不授权</button>
+     </view>
+      <button hover-class="none" open-type="getUserInfo" bindgetuserinfo="getuserinfo">确定授权</button></view>
+  </view>
+</view>

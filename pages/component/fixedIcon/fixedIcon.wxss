@@ -1,0 +1,70 @@
+.shop-cart-pic{
+  position: fixed;
+  bottom: 200rpx;
+  left: 40rpx;
+  z-index: 100;
+  padding: 5rpx 5rpx 0 0;
+}
+.shop-cart-pic image{
+  width: 90rpx;
+  height: 90rpx;
+}
+.shop-cart-pic  text{
+  position: absolute;
+  top: 0rpx;
+  right: 0rpx;
+  z-index: 11;
+  border: 2rpx solid #ff6f26;
+  border-radius: 16rpx;
+  font-size: 20rpx;
+  background: #fff;
+  color: #ff6f26;
+  min-width: 32rpx;
+  height: 32rpx;
+  box-sizing: border-box;
+  text-align: center;
+}
+.shop-cart-pic button{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 80rpx;
+  height: 80rpx;
+  padding: 0;
+  margin: 0;
+  border-radius: 100%;
+  border: none;
+}
+.my-order{
+  position: fixed;
+  bottom: 110rpx;
+  left: 40rpx; 
+  z-index: 10;
+  text-align: center;
+  width: 86rpx;
+  height: 86rpx;
+  justify-items: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.6);
+  border-radius: 100%;
+}
+.my-order view{
+  display: block;
+  width: 86rpx;
+  height: 86rpx;
+  line-height: 86rpx;
+  color: #fff;
+  font-size: 24rpx;
+  box-sizing: border-box;
+}
+.my-order button{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 11;
+  height: 86rpx;
+  width: 86rpx;
+  border-radius: 100%;
+  border:none;
+}

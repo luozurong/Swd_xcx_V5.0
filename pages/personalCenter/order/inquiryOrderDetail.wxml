@@ -1,0 +1,139 @@
+<!--pages/personalCenter/order/inquiryOrderDetail.wxml-->
+<view class="inquiryOrderDetail">
+  <view class="bg">
+    <image src="https://nfys-static.kinglian.cn/xcx/personalCenter/order_detail_bj.png" mode="aspectFit"></image>
+  </view>
+  <view class="inquiryOrderDetail_content">
+    <view class="order_orderStatus">
+      <view class="orderStatus">
+        <image wx:if="{{orderData.orderState==4}}" src="https://nfys-static.kinglian.cn/xcx/personalCenter/icon_order_detail_1.png" mode="aspectFit"></image>
+        <image wx:if="{{orderData.orderState==7}}" src="https://nfys-static.kinglian.cn/xcx/personalCenter/icon_order_detail_6.png" mode="aspectFit"></image>
+        <image wx:if="{{orderData.orderState==200}}" src="https://nfys-static.kinglian.cn/xcx/personalCenter/icon_order_detail_2.png" mode="aspectFit"></image>
+        <image wx:if="{{orderData.orderState==300}}" src="https://nfys-static.kinglian.cn/xcx/personalCenter/icon_order_detail_3.png" mode="aspectFit"></image>
+        <text>{{orderData.orderStateName}}</text>
+      </view>
+    </view>
+    <view class="patient_con">
+      <view class="patient_con_top">
+        <view class="pic_con">
+          <image wx:if="{{orderData.patientAvatarUrl}}" src="{{orderData.patientAvatarUrl}}" mode="aspectFit"></image>
+          <image wx:else src="https://nfys-static.kinglian.cn/xcx/personalCenter/user.png" mode="aspectFit"></image>
+        </view>
+        <text class="name">{{orderData.patientName}}</text>
+        <text>({{orderData.patientSex}}/{{orderData.patientAge}}岁)</text>
+        <view class="tag">就诊人</view>
+      </view>
+      <view class="patient_con_bottom">
+        <text class="bottom_left">主诉</text>：
+        <text class="bottom_right">{{orderData.mainSuit}}</text>
+      </view>
+    </view>
+    <view class="patient_con doctor" wx:if="{{orderData.doctorName}}">
+      <view class="patient_con_top">
+        <view class="pic_con">
+          <image wx:if="{{orderData.doctorImageUrl}}" src="{{orderData.doctorImageUrl}}" mode="aspectFit"></image>
+          <image wx:else src="https://nfys-static.kinglian.cn/xcx/personalCenter/user.png" mode="aspectFit"></image>
+        </view>
+        <text class="name">{{orderData.doctorName}}</text>
+        <view class="tag">接诊医生</view>
+      </view>
+      <view class="flex">
+        <view class="patient_con_bottom">
+          <text class="bottom_left">职称</text>：
+          <text class="bottom_right">{{orderData.doctor.titleName}}</text>
+        </view>
+        <view class="patient_con_bottom">
+          <text class="bottom_left">科室</text>：
+          <text class="bottom_right">{{orderData.department}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="patient_con doctor" wx:for="{{orderData.pharmacistsList}}" wx:for-item="item" wx:key="index" wx:if="{{orderData.orderState==200}}">
+      <view class="patient_con_top">
+        <view class="pic_con">
+          <image wx:if="{{item.avatarUrl}}" src="{{item.avatarUrl}}" mode="aspectFit"></image>
+          <image wx:else src="https://nfys-static.kinglian.cn/xcx/personalCenter/user.png" mode="aspectFit"></image>
+        </view>
+        <text class="name">{{item.name}}</text>
+        <view class="tag">接诊药师</view>
+      </view>
+      <view class="flex">
+        <view class="patient_con_bottom">
+          <text class="bottom_left">职称</text>：
+          <text class="bottom_right">{{item.titleName}}</text>
+        </view>
+        <view class="patient_con_bottom">
+          <text class="bottom_left">科室</text>：
+          <text class="bottom_right">{{item.department}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="recipe_con" wx:if="{{orderData.orderState==200}}">
+      <view class="recipe_con_title">处方信息</view>
+      <view class="line"></view>
+      <view class="recipe_con_li">
+        <text class="left">临床诊断</text>
+        <text class="right">{{orderData.mainSuit}}</text>
+      </view>
+      <view class="recipe_con_li small" wx:if="{{orderData.rxAuditState=='1'}}">
+        <text class="left">处方笺</text>
+        <view class="right" catchtap="gotoPreDetail" data-id="{{orderData.orderId}}" >
+          <text>查看详情</text>
+          <van-icon name="arrow" color="#d2d2d4" size="16px" />
+        </view>
+      </view>
+      <view class="recipe_con_li small">
+        <text class="left">聊天记录</text>
+        <view class="right" catchtap="jumpChatPage" data-id="{{orderData.orderId}}">
+          <text>查看详情</text>
+          <van-icon name="arrow" color="#d2d2d4" size="16px" />
+        </view>
+      </view>
+    </view>
+    <view class="order_con">
+      <view class="order_con_li li_top">
+        <text class="name">问诊金额</text>
+        <text class="num">¥0.00</text>
+      </view>
+      <view class="order_con_li other">
+        <text>订单编号</text>
+        <text class="right">{{orderData.orderId}}</text>
+      </view>
+      <view class="order_con_li other">
+        <text>下单时间</text>
+        <text class="right">{{orderData.serviceTime}}</text>
+      </view>
+      <!-- <view class="order_con_li other" wx:if="{{orderData.orderState!=1}}">
+        <text>支付方式</text>
+        <text class="right" wx:if="{{orderData.payWay==0}}">支付宝</text>
+        <text class="right" wx:if="{{orderData.payWay==1}}">微信</text>
+        <text class="right" wx:if="{{orderData.payWay==2}}">余额</text>
+        <text class="right" wx:if="{{orderData.payWay==3}}">个人资产</text>
+      </view> -->
+      <!-- <view class="order_con_li other" wx:if="{{orderData.orderState!=1}}">
+        <text>付款时间</text>
+        <text class="right">{{orderData.serviceTime}}</text>
+      </view> -->
+    </view>
+    <!-- <view class="btn_bottom" wx:if="{{orderData.orderState==1}}">
+      <view class="msg">支付剩余：{{orderData.paymentTimeout}}秒</view>
+      <view>
+        <van-button round type="default" catchtap="cancelInquiryOrder" data-id="{{orderData.orderId}}">取消订单</van-button>
+        <van-button round type="default" class="btn_color" catchtap="inquiryPayfor" data-id="{{orderData.orderId}}">去支付</van-button>
+      </view>
+    </view>
+    <view class="btn_bottom" wx:if="{{orderData.orderState==200}}">
+      <view class="msg"></view>
+      <view>
+        <van-button round type="default" bindtap="gotoAfterSale" data-index="2">申请售后</van-button>
+      </view>
+    </view>
+    <view class="btn_bottom" wx:if="{{orderData.orderState==300}}">
+      <view class="msg"></view>
+      <view>
+        <van-button round type="default" bindtap="gotoAfterSale" data-index="2">申请售后</van-button>
+        <van-button round type="default" class="btn_color">重新问诊</van-button>
+      </view>
+    </view> -->
+  </view>
+</view>

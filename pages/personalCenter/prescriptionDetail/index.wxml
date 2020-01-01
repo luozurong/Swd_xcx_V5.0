@@ -1,0 +1,142 @@
+<!--pages/personalCenter/prescriptionDetail/index.wxml-->
+<view class="pres_box">
+  <view class="prescription" wx:if="presData">
+    <view class="head_logo">
+      <image src="../../../images/personalCenter/logo.png" mode="aspectFit" style="width: 350rpx;height:48rpx;"></image>
+    </view>
+    <view class="cachet">
+      <image src="../../../images/personalCenter/official_seal.png" mode="aspectFit" style="width: 140rpx;height:140rpx;"></image>
+    </view>
+    <view class="code">
+      <image src="{{presData.precriptionCodeUrl}}" mode="aspectFit" style="width: 164rpx;height:72rpx;"></image>
+    </view>
+    <view class="title">处方笺</view>
+    <view class="line_bold"></view>
+    <view class="content_top">
+      <view class="content_li">
+        <view>费别：</view>
+        <view class="content_li_right w_104">{{presData.costype}}</view>
+      </view>
+      <view class="content_li">
+        <view>医疗证/医保卡号：</view>
+        <view class="content_li_right w_212">{{presData.medInsCardNumber}}</view>
+      </view>
+      <view class="content_li">
+        <view>姓名：</view>
+        <view class="content_li_right w_104">{{presData.patientName}}</view>
+      </view>
+      <view class="content_li">
+        <view>性别：</view>
+        <view class="content_li_right w_104">{{presData.patientSex}}</view>
+      </view>
+      <view class="content_li">
+        <view>就诊卡号：</view>
+        <view class="content_li_right w_128"></view>
+      </view>
+      <view class="content_li">
+        <view>科别：</view>
+        <view class="content_li_right w_104">{{presData.department}}</view>
+      </view>
+      <view class="content_li">
+        <view>年龄：</view>
+        <view class="content_li_right w_104">{{presData.patientAge}}</view>
+      </view>
+      <!-- <view class="content_li">
+          <view>诊号：</view>
+          <view class="content_li_right w_122">756753534</view>
+        </view>-->
+      <view class="content_li">
+        <view>开方日期：</view>
+        <view class="content_li_right w_128">{{presData.createTime}}</view>
+      </view>
+      <view class="content_li">
+        <view>临床诊断：</view>
+        <view class="content_li_right w_490">{{presData.diagnoseDetail}}</view>
+      </view>
+      <view class="content_li">
+        <view>住址/电话：</view>
+        <view class="content_li_right w_480">{{presData.patientAddress}}</view>
+      </view>
+      <view class="content_li">
+        <view>协议药店：</view>
+        <view class="content_li_right w_490">{{presData.drugstoreName}}</view>
+      </view>
+    </view>
+    <view class="Rp">Rp</view>
+    <view class="drug_box">
+      <view class="drug_li" wx:for="{{presData.prescriptionDrugList}}" :key="index">
+        <view class="drug_li_top">
+          <text class="name">{{index+1}}、{{item.apDrugName}}</text>
+          <text>{{item.pack}}*{{item.count}}{{item.countUnit}}</text>
+        </view>
+        <view class="usage" wx:if="{{item.dosage}}">用法：{{item.dosage}} {{item.usageName}}</view>
+        <view class="usage" wx:else>
+          <text>用法：</text>
+          <text wx:if="{{item.dosNum && item.dosUnitName}}">一次{{item.dosNum}}{{item.dosUnitName}}</text>
+          <text wx:if="{{item.dosTimes && item.dosCycle}}">{{item.dosTimes}}次/{{item.dosCycle}}</text>
+          <text wx:if="{{item.usageName}}">{{item.usageName}}</text>
+        </view>
+      </view>
+      <!-- <view class="drug_li">
+          <view class="drug_li_top">
+            <text class="name">1、阿司匹林肠溶片</text>
+            <text>100mg*30片x1盒</text>
+          </view>
+          <view class="usage">用法：一次1片 1次/天 口服</view>
+        </view>-->
+      <view class="null_line">
+        <text class="line">--------------------------</text>
+        <text>以下为空</text>
+        <text class="line">--------------------------</text>
+      </view>
+    </view>
+    <view class="tip_mid">注：鉴于药物都有一定的副作用，请您在服用药物前仔细阅读说明书，了解禁忌及慎用情况，肝肾功能不全者注意减量。</view>
+    <view class="line_bold_bottom"></view>
+    <view class="content_top content_bottom">
+      <!-- <view class="content_li">
+          <view>公费记账：</view>
+          <view class="content_li_right w_82">60</view>
+          <view>元</view>
+        </view>
+        <view class="content_li">
+          <view>付现：</view>
+          <view class="content_li_right w_82">60</view>
+          <view>元</view>
+        </view>-->
+      <view class="content_li">
+        <view style="width:100rpx;text-align:right;">医师：</view>
+        <view class="content_li_right w_180">{{presData.doctorName}}</view>
+        <image src="{{presData.doctorSignUrl}}" mode="aspectFit" class="signature"></image>
+      </view>
+      <view class="content_li">
+        <view>药品金额：</view>
+        <view class="content_li_right w_158">{{presData.drugsPrice}}</view>
+        <view>元</view>
+      </view>
+      <view class="content_li">
+        <view style="width:100rpx;text-align:right;">审核药师：</view>
+        <view class="content_li_right w_180">{{presData.firstPharmacistName}}</view>
+        <image src="{{presData.firstPharmacistSignUrl}}" mode="aspectFit" class="signature"></image>
+      </view>
+      <view class="content_li">
+        <view>调配：</view>
+        <view class="content_li_right w_180"></view>
+      </view>
+      <view class="content_li">
+        <view style="width:100rpx;text-align:right;">审核药师：</view>
+        <view class="content_li_right w_180">{{presData.secondPharmacistName}}</view>
+        <image src="{{presData.secondPharmacistSignUrl}}" mode="aspectFit" class="signature"></image>
+      </view>
+      <view class="content_li">
+        <view>核对发药：</view>
+        <view class="content_li_right w_180"></view>
+      </view>
+    </view>
+    <view class="tip_mid tip_bottom">注意：根据《互联网医院管理办法（试行）》规定，处方仅限本协议药店有效，自行下载不具有处方效力。为确保用药安全，处方三日内有效。</view>
+  </view>
+  <!-- <view wx:if="{{showBtn || presData.inquiryType == '5' || presData.inquiryType == '10'}}" class="height_bottom"></view>
+  <view wx:if="{{showBtn || presData.inquiryType == '5' || presData.inquiryType == '10'}}" class="goto_shop" bindtap="gotoShop">去购药</view> -->
+  <view wx:if="{{showNull}}">
+    <no-data-view scene="noData"></no-data-view>
+  </view>
+</view>

@@ -1,0 +1,42 @@
+/* pages/personalCenter/consultNum/share.wxss */
+.consultNum_share {
+
+}
+.consultNum_share .share_li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 634rpx;
+	height: 160rpx;
+  padding: 0 28rpx;
+  margin: 20rpx auto 0;
+	background-color: #ffffff;
+	border-radius: 10rpx;
+}
+.consultNum_share .share_li .share_li_left {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+	color: #666666;
+}
+.consultNum_share .share_li .share_li_left .portrait  {
+  width: 96rpx;
+	height: 96rpx;
+  margin-right: 8rpx;
+	background-color: #f89283;
+  border-radius: 50%;
+}
+.consultNum_share .share_li .share_li_left .name {
+  font-size: 16px;
+  font-weight: bold;
+	color: #333333;
+}
+.consultNum_share .share_li .van-button {
+  width: 128rpx;
+	height: 56rpx;
+  line-height: 56rpx;
+  font-size: 16px;
+	color: #3ac756;
+	border-radius: 10rpx;
+	border: solid 1px #3ac756;
+}

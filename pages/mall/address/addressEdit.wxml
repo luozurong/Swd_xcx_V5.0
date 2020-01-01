@@ -1,0 +1,42 @@
+<view class="contain">
+  <view class="addr">
+    <van-cell-group class="form">
+      <van-field value="{{name}}" label="姓名" placeholder="请输入用户名" data-type="name" class="uname setline" bind:change="validate" />
+      <van-field value="{{phone}}" class="setline" type="number" label="联系方式" placeholder="请输入联系方式" data-type="phone" bind:change="validate" bind:blur="checkPhone"/>
+      <van-field value="{{address}}" class="setline" label="所在区域" placeholder="请选择区域" right-icon="arrow" bindtap="showPopup" disabled/>
+      <van-field value="{{detail}}" class="setline" label="详细地址" placeholder="请输入详细地址" data-type="detail" custom-style="min-height:180rpx;" class="onflex" bind:change="validate" />
+    </van-cell-group>
+    <view class="block"></view>
+    <view class="default">
+      <span>设为默认地址</span>
+      <van-switch
+        checked="{{checked}}"
+        bind:change="onChange"
+        active-color="#3ac756" 
+        size="40rpx"
+        inactive-color="#fff"
+        class="check"
+      />
+    </view>
+    <view class="block"></view>
+    <view class="delete" decode="true" wx:if="{{isDelete}}" bind:tap="delete">
+      <van-icon name="delete" class="delete-style" size="80px"/>
+      删除
+    </view>
+  </view>
+  <view class="save {{active ? 'active' : ''}}" wx:if="{{isDelete}}"  bind:tap="editSave">保存</view> <!-- 编辑地址 -->
+  <view class="save {{active ? 'active' : ''}}"  wx:if="{{!isDelete}}" bind:tap="addSave">保存</view> <!-- 新增地址 -->
+   <van-popup 
+      show="{{show}}"
+      position="bottom"
+      :style="{ height: '38%' }"
+    >
+      <van-area 
+        area-list="{{areaList}}" 
+        value="{{region}}"
+        bind:confirm="ok"
+        bind:cancel="cancel"
+      />    
+    </van-popup>
+    <van-toast id="van-toast" />
+</view>

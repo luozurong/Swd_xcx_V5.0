@@ -1,0 +1,30 @@
+<view class="contain">
+ <view wx:if="{{noDataFlag}}">
+  <no-data  scene="noData" ></no-data>
+  </view>
+  <view wx:else>
+    <view style="height: 5rpx;"></view>
+    <view class="list">
+      <view class="addr clearfix" wx:if="{{data.length > 0}}" wx:for="{{data}}" wx:key="index">
+        <view class="info" data-type="{{item}}"  data-index="{{index}}" bindtap="chooseAddress">
+          <view class="msg">
+            <text class="name">{{item.receivingName}}</text>
+            <text class="phone" decode="true">&nbsp;{{item.phone}}</text>
+          </view>
+          <view class="location">
+            <text class="default" wx:if="{{item.isSelect === 0 ? false : true}}">默认</text>
+            <text class="detail">{{item.provinceName+item.cityName+item.districtName+item.address}}</text>
+          </view>
+        </view>
+        <view class="valid"></view>
+        <view class="edit" data-id="{{item.id}}" bindtap="toedit">
+          <van-icon name="edit" data-id="{{item.id}}" class="edit-style" />
+          编辑
+        </view>
+      </view>
+    </view>
+  </view>
+  <div class="add" bindtap="toadd">
+      新增收货地址
+  </div>
+</view>

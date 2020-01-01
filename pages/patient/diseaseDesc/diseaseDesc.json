@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "病情描述",
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "van-icon": "vant-weapp/icon/index",
+    "van-button": "vant-weapp/button/index"
+  }
+}

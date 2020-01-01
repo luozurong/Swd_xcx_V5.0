@@ -1,0 +1,81 @@
+/* pages/personalCenter/healthRecord/basicInfo.wxss */
+
+.basicInfo .van-cell-group {
+  margin-bottom: 150rpx;
+}
+.basicInfo .van-cell {
+  height: 110rpx;
+  padding: 10px 10px 10px 15px;
+  align-items: center;
+  background: #ffffff;
+}
+.basicInfo .portrait {
+  width: 70rpx;
+  height: 70rpx;
+  margin-top: 12rpx; 
+  margin-right: 10rpx;
+  border-radius: 50%;
+}
+.basicInfo .van-cell .van-cell__right-icon-wrap {
+  margin-left: 10rpx;
+  color: #d2d2d4;
+}
+.basicInfo .null {
+  color: #aeafb2;
+}
+.basicInfo .btn {
+  position: fixed;
+  bottom: 35rpx;
+  left: 75rpx;
+  z-index: 99;
+  width: 600rpx;
+	height: 80rpx;
+  line-height: 80rpx;
+  font-size: 14px;
+	color: #ffffff;
+	background-image: linear-gradient(90deg, 
+		#73e539 0%, 
+		#3ac756 100%), 
+	linear-gradient(
+		#d2d2d4, 
+		#d2d2d4);
+	background-blend-mode: normal, 
+		normal;
+	border-radius: 40rpx;
+}
+
+.basicInfo .inDetail input {
+  text-align: left;
+}
+
+/* 慢病分类 */
+.basicInfo .classify .van-cell__title {
+  -webkit-flex: unset;
+  flex: unset;
+  width: 200rpx!important;
+}
+.basicInfo .classify .van-cell__value {
+  -webkit-flex: unset;
+  flex: unset;
+  width: 500rpx!important;
+}
+.basicInfo .classify label {
+  display: inline-block;
+  width: 96rpx;
+	height: 44rpx;
+  margin-left: 10rpx;
+  text-align: center;
+  line-height: 44rpx;
+  font-size: 12px;
+	color: #aeafb2;
+	border-radius: 8rpx;
+	border: solid 1px #dedede;
+}
+.basicInfo .classify label.is_checked {
+  width: 100rpx;
+	height: 48rpx;
+  line-height: 48rpx;
+	color: #ffffff;
+  background: #3ac756;
+  border: none;
+}

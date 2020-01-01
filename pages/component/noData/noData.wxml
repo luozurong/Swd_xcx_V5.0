@@ -1,0 +1,8 @@
+<view id="">
+    <view class="noDataContainer">
+      <view class="noDataImg">
+        <image  src="{{imgUrl}}"></image>
+        <view class="noDataTips">{{tips}}</view>
+      </view>
+    </view>
+  </view>

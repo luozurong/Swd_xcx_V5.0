@@ -1,0 +1,15 @@
+<view class="contain">
+  <view id="j_page" class="list" wx:if="{{dataSource.length > 0 ? true : false}}">
+    <view class="item" wx:for="{{dataSource}}" wx:key="index">
+      <view class="item-time">{{item.pushTime}}</view>
+      <view class="item-msg">{{item.content}}</view>
+    </view>
+    <!-- <view class="item">
+      <view class="item-time">7月22日 09:15</view>
+      <view class="item-msg">
+        <text>您的慢病筛查报告已出具，去查看结果吧！</text> 
+      <view class="check-detail">查看详情 <image src="http://yun-test.kinglian.net/xcx/doctor/go-icon.png" class="check-icon" /></view>
+      </view>
+    </view> -->
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "van-switch": "vant-weapp/switch"
+  },
+  "navigationBarTitleText": "添加亲友"
+}

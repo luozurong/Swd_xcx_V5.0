@@ -1,0 +1,24 @@
+<!--pages/personalCenter/collection/collection.wxml-->
+<view class="collection" wx:if="{{listData.length}}">
+  <scroll-view style="height: 99vh;" scroll-y  bindscrolltolower="collectionLower">
+    <view class="collection_li" wx:for="{{listData}}" wx:for-item="item" wx:key="item.id" bindtap="gotoDeatil" data-id="{{item.id}}">
+      <view class="collection_li_left">
+        <view class="title">{{item.title}}</view>
+        <view class="msg">
+          <view>{{item.author}}</view>
+          <view class="msg_right">
+            <text>浏览 {{item.pageView}}</text>
+            <text>点赞 {{item.praise}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="collection_li_right">
+        <image src="{{item.imgUrl}}" mode="aspectFill"></image>
+      </view>
+    </view>
+    <view wx:if="{{nomoreShow}}" class="no_more_show">我也是有底线的</view>
+  </scroll-view>
+</view>
+<view style="height: 100vh;" wx:if="{{noDatashow}}">
+  <no-data scene="noData"></no-data>
+</view>

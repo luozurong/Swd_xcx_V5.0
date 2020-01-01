@@ -1,0 +1,12 @@
+<view class="contain">
+  <view class="section"  bind:tap="toaddress">
+    <view class="location">
+      <image  class="location-icon" src="http://yun-test.kinglian.net/xcx/doctor/location.png" />  
+      收货地址
+    </view>
+    <van-icon name="arrow" />
+  </view>
+  <!-- <view > -->
+   <navigator target="miniProgram" open-type="exit" class="section out">退出登录</navigator>
+  <!-- </view> -->
+</view>

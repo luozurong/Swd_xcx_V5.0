@@ -1,0 +1,112 @@
+<view class="contain">
+  <view wx:if="{{noDataFlag}}">
+    <no-data  scene="noData" ></no-data>
+  </view>
+  <view class="list" wx:else>
+    <view class="item" data-type="健管师" bindtap="jumpDetail" wx:if="{{Connecting.length  > 0 ? true : false}}">
+      <view class="pic">
+        <image src="http://yun-test.kinglian.net/xcx/doctor/jianguan.png" />
+      </view>
+      <view class="conversation">
+        <view class="type">
+          <text class="type-name">健管师</text>
+          <text class="type-time">{{ConnectingContent.pushTime}}{{ConnectingContent}}</text>
+        </view>
+        <view class="descript">
+          <text class="msg">{{ConnectingContent.content}}</text>
+          <van-badge info="{{ConnectingRead > 99 ? '99+' : ConnectingRead}}" custom-class="bagcolor" wx:if="{{ConnectingRead != 0 ? true : false}}"/>
+        </view>
+      </view>
+    </view>
+    <view class="item" data-type="医师" bindtap="jumpDetail" wx:if="{{physician.length  > 0 ? true : false}}">
+      <view class="pic">
+        <image src="http://yun-test.kinglian.net/xcx/doctor/yishi.png" />
+      </view>
+      <view class="conversation">
+        <view class="type">
+          <text class="type-name">医师</text>
+          <text class="type-time">{{physicianContent.pushTime}}</text>
+        </view>
+        <view class="descript">
+          <text class="msg">{{physicianContent.content}}</text>
+          <van-badge info="{{physicianRead > 99 ? '99+' : physicianRead}}" custom-class="bagcolor" wx:if="{{physicianRead != 0 ? true : false}}"/>
+        </view>
+      </view>
+    </view>
+    <view class="item" data-type="药师" bindtap="jumpDetail" wx:if="{{pharmacist.length  > 0 ? true : false}}">
+      <view class="pic">
+        <image src="http://yun-test.kinglian.net/xcx/doctor/yaoshi.png" />
+      </view>
+      <view class="conversation">
+        <view class="type">
+          <text class="type-name">药师</text>
+          <text class="type-time">{{pharmacistContent.pushTime}}</text>
+        </view>
+        <view class="descript">
+          <text class="msg">{{pharmacistContent.content}}</text>
+          <van-badge info="{{pharmacistRead > 99 ? '99+' : pharmacistRead}}" custom-class="bagcolor" wx:if="{{pharmacistRead != 0 ? true : false}}"/>
+        </view>
+      </view>
+    </view>
+    <view class="item" data-type="物流" bindtap="jumpDetail" wx:if="{{logistics.length > 0 ? true : false}}">
+      <view class="pic">
+        <image src="http://yun-test.kinglian.net/xcx/doctor/wuliu.png" />
+      </view>
+      <view class="conversation">
+        <view class="type">
+          <text class="type-name">物流</text>
+          <text class="type-time">{{logisticsContent.pushTime}}</text>
+        </view>
+        <view class="descript">
+          <text class="msg">{{logisticsContent.content}}</text>
+          <van-badge info="{{logisticsRead > 99 ? '99+' : logisticsRead }}" custom-class="bagcolor" wx:if="{{logisticsRead != 0 ? true : false}}"/>
+        </view>
+      </view>
+    </view>
+    <view class="item"  data-type="商城" bindtap="jumpDetail" wx:if="{{mall.length  > 0 ? true : false}}">
+      <view class="pic">
+        <image src="http://yun-test.kinglian.net/xcx/doctor/shangcheng.png" />
+      </view>
+      <view class="conversation">
+        <view class="type">
+          <text class="type-name">商城</text>
+          <text class="type-time">{{mallContent.pushTime}}</text>
+        </view>
+        <view class="descript">
+          <text class="msg">{{mallContent.content}}</text>
+          <van-badge info="{{mallRead > 99 ? '99+' : mallRead }}" custom-class="bagcolor" wx:if="{{mallRead != 0 ? true : false}}"/>
+        </view>
+      </view>
+    </view>
+    <view class="item" data-type="亲友" bindtap="jumpDetail" wx:if="{{friend.length  > 0 ? true : false}}">
+      <view class="pic">
+        <image src="http://yun-test.kinglian.net/xcx/doctor/qinyou.png" />
+      </view>
+      <view class="conversation">
+        <view class="type">
+          <text class="type-name">亲友</text>
+          <text class="type-time">{{friendContent.pushTime}}</text>
+        </view>
+        <view class="descript">
+          <text class="msg">{{friendContent.content}}</text>
+          <van-badge info="{{friendRead > 99 ? '99+' : friendRead}}" custom-class="bagcolor" wx:if="{{friendRead != 0 ? true : false}}"/>
+        </view>
+      </view>
+    </view>
+    <view class="item" data-type="客服" bindtap="jumpDetail" wx:if="{{service.length > 0 ? true : false}}">
+      <view class="pic">
+        <image src="http://yun-test.kinglian.net/xcx/doctor/kefu.png" />
+      </view>
+      <view class="conversation">
+        <view class="type">
+          <text class="type-name">客服</text>
+          <text class="type-time">{{serviceContent.pushTime}}</text>
+        </view>
+        <view class="descript">
+          <text class="msg">{{serviceContent.content}}</text>
+            <van-badge info="{{serviceRead > 99 ? '99+' : serviceRead}}" custom-class="bagcolor" wx:if="{{serviceRead != 0 ? true : false}}"/>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

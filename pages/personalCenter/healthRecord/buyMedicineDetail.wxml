@@ -1,0 +1,39 @@
+<!--pages/personalCenter/healthRecord/buyMedicineDetail.wxml-->
+<view class="buyMedicineDetail">
+  <view class="buyMedicineDetail_con">
+    <view class="content_top">
+      <text class="title">药品信息</text>
+      <text>2018/08/26</text>
+    </view>
+    <view class="drug_box">
+      <view class="drug_li">
+        <view class="name">
+          <text class="left">1、阿昔洛韦分散片</text>
+          <text>×2</text>
+        </view>
+        <view class="usually_name">(通用名：阿昔洛韦分散片)</view>
+        <view class="spec">规格：0.1g*12片*4板</view>
+        <view class="price">
+          <text>厂家：悦康药业</text>
+          <text class="right">¥1080.30</text>
+        </view>
+      </view>
+      <view class="drug_li">
+        <view class="name">
+          <text class="left">1、阿昔洛韦分散片</text>
+          <text>×2</text>
+        </view>
+        <view class="usually_name">(通用名：阿昔洛韦分散片)</view>
+        <view class="spec">规格：0.1g*12片*4板</view>
+        <view class="price">
+          <text>厂家：悦康药业</text>
+          <text class="right">¥1080.30</text>
+        </view>
+      </view>
+      <view class="total">
+        <text>药品总价</text>
+        <text class="price">¥2069.30</text>
+      </view>
+    </view>
+  </view>
+</view>

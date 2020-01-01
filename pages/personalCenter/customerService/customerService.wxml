@@ -1,0 +1,5 @@
+<!--pages/personalCenter/customerService/customerService.wxml-->
+<!-- <web-view src="https://tb.53kf.com/code/app/10157687/1"></web-view> -->
+<van-dialog use-slot title="确定发起客服吗？" show="{{ show }}" show-cancel-button confirm-button-open-type="contact" bind:cancel="onCancel" bind:contact="gotoContact">
+  <text>\n</text>
+</van-dialog>

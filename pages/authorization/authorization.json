@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "授权登录",
+  "navigationBarBackgroundColor": "#D2EFFE",
+  "usingComponents": {
+    "union-id": "../../component/unionId/unionId"
+  }
+}

@@ -1,0 +1,236 @@
+.productSearch-search{
+  display: flex;
+  background: #fff;
+  height: 88rpx;
+  align-items: center;
+  padding: 0 30rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  box-sizing: border-box;
+}
+.productSearch-search-pic{
+  position: absolute;
+  top: 36rpx;
+  left: 65rpx;
+  z-index: 100;
+  width: 40rpx;
+  height: 40rpx;
+  background: #f5f6f7;
+}
+.productSearch-search-pic image{
+  width: 24rpx;
+  height: 24rpx;
+}
+.productSearch-search view{
+  flex-grow: 2;
+  background-color: #f5f7fa;
+  height: 64rpx;
+  border-radius: 32rpx;
+  display: flex;
+  align-items: center;
+  margin-right: 29rpx;
+}
+.productSearch-search>text{
+  flex-shrink: 0;
+  font-size: 32rpx;
+	color: #3ac756;
+}
+.productSearch-search view image{
+  width: 24rpx;
+	height: 24rpx;
+  flex-shrink: 0;
+  margin-left: 20rpx;
+}
+.productSearch-search view input{
+  flex-grow: 2;
+  box-sizing: border-box;
+  padding-left: 20rpx;
+  color: #333;
+}
+.productSearch-search-view-height{
+  height: 88rpx;
+}
+.productSearch-history{
+  height: 100vh;
+  padding-top: 88rpx;
+  box-sizing: border-box;
+  background-color: #fff; 
+}
+.productSearch-history-header{
+  display: flex;
+  padding: 0 30rpx;
+  margin-top: 32rpx;
+}
+.productSearch-history-header text{
+  flex-grow: 2; 
+  color: #333;
+  font-size: 28rpx; 
+}
+.productSearch-history-header image{
+  flex-shrink: 0; 
+  width: 32rpx;
+	height: 32rpx;
+}
+.productSearch-history-label{
+  padding: 0 30rpx;
+  margin-top: 24rpx;
+}
+.productSearch-history-label text{
+  display: inline-block;
+  padding: 0 42rpx;
+  line-height: 50rpx;
+  background: #f5f6f7;
+  border-radius: 28rpx;
+  margin-right: 20rpx;
+  font-size: 24rpx;
+  color: #333333;
+  margin-bottom: 20rpx;
+}
+
+
+
+
+.home-product{
+  background: #fff;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+  margin-top: 108rpx;
+}
+.home-product-item{
+  border-bottom: 1rpx solid #ebebeb;
+}
+.home-product-item:last-child{
+  border-bottom: none;
+}
+.home-product-item .navigator{
+  display: flex;
+  display: -webkit-flex;
+  padding: 40rpx 0;
+}
+.home-product-item:last-child{
+  border-bottom: none;
+}
+.home-product-item .navigator>image{
+  width: 180rpx;
+  height: 180rpx;
+  flex-shrink: 0;
+  -webkit-flex-shrink: 0;
+  margin-right: 18rpx;
+  border-radius: 8rpx;
+}
+.home-product-item .navigator>view{
+  margin-right: 34rpx; 
+  flex-flow: 2;
+  -webkit-flex-flow: 2;
+  width: 492rpx;
+}
+.home-product-view{
+  height: 112rpx;
+}
+.home-product-name{
+  font-size: 28rpx;
+  line-height: 36rpx;
+  color: #333333;
+}
+.home-product-name text {
+  word-break: break-all;
+}
+.home-product-name text.chu {
+  width: 72rpx;
+  height: 28rpx;
+  font-size: 20rpx;
+  line-height: 28rpx;
+  background-color: #ff6e26;
+  border-radius: 4rpx;
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  float: left;
+  margin-top: 4rpx;
+  margin-right: 10rpx;
+}
+.home-product-tip{
+  height: 42rpx;
+}
+.home-product-tip text{
+	font-size: 20rpx;
+  line-height: 1;
+  padding: 0rpx 10rpx;
+  border-radius: 8rpx;
+	color: #3ac756;
+  border: 1rpx solid #3ac756;
+  margin-right: 10rpx;
+}
+.home-product-wrap{
+  display: flex;
+  margin-top: 19rpx;
+}
+.home-product-price{
+  display: flex;
+  display: -webkit-flex;
+  flex-grow: 2;
+}
+.home-product-price>text:first-child text:first-child{
+  font-size: 36rpx;
+  color: #ff6f26;
+}
+.home-product-price>text:first-child text:first-child:before{
+  content: "￥";
+  font-size: 24rpx;
+  margin-right: -6rpx;
+}
+.home-product-price>text:first-child text:last-child{
+
+  font-size: 24rpx;
+  color: #ff6f26;
+}
+.home-product-cart{
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+.home-product-cart text{
+  color: #aeafb2;
+  font-size: 24rpx;
+  margin-right: 14rpx;
+}
+.home-product-cart image{
+  width: 56rpx;
+  height: 56rpx;
+}
+
+.productSearch-search-wrap{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.van-cell{
+  padding: 8rpx 15rpx !important;
+  border-radius: 15px;
+}
+.van-search__content--square{
+  border-radius: 16rpx;
+}
+.van-search__content{
+  border-radius: 32rpx !important;
+}
+.van-search__action view{
+  color: #3ac756;
+}
+.home-product-pre{
+  text-decoration: line-through;
+  color: #d2d2d4;
+  font-size: 24rpx;
+  box-sizing: border-box;
+  padding-top: 10rpx;
+  margin-left: 13rpx;
+}
+.home-product-pre::before{
+  content: "￥";
+  margin-right: -6rpx;
+  align-content: flex-end
+}

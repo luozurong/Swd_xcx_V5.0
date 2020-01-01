@@ -1,0 +1,86 @@
+<view class="contain">
+  <view class="form">
+    <view class="section">
+      <view class="section-label">
+        <text>姓</text>
+        <text class="tag">名</text>
+      </view>
+      <view class="section-select">
+        <input  type="text" placeholder="请输入姓名" value="{{patientName}}" style="color:black"  bindinput="patientNameInput"/>
+      </view>
+    </view>
+    <view class="section">
+      <view class="section-label">
+        <text>手</text>
+        <text>机</text>
+        <text>号</text>
+        <text>码</text>
+        <text class="tag"></text>
+      </view>
+      <view class="section-select">
+        <input  type="text" placeholder="请输入手机号码" value="{{contractPhone}}" style="color:black" bindinput="contractPhoneInput"/>
+      </view>
+    </view>
+    <view class="section">
+      <view class="section-label idcart getbox">
+        <text>性</text>
+        <text>别</text>
+      </view>
+      <view class="section-select section-button">
+        <view class="select-button {{isSex==1?'isCheck':''}}" data-Type="1" bindtap="selectSex">男</view>
+        <view class="select-button {{isSex==0?'isCheck':''}}" data-Type="0" bindtap="selectSex">女</view>
+      </view>
+    </view>
+    <view class="section">
+      <view class="section-label idcart getbox">
+        <text>身</text>
+        <text>份</text>
+        <text>证</text>
+        <text>号</text>
+      </view>
+      <view class="section-select">
+        <input  type="text" placeholder="请输入身份证号" value="{{idCard}}" style="color:black" bindinput="idCardInput"/>
+      </view>
+    </view>
+      <view class="section noborder">
+      <view class="section-label connection getbox">
+        <text>关</text>
+        <text>系</text>
+      </view>
+      <view class="section-select section-button">
+        <view class="select-button {{isFamily=='配偶'?'isCheck':''}}" data-Type="配偶" bindtap="selectFamaily">配偶</view>
+        <view class="select-button {{isFamily=='父亲'?'isCheck':''}}" data-Type="父亲" bindtap="selectFamaily">父亲</view>
+        <view class="select-button {{isFamily=='母亲'?'isCheck':''}}" data-Type="母亲" bindtap="selectFamaily">母亲</view>
+        <view class="select-button {{isFamily=='儿子'?'isCheck':''}}" data-Type="儿子" bindtap="selectFamaily">儿子</view>
+        <view class="select-button {{isFamily=='女儿'?'isCheck':''}}" data-Type="女儿" bindtap="selectFamaily">女儿</view>
+        <view class="select-button {{isFamily=='其他'?'isCheck':''}}" data-Type="其他" bindtap="selectFamaily">其他</view>
+      </view>
+    </view>
+  </view>
+  <view class="setting">
+    <view class="list">
+      <view class="item">
+        <view class="setting-msg">
+          <view class="setting-title">设为紧急联系人</view>
+          <van-switch checked="{{ checked }}" bind:change="onChange" size="40rpx" active-color="#3ac756"/>
+        </view>
+        <view class="setting-descript">在本人测量数据高危时，健管师可电话联系该紧急联系人</view>
+      </view>
+      <view class="item">
+        <view class="setting-msg">
+          <view class="setting-title">测量异常通知他（她）</view>
+          <van-switch checked="{{ infoChecked }}" bind:change="onInfoChange" size="40rpx" active-color="#3ac756"/>
+        </view>
+        <view class="setting-descript">在本人测量数据异常时，向该亲友推送消息，支持短信微信电话等推送方式</view>
+      </view>
+      <view class="item clear-border">
+        <view class="setting-msg">
+          <view class="setting-title">每天可看我的测量数据</view>
+          <van-switch checked="{{ seeChecked }}" bind:change="onSeeChange" size="40rpx" active-color="#3ac756"/>
+        </view>
+        <view class="setting-descript">向该亲友推送本人的设备检测数据。</view>
+      </view>
+    </view>
+  </view>
+  <view class="sure" bindtap="addSave">确定</view>
+</view>

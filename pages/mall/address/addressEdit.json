@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "van-checkbox": "vant-weapp/checkbox",
+    "van-cell-group": "vant-weapp/cell-group",
+    "van-field": "vant-weapp/field",
+    "van-switch": "vant-weapp/switch",
+    "van-icon": "vant-weapp/icon",
+    "van-area": "vant-weapp/area",
+    "van-popup": "vant-weapp/popup",
+    "van-toast": "vant-weapp/toast"
+  },
+  "navigationBarTitleText": "编辑地址"
+}

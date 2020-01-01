@@ -1,0 +1,221 @@
+/* pages/personalCenter/order/detail_conDetail.wxss */
+.detail_con {
+  width: 640rpx;
+	height: auto;
+  line-height: 1;
+  margin: 20rpx auto 0;
+  padding: 0 25rpx 0rpx;
+	background-color: #ffffff;
+	border-radius: 8rpx;
+}
+image {
+  width: 100%;
+  height: 100%;
+}
+.order_msg {
+  display: flex;
+  justify-content: space-between;
+  padding: 28rpx 0;
+  font-size: 14px;
+	color: #666666;
+  border-bottom: 1px solid #ebebeb;
+}
+.order_msg .color {
+  color: #ff6e26;
+}
+
+/* 问诊信息 */
+.detail_con .portrait_con {
+  padding: 20rpx 0rpx 48rpx 0rpx;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.detail_con .portrait_con .name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.detail_con .portrait_con .left {
+  font-size: 16px;
+}
+
+.detail_con .portrait_con .detail {
+  display: flex;
+  align-items: center;
+  margin-top: 24rpx;
+}
+
+.detail_con .portrait_con .detail_pic {
+  width: 96rpx;
+  height: 96rpx;
+  margin-right: 14rpx;
+  background-color: #fff;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.detail_con .portrait_con .detail_pic image {
+  width: 100%;
+  height: 100%;
+}
+.detail_con .portrait_con .detail_right {
+  width: 530rpx;
+}
+
+.detail_con .portrait_con .patient {
+  display: flex;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 22rpx;
+}
+.detail_con .portrait_con .patient:last-child {
+  margin-bottom: 0rpx;
+}
+
+.detail_con .portrait_con .patient .name {
+  display: inline-block;
+  width: 45px;
+  color: #333;
+  text-align: justify;
+  text-align-last: justify;
+}
+
+.detail_con .portrait_con .patient .text_con {
+  display: block;
+  width: 428rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/* 图片上传 */
+.uploader-img {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 24rpx 24rpx 16rpx 24rpx;
+}
+.uploader-list {
+  position: relative;
+  width: 145rpx;
+	height: 145rpx;
+  margin-right: 22rpx;
+  margin-bottom: 22rpx;
+	background-color: #ebebeb;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+.uploader-list:nth-child(4) {
+  margin-right: 0rpx;
+}
+.uploader-list image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 结果 */
+.detail_con .result {
+  margin-top: 20rpx;
+}
+.detail_con .result .title {
+  margin-bottom: 16rpx;
+  font-size: 14px;
+	color: #666666;
+}
+.title  .chu{
+  font-size: 20rpx;
+  color: #fff;
+  background: #ff6e26;
+  padding: 4rpx 6rpx;
+  float: left;
+  border-radius: 4rpx;
+  margin-top: 2rpx;
+}
+.detail_con .result .result_text {
+  padding-bottom: 50rpx;
+  line-height: 20px;
+  font-size: 14px;
+	color: #333333;
+}
+
+/* 商城商品售后 */
+.detail_con .good_box {
+  padding-top: 24rpx; 
+}
+.detail_con .good_con {
+  display: flex;
+  padding: 0rpx 0 24rpx 0;
+}
+.detail_con .good_con .good_con_pic {
+  width: 160rpx;
+	height: 160rpx;
+  margin: 0 16rpx 0 0rpx;
+	background-color: #ffffff ;
+	border-radius: 8rpx;
+  overflow: hidden;
+}
+.detail_con .good_con .good_con_right {
+  width: 466rpx;
+  font-size: 14px;
+	color: #333333;
+}
+.detail_con .good_con_right .title {
+  height: 126rpx;
+}
+.detail_con .good_con_right .price {
+  display: flex;
+  justify-content: space-between;
+}
+.detail_con .good_con_right .num {
+  font-size: 14px;
+	color: #aeafb2;
+}
+
+/* 问题描述 */
+
+.afterSaleDetail .issue {
+  width: 690rpx;
+  height: auto;
+  line-height: 1;
+  margin: 20rpx auto;
+  background-color: #fff;
+  border-radius: 8rpx;
+}
+
+.afterSaleDetail .issue .title {
+  padding: 32rpx 24rpx 0rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333333;
+}
+
+.afterSaleDetail .issue .issue_text {
+  padding: 24rpx 24rpx 24rpx 24rpx;
+  font-size: 24rpx;
+  color: #333333;
+}
+.afterSaleDetail .issue .issue_text.desc {
+  line-height: 1.5;
+  padding: 12rpx 24rpx 24rpx 24rpx;
+  font-size: 28rpx;
+  color: #666666;
+}
+.afterSaleDetail .issue .issue_text.price {
+  font-size: 28rpx;
+	color: #ff6e26;
+}
+.afterSaleDetail .pic_con {
+  width: 690rpx;
+  height: auto;
+  line-height: 1;
+  margin: 20rpx auto;
+  background-color: #fff;
+  border-radius: 8rpx;
+}
+.afterSaleDetail .pic_con .title {
+  padding: 32rpx 24rpx 0rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333333;
+}

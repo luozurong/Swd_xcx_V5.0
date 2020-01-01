@@ -1,0 +1,24 @@
+<view class="contain">
+  <!-- {{noDataFlag}} -->
+  <view wx:if="{{noDataFlag}}">
+    <no-data scene="noData"></no-data>
+  </view>
+  <view class="list" wx:else>
+    <scroll-view scroll-y style="height:1176rpx;" bindscrolltolower="onReachBottom">
+      <view class="item" bindtap="torecordDetail" data-visitObj="{{item}}" wx:for="{{dataSource}}" wx:key="index">
+        <view class="user">
+          <view class="user-name">
+            <text>就诊人：{{item.patientName}}</text>
+            <!-- <text wx:if="{{item.orderType}}">{{item.orderType}}</text> -->
+            <text>{{item.orderTypeName}}</text>
+          </view>
+          <view class="user-time">{{item.showDate}}</view>
+        </view>
+        <view class="diagnose">
+          {{item.diagnosis}}
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+</view>

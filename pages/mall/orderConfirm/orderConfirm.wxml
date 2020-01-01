@@ -1,0 +1,97 @@
+<view wx:if="{{loadingOver}}">
+  <view class="orderConfirm-address" data-siteStatus="{{siteStatus}}" bindtap="jumpAddressList" wx:if="{{hasEntity == 1}}">
+  <image src="http://yun-test.kinglian.net/xcx/mall/address.png"></image>
+  <view>
+    <view wx:if="{{ siteStatusFlag == 0 }}">
+      <view class="orderCofirm-address-name">
+        <text>{{site.receivingName}}</text>
+        <text>{{site.phone}}</text>
+      </view>
+      <view  class="orderCofirm-address-detail">
+        <text  class="orderCofirm-address-default" wx:if="{{site.isSelect == 1}}">默认</text>
+        <text  class="orderCofirm-address-details">{{site.provinceName}}{{site.cityName}}{{site.districtName}}{{site.address}}</text>
+      </view>
+    </view>
+    <view wx:if="{{siteStatusFlag == 2}}" class="orderConfirm-address-empty">请填写收货地址</view>
+    <view wx:if="{{siteStatusFlag == 1}}" class="orderConfirm-address-empty">添加收货地址</view>
+  </view>
+  <image src="http://yun-test.kinglian.net/xcx/mall/more.png"></image>
+</view>
+
+<!-- 用药人信息 -->
+<view class="confirm-patient" wx:if="{{isRx == 1}}" bindtap="jumpPatientPage">
+  <image class="confirm-patient-icon" src="http://yun-test.kinglian.net/xcx/mall/patient_icon.png"></image>
+  <view class="confirm-patient-wrap">
+    <view>用药人信息</view>
+    <view>
+      <text class="confirm-patient-tip" wx:if="{{!patientInfo.patientName}}">请填写用药人信息</text>
+      <text>{{patientInfo.patientName}}</text>
+      <text wx:if="{{patientInfo.patientGender == 1}}">男</text>
+      <text wx:if="{{patientInfo.patientGender == 2}}">女</text>
+      <text wx:if="{{patientInfo.patientAge}}">{{patientInfo.patientAge}}岁</text>
+    </view>
+  </view>
+  <image class="confirm-patient-more" src="http://yun-test.kinglian.net/xcx/mall/more.png" alt></image>
+</view>
+
+<view class="orderConfirm-product">
+  <view class="orderConfirm-product-word">商品清单</view>
+  <view>
+    <view class="orderConfirm-product-item" wx:for="{{comList}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+      <image class="orderConfirm-product-pic" src="{{item.imgUrl}}"></image>
+      <view class="orderConfirm-product-wrap">
+        <view class="orderConfirm-product-name">
+          <text class="chu" wx:if="{{item.isRx == 1}}">处方药</text>
+          <text>{{item.name}}</text>
+        </view>
+        <view class="orderConfirm-product-store">
+          <text>库存:</text>
+          <text>{{item.inventory}}</text>  
+        </view>
+        <view class="orderConfirm-product-num">
+          <text class="orderConfirm-product-price">
+            <text>{{item.pricePre}}</text>
+            <text>{{item.priceNext}}</text>
+          </text>
+          <view class="orderConfirm-product-ipt">
+            <text data-index="{{index}}" bindtap="subProduct">-</text>
+            <input data-index="{{index}}" bindblur="inputChange" disabled="{{isChangeNumFlag}}" type="number" value="{{item.qty}}"></input>
+            <text data-index="{{index}}" bindtap="addProduct">+</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="orderConfirm-note">
+  <text>留言</text>
+  <textarea bindinput="changeTextArea" value="{{remark}}" auto-height="true" maxlength="45" placeholder-class="text-placeholder" placeholder="备注发货需要注意的事项，如需开发票请留言，选填（45个字以内）"></textarea>
+</view>
+<view class="orderConfirm-other">
+  <view>
+    <text>商品总价</text>
+    <text>¥{{sumPrice}}</text>
+  </view>
+  <view wx:if="{{isRx == 1}}">
+    <text>问诊费</text>
+    <text>¥{{inquiryPrice}}</text>
+  </view>
+  <view wx:if="{{hasEntity == 1}}">
+    <text>运费</text>
+    <text>¥{{freight}}</text>
+  </view>
+  <view wx:if="{{hasEntity == 1}}">
+    <text>配送方式</text>
+    <text class="orderConfirm-other-kuai">快递</text>
+  </view>
+</view>
+<view class="orderConfirm-bottom-height"></view>
+<view class="orderConfirm-fixed">
+  <view>共{{sumQty}}件商品</view>
+  <view>
+    <text>总共</text>
+    <text>￥{{orderPrice}}</text>
+  </view>
+  <view bindtap="goPay">去支付</view>
+</view>
+</view>

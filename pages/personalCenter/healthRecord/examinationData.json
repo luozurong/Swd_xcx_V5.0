@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "体检数据",
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "van-dialog": "vant-weapp/dialog/index",
+    "van-field": "vant-weapp/field/index",
+    "no-data": "../../../component/noData/noData"
+  }
+}

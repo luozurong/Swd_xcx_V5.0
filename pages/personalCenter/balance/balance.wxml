@@ -1,0 +1,95 @@
+<view class="balance-header">
+  <image src="http://yun-test.kinglian.net/xcx/personalCenter/balance.png"></image>
+  <view>
+    <text>￥</text>
+    <text>0.00</text>
+  </view>
+</view>
+<van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="全部账单">
+    <!-- <view class="balance-wrap">
+      <view class="balance-wrap-item">
+        <view class="balance-item-left">
+          <view>现金转入</view>
+          <view>2019-07-12 14:20:56</view>
+        </view>
+        <view class="balance-item-right balance-item-color">+16.0</view>
+      </view>
+      <view class="balance-wrap-item">
+        <view class="balance-item-left">
+          <view>现金转入</view>
+          <view>2019-07-12 14:20:56</view>
+        </view>
+        <view class="balance-item-right balance-item-color">+16.0</view>
+      </view>
+      <view class="balance-wrap-item">
+        <view class="balance-item-left">
+          <view>现金转入</view>
+          <view>2019-07-12 14:20:56</view>
+        </view>
+        <view class="balance-item-right balance-item-color">+16.0</view>
+      </view>
+      <view class="balance-wrap-item">
+        <view class="balance-item-left">
+          <view>现金转入</view>
+          <view>2019-07-12 14:20:56</view>
+        </view>
+        <view class="balance-item-right balance-item-color">+16.0</view>
+      </view>
+      <view class="balance-wrap-item">
+        <view class="balance-item-left">
+          <view>现金转入</view>
+          <view>2019-07-12 14:20:56</view>
+        </view>
+        <view class="balance-item-color">+16.0</view>
+      </view>
+    </view> -->
+    <view>
+      <no-data  scene="noData" ></no-data>
+    </view>
+  </van-tab>
+  <van-tab title="支出">
+    <view>
+      <no-data  scene="noData" ></no-data>
+    </view>
+    <!-- <view class="balance-wrap">
+      <view class="balance-wrap-item">
+        <view class="balance-item-left">
+          <view>现金转入</view>
+          <view>2019-07-12 14:20:56</view>
+        </view>
+        <view class="balance-item-right balance-item-color">+16.0</view>
+      </view>
+    </view> -->
+  </van-tab>
+  <van-tab title="收入">
+    <view>
+      <no-data  scene="noData" ></no-data>
+    </view>
+  </van-tab>
+  <van-tab title="筛选">
+    <!-- <view class="balance-wrap">
+      <view class="balance-wrap-time">
+        <view>
+          <view>开始时间</view>
+          <view>2017-07-10</view>
+        </view>
+        <view>
+          <view>结束时间</view>
+          <view>2017-07-11</view>
+        </view>
+      </view>
+      <view class="balance-border"></view>
+      <view class="balance-wrap-item">
+        <view class="balance-item-left">
+          <view>现金转入</view>
+          <view>2019-07-12 14:20:56</view>
+        </view>
+        <view class="balance-item-right balance-item-color">+16.0</view>
+      </view>
+    </view> -->
+    <view>
+      <no-data  scene="noData" ></no-data>
+    </view>
+  </van-tab>
+</van-tabs>

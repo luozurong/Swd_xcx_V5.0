@@ -1,0 +1,132 @@
+page {
+  height: 100%;
+}
+.contain {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  background:rgba(246,248,250,1);
+}
+.form {
+  width:750rpx;
+  height:595rpx;
+  padding: 0 30rpx;
+  border-top: 1rpx solid rgba(235, 234, 234, 0.9);
+  box-sizing: border-box;
+  background:rgba(255,255,255,1);
+}
+.section {
+  display: flex;
+  min-height: 100rpx;
+  width: 100%;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #EBEBEB;
+}
+.section-label {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 140rpx;
+  font-size:28rpx;
+}
+.section-label .tag::after {
+  content: "*";
+  color: red;
+  position: relative;
+  top: 7rpx;
+}
+.section-select {
+  margin-top: 30rpx;
+  margin-left: 27rpx;
+  width: 490rpx;
+}
+input {
+  font-size: 28rpx;
+  color: #AEAFB2;
+  width: 500rpx;
+}
+.idcart {
+  letter-spacing: 4rpx;
+}
+.section-button {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 25rpx;
+}
+.select-button {
+  margin-right: 20rpx;
+  margin-bottom: 24rpx;
+  width:112rpx;
+  height:48rpx;
+  text-align: center;
+  line-height: 48rpx;
+  font-size: 28rpx;
+  background:rgba(255,255,255,1);
+  color:rgba(174,175,178,1);
+  border:1px solid rgba(210,210,212,1);
+  border-radius:8rpx;
+}
+.isCheck {
+  border:1px solid rgba(58,199,86,1);
+  color:rgba(58,199,86,1);
+}
+.connection {
+  letter-spacing: 4rpx;
+  margin-top: -70rpx;
+}
+.noborder {
+  border-bottom: 0 solid #EBEBEB;
+}
+.setting {
+  margin-top:20rpx;
+  margin-bottom: 90rpx;
+  background:rgba(255,255,255,1);
+}
+.list {
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.item {
+  width: 688rpx;
+  padding: 40rpx 0;
+  border-bottom: 1px solid #EBEBEB;
+}
+.setting-msg {
+  display: flex;
+  justify-content: space-between;
+}
+.setting-title {
+  font-size:28rpx;
+}
+.setting-descript {
+  width: 623rpx;
+  font-size:24rpx;
+  color:rgba(174,175,178,1);
+}
+.line {
+  width:690rpx;
+  height:1rpx;
+  background:rgba(235,235,235,1);
+}
+.clear-border {
+  border-bottom: 0 solid #EBEBEB;
+}
+.sure {
+  position: fixed;
+  /* margin: 18rpx 224rpx; */
+  bottom: 18rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width:300rpx;
+  height:80rpx;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 80rpx;
+  background:linear-gradient(90deg,rgba(115,230,57,1),rgba(58,199,86,1));
+  color:rgba(255,255,255,1);
+  border-radius:40rpx;
+}
+.getbox {
+  padding-right: 15rpx;
+  box-sizing: border-box;
+}

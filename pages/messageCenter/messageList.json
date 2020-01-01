@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-badge": "vant-weapp/badge",
+    "no-data": "../component/noData/noData"
+  },
+  "navigationBarTitleText": "消息中心"
+}

@@ -1,0 +1,36 @@
+<view class="contain">
+  <view wx:if="{{noDataFlag}}">
+    <no-data  scene="noData" ></no-data>
+  </view>
+  <view class="list" wx:else>
+    <view class="item" wx:for="{{dataSource}}" wx:key="index">
+      <van-swipe-cell id="{{item.patientId}}" right-width="{{ 65 }}" async-close bind:close="onClose">
+        <van-cell data-info="{{item}}" bindtap="tofamily">
+          <view class="base-msg">
+            <view class="name">
+              {{item.patientName}}
+              <text wx:if="{{item.relation}}">({{item.relation}})</text> 
+            </view>
+            <view class="phone">{{item.contractPhone}}</view>
+            <!-- <view class="bind">已绑定</view>  -->
+            <view class="nobind">未绑定</view> 
+          </view>
+          <view class="urgency">
+            <view class="urgency-list">
+              <view class="urgency-item" wx:if="{{item.isEmergencyContact == 1 ? true : false}}"><image src="http://yun-test.kinglian.net/xcx/doctor/sure.png" />紧急联系人</view>
+              <view class="urgency-item"  wx:if="{{item.isAbnormalNotify == 1 ? true : false}}"><image src="http://yun-test.kinglian.net/xcx/doctor/sure.png" />异常推送</view>
+              <view class="urgency-item" wx:if="{{item.isPushData == 1 ? true : false}}"><image src="http://yun-test.kinglian.net/xcx/doctor/sure.png" />分享数据</view>
+            </view>
+            <view class="edit" > 
+              <image src="http://yun-test.kinglian.net/xcx/doctor/edit.png" />
+              编辑
+            </view>
+          </view>
+        </van-cell>
+        <van-button square type="danger" slot="right">删除</van-button>
+      </van-swipe-cell>
+    </view>
+
+  </view>
+  <view class="sure" bindtap="addfamily">继续添加</view>
+</view>

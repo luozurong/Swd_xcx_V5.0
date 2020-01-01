@@ -1,0 +1,32 @@
+<view wx:if="{{noDataFlag}}">
+  <no-data scene="noData"></no-data>
+</view>
+<view wx:else>
+  <scroll-view scroll-y style="height:1176rpx;" bindscrolltolower="onReachBottom">
+    <view class="inquiryBox" wx:for="{{inquiryArr}}" bindtap="goToChat" data-item="{{item}}">
+      <view class="inquiryTitle">
+        <text>{{item.inquiryTypeName}}</text>
+        <view class="inquiryStatus inquiryClosed" wx:if="{{item.orderStatus == 300}}">{{item.orderStatusName}}</view>
+        <view class="inquiryStatus inquiryCompleted" wx:elif="{{item.orderStatus == 200}}">{{item.orderStatusName}}</view>
+        <view class="inquiryStatus inquirying" wx:else>问诊中</view>
+      </view>
+      <view class="inquiryContent">
+        <image src="{{item.avatarUrl?item.avatarUrl:'https://nfys-static.kinglian.cn/xcx/personalCenter/doctor.png'}}" class="doctorImg"></image>
+        <view class="patientMessage">
+          <view class="patientContent">
+            <view class="patientDetails">
+              <text>就诊人：</text>
+              <text class="patientName">{{item.patientName}}</text>
+              <text class="patientAge">（{{item.patientSex==1?'男':'女'}} <text wx:if="{{item.patientAge}}">{{item.patientAge}}岁</text>）</text>
+            </view>
+            <text class="inquiryDate">{{item.orderShowTime}}</text>
+          </view>
+          <view wx:if="{{item.mainSuit}}">
+            <text>主诉：</text>
+            <view class="mainSuit">{{item.mainSuit}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

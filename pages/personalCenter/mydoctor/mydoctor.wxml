@@ -1,0 +1,47 @@
+<view class="contain"  wx:if="{{!noDataFlag}}">
+  <view class="list">
+    <view class="item" bind:tap="todoctorPage">
+      <image class="icon" src="http://yun-test.kinglian.net/xcx/doctor/doctor-icon.png" />
+      <view class="card">
+        <view class="job">
+          <view class="job-name">
+            <text>许琴琴</text>
+            <text>主任医师</text>
+          </view>
+          <view class="ranking">
+            <image src="http://yun-test.kinglian.net/xcx/doctor/tag.png" />
+            全国排名第一
+          </view>
+        </view>
+        <view class="location">银川市第一人民医院  心内科</view>
+        <view class="descript">
+          <text>描述：</text>
+          <text>冠心病诊断治疗及治疗方案决策咨询；冠心病一级二级预防的综合指导；高血压高血脂冠心病一级二级预防的综合指导</text>
+        </view>
+      </view>
+    </view>
+    <view class="item">
+      <image class="icon" src="http://yun-test.kinglian.net/xcx/doctor/doctor-icon.png" />
+      <view class="card">
+        <view class="job">
+          <view class="job-name">
+            <text>许琴琴</text>
+            <text>主任医师</text>
+          </view>
+          <view class="ranking">
+            <image src="http://yun-test.kinglian.net/xcx/doctor/tag.png" />
+            全国排名第一
+          </view>
+        </view>
+        <view class="location">银川市第一人民医院  心内科</view>
+        <view class="descript">
+          <text>描述：</text>
+          <text>冠心病诊断治疗及治疗方案决策咨询；冠心病一级二级预防的综合指导；高血压高血脂冠心病一级二级预防的综合指导</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{noDataFlag}}">
+  <no-data scene="noData"></no-data>
+</view>

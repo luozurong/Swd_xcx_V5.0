@@ -1,0 +1,361 @@
+/* pages/personalCenter/order/afterSale.wxss */
+
+/* 问诊订单 */
+
+image {
+  width: 100%;
+  height: 100%;
+}
+
+.afterSale {
+  position: relative;
+}
+
+.afterSale .portrait_box {
+  width: 690rpx;
+  height: 223rpx;
+  margin: 20rpx auto;
+  background-color: #fff;
+  border-radius: 8rpx;
+}
+
+.afterSale .portrait_con {
+  padding: 20rpx 22rpx 32rpx 25rpx;
+}
+
+.afterSale .portrait_con .name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.afterSale .portrait_con .left {
+  font-size: 16px;
+}
+
+.afterSale .portrait_con .detail {
+  display: flex;
+  align-items: center;
+  margin-top: 24rpx;
+}
+
+.afterSale .portrait_con .detail_pic {
+  width: 96rpx;
+  height: 96rpx;
+  margin-right: 14rpx;
+  background-color: #fff;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.afterSale .portrait_con .detail_pic image {
+  width: 100%;
+  height: 100%;
+}
+
+.afterSale .portrait_con .detail_right {
+  width: 530rpx;
+}
+
+.afterSale .portrait_con .patient {
+  display: flex;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 22rpx;
+}
+
+.afterSale .portrait_con .patient:last-child {
+  margin-bottom: 0rpx;
+}
+
+.afterSale .portrait_con .patient .name {
+  display: inline-block;
+  width: 45px;
+  color: #333;
+  text-align: justify;
+  text-align-last: justify;
+}
+
+.afterSale .portrait_con .patient .text_con {
+  display: block;
+  width: 428rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.afterSale .border_top {
+  border-top: solid 1px #ebebeb;
+}
+
+/* 问题描述 */
+
+.afterSale .issue {
+  width: 690rpx;
+  height: auto;
+  line-height: 1;
+  margin: 20rpx auto;
+  background-color: #fff;
+  border-radius: 8rpx;
+}
+
+.afterSale .issue.first {
+  height: auto;
+  padding-bottom: 8rpx;
+}
+
+.afterSale .issue .tip {
+  padding: 32rpx 24rpx 0rpx;
+  font-size: 14px;
+  font-weight: bold;
+  color: #666;
+}
+
+.afterSale .issue textarea {
+  width: 642rpx;
+  height: 85rpx;
+  line-height: 1.5;
+  padding: 16rpx 24rpx;
+  font-size: 14px;
+  color: #666;
+  z-index: 9;
+}
+.placeholderContent {
+  width: 642rpx;
+  height: 85rpx;
+  padding: 16rpx 32rpx 16rpx 24rpx;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #aeafb2;
+}
+.afterContent {
+  width: 642rpx;
+  /* height: 85rpx; */
+  height: 75rpx;
+  padding: 16rpx 32rpx 26rpx 24rpx;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #666;
+}
+
+.placeholder {
+  color: #aeafb2;
+  line-height: 1.5;
+}
+
+.afterSale .issue .choosebox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 20rpx;
+}
+
+.afterSale .issue .choosebox .van-cell {
+  padding: 4px 12px;
+  font-size: 24rpx;
+}
+
+/* 上传 */
+
+.upload {
+  width: 646rpx;
+  height: auto;
+  line-height: 1;
+  padding: 32rpx 22rpx;
+  margin: 20rpx auto;
+  background-color: #fff;
+  border-radius: 8rpx;
+}
+
+.upload .tip {
+  font-size: 14px;
+  color: #666;
+}
+
+.upload .tip .small {
+  font-size: 12px;
+  color: #666;
+}
+
+/* 图片上传 */
+
+.uploader-img {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 28rpx 0 16rpx;
+}
+
+.uploader-list {
+  position: relative;
+  width: 145rpx;
+  height: 145rpx;
+  margin-right: 22rpx;
+  margin-bottom: 22rpx;
+  background-color: #ebebeb;
+}
+
+.uploader-list:nth-child(4) {
+  margin-right: 0rpx;
+}
+
+.uploader-list image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.uploader-list .delete {
+  position: absolute;
+  left: -7px;
+  top: -7px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.upAdd {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 143rpx;
+  height: 143rpx;
+  border-radius: 10rpx;
+  border: 1px solid #efefef;
+}
+
+/* 按钮 */
+.afterSale .btn {
+  position: fixed;
+  bottom: 0;
+  background: #ffffff;
+}
+.afterSale .btn .van-button {
+  width: 600rpx;
+  height: 80rpx;
+  margin: 16rpx 74rpx;
+  line-height: 80rpx;
+  font-size: 14px;
+  color: #fff;
+  background-image: linear-gradient(90deg, #ffaf41 0%, #ff8441 100%),
+                      linear-gradient(#ff6e26, #ff6e26);
+  background-blend-mode: normal, normal;
+  border-radius: 40rpx;
+}
+
+.afterSale .btn.result_null .van-button {
+  background: #aeafb2;
+}
+
+/* 商城商品售后 */
+
+.afterSale .good_con {
+  display: flex;
+  padding: 24rpx 0;
+  width: 690rpx;
+  height: auto;
+  margin: 0 auto 0rpx;
+  margin-left: 10rpx;
+  background-color: #fff;
+  border-radius: 8rpx;
+}
+
+.afterSale .good_con:first-of-type {
+  margin-top: 20rpx;
+}
+
+.afterSale .good_con .good_con_pic {
+  width: 160rpx;
+  height: 160rpx;
+  margin: 0 16rpx 0 66rpx;
+  background-color: #d2d2d4;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+
+.afterSale .good_con .good_con_right {
+  width: 466rpx;
+  font-size: 14px;
+  color: #333;
+}
+
+.afterSale .good_con_right .title {
+  height: 126rpx;
+  padding-right: 20rpx;
+}
+.afterSale .good_con_right .title text.chu{
+  font-size: 20rpx;
+  color: #fff;
+  background: #ff6e26;
+  border-radius: 4rpx;
+  padding: 4rpx 6rpx;
+  float: left;
+  margin-top: 2rpx;
+}
+
+.afterSale .good_con_right .price {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20rpx;
+}
+
+.afterSale .good_con_right .num {
+  font-size: 14px;
+  color: #aeafb2;
+}
+
+.afterSale .box {
+  position: relative;
+}
+
+.afterSale .shopGood .van-checkbox__icon-wrap {
+  position: absolute;
+  top: 44%;
+  left: 46rpx;
+}
+/* 弹框 */
+.afterSale .van-popup--bottom {
+  border-radius: 32rpx 32rpx 0px 0px;
+}
+
+.afterSale .sheet_title {
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  line-height: 1;
+  text-align: center;
+  font-size: 32rpx;
+	color: #333333;
+}
+.afterSale .van-cell-group__title {
+  color: #aeafb2;
+}
+
+.value-class {
+  flex: none !important;
+}
+
+.afterSale .btn_color .van-button {
+  width: 300rpx;
+	height: 80rpx;
+  line-height: 80rpx;
+  margin: 16rpx 225rpx;
+  font-size: 28rpx;
+  color: #fff;
+	background-image: linear-gradient(90deg, 
+		#ffaf41 0%, 
+		#ff8441 100%), 
+	linear-gradient(
+		#f89283, 
+		#f89283);
+	background-blend-mode: normal, 
+		normal;
+	border-radius: 40rpx;
+}
+
+.afterSale .radio_null.btn_color .van-button {
+  background: #aeafb2;
+}

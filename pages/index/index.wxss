@@ -1,0 +1,388 @@
+button:after {
+  border: none;
+}
+
+.orderTips {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 690rpx;
+  height: 72rpx;
+  align-items: center ;
+  background-color: #fffaf5;
+  padding: 0 30rpx;
+}
+
+.orderTipsLeft {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+
+.orderTipsLeft text {
+  display: inline-block;
+}
+
+.orderTipsLeft image {
+  width: 28rpx;
+  height: 26rpx;
+  margin-right: 12rpx;
+}
+
+.indexOrderStatus, .orderTipsRight {
+  color: #ff6f26;
+}
+
+.orderTipsRight image {
+  width: 20rpx;
+  height: 24rpx;
+}
+
+.index-download {
+  background-color: #fffbf2;
+  height: 72rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 30rpx;
+}
+
+.index-download-pic {
+  display: flex;
+  align-items: center;
+  flex-grow: 2;
+}
+
+.index-download-pic image {
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 12rpx;
+}
+
+.index-download-pic text {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.index-download-btn {
+  width: 120rpx;
+  height: 48rpx;
+  display: inline-block;
+  flex-shrink: 0;
+  background-color: #ffa526;
+  border-radius: 8rpx;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 48rpx;
+  color: #fff;
+}
+
+.index-download button {
+  position: absolute;
+  top: 13rpx;
+  right: 30rpx;
+  z-index: 10;
+  padding: 0;
+  margin: 0;
+  width: 120rpx;
+  height: 48rpx;
+  border: none;
+  background-color: transparent;
+}
+
+.swiper-wrap {
+  height: 240rpx;
+}
+
+.slide-image {
+  width: 100%;
+  height: 240rpx;
+}
+
+.index-service-wrap {
+  position: relative;
+  height: 160rpx;
+}
+
+.index-service {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.index-service-item {
+  width: 33.33%;
+  height: 180rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.index-service-item image {
+  width: 56rpx;
+  height: 54rpx;
+  display: block;
+  margin: 0 auto;
+}
+
+.index-service-item text {
+  display: block;
+  margin-top: 11rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #333;
+  font-weight: 600;
+}
+
+.index-subject {
+  width: 100%;
+  margin-top: 20rpx;
+}
+
+.index-subject-tip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  padding: 40rpx 0 35rpx 0;
+}
+
+.index-subject-tip text:first-child {
+  width: 24rpx;
+  height: 4rpx;
+  background-color: #676767;
+}
+
+.index-subject-tip text:nth-child(2) {
+  padding: 0 14rpx;
+  font-weight: 600;
+  font-size: 36rpx;
+}
+
+.index-subject-tip text:last-child {
+  width: 24rpx;
+  height: 4rpx;
+  background-color: #676767;
+}
+
+.index-subject-word {
+  width: 100%;
+  background: #fff;
+}
+
+.index-subject-word text {
+  display: inline-block;
+  width: 214rpx;
+  height: 120rpx;
+  text-align: center;
+  line-height: 120rpx;
+  background-color: #f7f9fa;
+  border-radius: 8rpx;
+  margin: 0 0 24rpx 24rpx;
+  color: #333;
+  font-size: 28rpx;
+}
+
+.index-subject-word text:nth-child(1), .index-subject-word text:nth-child(4) {
+  margin-left: 30rpx;
+}
+
+.index-doctor {
+  background: #fff;
+  padding-bottom: 30rpx;
+}
+
+.index-doctor-item {
+  width: 690rpx;
+  padding-bottom: 60rpx;
+  background-color: #fff;
+  box-shadow: 0rpx 6rpx 16rpx 0rpx rgba(0, 0, 0, 0.1);
+  border-radius: 16rpx;
+  margin: 0 auto;
+  padding-top: 40rpx;
+  box-sizing: border-box;
+  position: relative;
+  margin-bottom: 28rpx;
+}
+
+.index-doctor-absolute {
+  position: absolute;
+  top: 42rpx;
+  right: 38rpx;
+  z-index: 10;
+}
+
+.index-doctor-absolute view {
+  margin-bottom: 25rpx;
+  position: relative;
+}
+
+.index-doctor-absolute view button.productDetail-share-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 11;
+  height: 60rpx;
+  width: 35rpx;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+}
+
+.index-doctor-absolute view:last-child {
+  position: relative;
+  margin-top: 2rpx;
+}
+
+.index-doctor-absolute view:last-child button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  border-color: red;
+  opacity: 0;
+  padding: 0;
+  margin: 0;
+  height: 60rpx;
+  width: 39rpx;
+}
+
+.index-doctor-absolute view image {
+  width: 32rpx;
+  height: 34rpx;
+  display: block;
+  margin: 0 auto;
+}
+
+.index-doctor-absolute view view {
+  font-size: 18rpx;
+  color: #a8a8a8;
+  text-align: center;
+}
+
+.index-doctor-item-pic {
+  display: block;
+  width: 280rpx;
+  height: 280rpx;
+  margin: 0 auto;
+  border-radius: 100%;
+}
+
+.index-doctor-name {
+  text-align: center;
+  font-size: 36rpx;
+  margin-top: 34rpx;
+  color: #333;
+  font-weight: 600;
+}
+
+.index-doctor-info {
+  text-align: center;
+  color: #3ac756;
+  margin-top: 10rpx;
+}
+
+.index-doctor-hospital {
+  display: flex;
+  justify-content: center;
+  margin-top: 16rpx;
+}
+
+.index-doctor-hospital text {
+  text-align: center;
+  font-size: 28rpx;
+  color: #666;
+  margin: 0 10rpx;
+}
+
+.index-doctor-tip {
+  display: flex;
+  justify-content: center;
+  margin-top: 24rpx;
+}
+
+.index-doctor-tip view {
+  position: relative;
+  margin: 0 8.5rpx;
+}
+
+.index-doctor-tip view image {
+  width: 140rpx;
+  height: 36rpx;
+}
+
+.index-doctor-tip view text {
+  width: 140rpx;
+  height: 36rpx;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  left: -6rpx;
+  z-index: 1;
+  background-size: contain;
+  margin: 0 8rpx;
+  font-size: 22rpx;
+  color: #b37a00;
+  line-height: 35rpx;
+}
+
+.index-doctor-number {
+  display: flex;
+  justify-content: center;
+  font-size: 31rpx;
+  margin-top: 44rpx;
+  margin-bottom: 54rpx;
+  color: #333;
+}
+
+.index-doctor-number view {
+  margin: 0 40rpx;
+}
+
+.index-doctor-number view text:last-child {
+  margin-left: 6rpx;
+  color: #ff6f26;
+}
+
+.index-doctor-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.index-doctor-btn view {
+  display: inline-block;
+  width: 180rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background-color: #3ac756;
+  border-radius: 30rpx;
+  text-align: center;
+  color: #fff;
+  margin: 0 30rpx;
+  position: relative;
+}
+
+.index-doctor-btn view:last-child {
+  color: #a8a8a8;
+  background-color: #f2f4f5;
+}
+
+.index-doctor-btn view button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  display: inline-block;
+  width: 180rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 20rpx;
+  border: none;
+  padding: 0;
+  margin: 0;
+}

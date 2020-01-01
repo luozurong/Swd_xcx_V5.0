@@ -1,0 +1,50 @@
+/* pages/personalCenter/order/receiving.wxss */
+.receiving .img {
+  width: 300rpx;
+  height: 304rpx;
+  margin: 45rpx auto 14rpx;
+}
+.receiving .img image {
+  width: 100%;
+  height: 100%;
+}
+.receiving .text {
+  text-align: center;
+  font-weight: bold;
+	font-size: 32rpx;
+	color: #ff6e26;
+}
+.receiving .btn {
+  display: flex;
+  margin-top: 120rpx;
+  justify-content: center;
+}
+.receiving .btn_left .van-button {
+  width: 228rpx;
+	height: 78rpx;
+  padding: 0;
+  line-height: 78rpx;
+  font-size: 28rpx;
+  color: #aeafb2;
+	border-radius: 40rpx;
+  background: #F6F8FA;
+	border: solid 1px #aeafb2;
+}
+.receiving .btn_right .van-button {
+  width: 230rpx;
+	height: 80rpx;
+  padding: 0;
+  line-height: 80rpx;
+  font-size: 28rpx;
+	color: #ffffff;
+  margin-left: 25rpx;
+	background-image: linear-gradient(90deg, 
+		#ffaf41 0%, 
+		#ff8441 100%), 
+	linear-gradient(
+		#f89283, 
+		#f89283);
+	background-blend-mode: normal, 
+		normal;
+	border-radius: 40rpx;
+}

@@ -1,0 +1,55 @@
+<view class="contain">
+  <view class="nav">
+    <van-tabs active="{{ active }}" color="#3AC756">
+      <van-tab title="全部({{active}})">
+          <!-- 评价 -->
+        <!-- <view class="comment">
+            <view class="comment-list">
+              <view class="comment-item">
+                <view class="comment-icon">
+                  <image src="http://yun-test.kinglian.net/xcx/doctor/doctor-icon.png" />
+                </view>
+                <view class="content">
+                  <view class="content-msg">
+                    <view class="msg-name">刘**</view>
+                    <view class="msg-time">2019/08/09 15:20</view>
+                  </view>
+                  <view class="descript">
+                    <view class="descript-tag">非常有耐心</view>
+                    <view class="descript-tag">解答很有帮助</view>
+                    <view class="descript-tag">非常有耐心</view>
+                    <view class="descript-tag">回复很及时</view>
+                  </view>
+                </view>
+              </view>
+            </view>
+        </view> -->
+      </van-tab>
+      <van-tab title="好评(0)">
+          <!-- <view class="comment">
+            <view class="comment-list">
+              <view class="comment-item">
+                <view class="comment-icon">
+                  <image src="http://yun-test.kinglian.net/xcx/doctor/doctor-icon.png" />
+                </view>
+                <view class="content">
+                  <view class="content-msg">
+                    <view class="msg-name">钟**</view>
+                    <view class="msg-time">2019/08/09 15:20</view>
+                  </view>
+                  <view class="descript">
+                    <view class="descript-tag">非常有耐心</view>
+                    <view class="descript-tag">解答很有帮助</view>
+                    <view class="descript-tag">非常有耐心</view>
+                    <view class="descript-tag">回复很及时</view>
+                  </view>
+                </view>
+              </view>
+            </view>
+        </view> -->
+      </van-tab>
+      <van-tab title="中评(0)"></van-tab>
+      <van-tab title="差评(0)"></van-tab>
+    </van-tabs>
+  </view>
+</view>

@@ -1,0 +1,35 @@
+/* pages/personalCenter/insurance/insurance.wxss */
+.insurance {
+
+}
+.insurance .insurance_li {
+  width: 634rpx;
+  padding: 0 28rpx 32rpx 28rpx;
+  margin: 20rpx auto 0;
+	background-color: #ffffff;
+	border-radius: 8rpx;
+}
+.insurance .insurance_li .insurance_li_top {
+  display: flex;
+  align-items: center;
+  padding: 30rpx 0 10rpx 0;
+  font-size: 16px;
+  font-weight: bold;
+	color: #333333;
+}
+.insurance .insurance_li .icon_insurance {
+  width: 44rpx;
+	height: 44rpx;
+  margin-right: 8rpx;
+}
+.insurance .insurance_li .text_con {
+  font-size: 28rpx;
+	line-height: 40rpx;
+  text-align: justify;
+	color: #666666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient: vertical;
+}

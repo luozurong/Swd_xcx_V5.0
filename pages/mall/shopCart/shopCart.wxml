@@ -1,0 +1,161 @@
+<view class="shopCart-edit-over" wx:if="{{!isNoData}}">
+  <text wx:if="{{!overFlag}}" bindtap="edit">编辑</text>
+  <text wx:if="{{overFlag}}" bindtap="over">完成</text>
+</view>
+<view class="shopCart-wrap">
+  <van-swipe-cell class="shopCart-cell" right-width="{{ 65 }}" left-width="{{ 0.1 }}"  wx:for="{{records}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+    <view slot="left"></view>
+    <view class="shopCart-wrap-item">
+      <view class="shopCart-item-choose">
+        <image data-index='{{index}}' bindtap="isChoose" wx:if="{{item.isSelect == 0 && item.inventory > 0 && shopCartCheck}}" src="https://nfys-static.kinglian.cn/xcx/mall/cart-nor.png"></image>
+        <image data-index='{{index}}' bindtap="isChoose" wx:if="{{item.isSelect == 1 && item.inventory > 0 && shopCartCheck}}" src="https://nfys-static.kinglian.cn/xcx/mall/cart-select.png"></image>
+        <image wx:if="{{item.inventory == 0 && shopCartCheck}}" src="https://nfys-static.kinglian.cn/xcx/mall/cart-disable.png"></image>
+        <image data-index='{{index}}' bindtap="isChoose" wx:if="{{item.isSelect == 0 && !shopCartCheck}}" src="https://nfys-static.kinglian.cn/xcx/mall/cart-nor.png"></image>
+        <image data-index='{{index}}' bindtap="isChoose" wx:if="{{item.isSelect == 1 && !shopCartCheck}}" src="https://nfys-static.kinglian.cn/xcx/mall/cart-select.png"></image>
+      </view>
+      <view class="shopCart-pic-wrap">
+         <image class="shopCart-item-pic" 
+          bindtap="jumpProductDetail"  
+          data-isrx="{{item.isRx}}"  
+          data-id="{{item.comId}}" 
+          data-columnid="{{item.columnId}}" 
+          src="{{item.imgUrl}}"></image>
+         <text wx:if="{{item.inventory == 0 && item.status == 0}}">缺货</text>
+         <text wx:if="{{item.inventory == 0 && item.status == 1}}">已下架</text>
+      </view>
+     
+      <view class="shopCart-wrap-containnr">
+        <view class="home-product-view">
+          <view class="shopCart-item-name">
+           
+            <text>{{item.name}}</text>
+          </view>
+          <view class="shopCart-item-tip">
+            <text wx:for="{{item.labelArr}}" wx:for-item="list" wx:for-index="i" wx:key="i" wx:if="{{list}}">{{list}}</text>
+          </view>
+        </view>
+       
+        <view class="shopCart-price-cart">
+          <view class="shopCart-price">
+            <text class="shopCart-price-current">
+              <text>{{item.pricePre}}</text>
+              <text>{{item.priceNext}}</text>
+            </text>
+          </view>
+          <view class="shopCart-cart" wx:if="{{item.inventory > 0}}">
+            <text data-index="{{index}}" bindtap="subShopCartNum">-</text>
+            <input data-index="{{index}}" bindblur="inputChange" type="number"  value="{{item.qty}}"></input>
+            <text data-index="{{index}}" bindtap="addShopCartNum">+</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view slot="right" data-index="{{index}}" bindtap="shopCartDelete" class="shopCart-delete">删除</view>
+  </van-swipe-cell>
+</view>
+
+<!-- 缺省页 -->
+<view class="shopCart-no-data"  wx:if="{{isNoData}}">
+  <no-data  scene="shopCartEmpty" ></no-data>
+  <!-- <view  class="shopCart-no-btn" bindtap="jumpDrug">去逛逛</view> -->
+</view>
+
+<!-- 快速清理失效商品 -->
+<view class="shopCart-cancel" wx:if="{{cancelFlag}}">
+  <view>
+    <view class="shopCart-cancel-word">快速清理失效商品</view>
+    <view class="shopCart-cancel-num">一共有{{unEfficacyCommodity.length}}件商品缺货或已下架</view>
+    <view class="shopCart-cancel-wrap">
+      <view class="shopCart-cancel-item" wx:for="{{unEfficacyCommodity}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+        <image src="{{item.imgUrl}}"></image>
+        <text wx:if="{{item.comStatus == 0}}">缺货</text>
+        <text wx:if="{{item.comStatus == 1}}">已下架</text>
+      </view>
+    </view>
+    <view class="shopCart-cancel-view"></view>
+    <view class="shopCart-cancel-btn">
+      <text bindtap="cancelBtn">取消</text>
+      <text bindtap="sureBtn">确认删除</text>
+    </view>
+  </view>
+</view>
+
+<!-- 询问弹框 -->
+<view class="shopCart-confirm" wx:if="{{confirmFlag}}">
+  <view>
+    <view class="shopCart-confirm-title">确认删除选中的商品？</view>
+    <view class="shopCart-confirm-btn">
+      <text>取消</text>
+      <text>确认删除</text>
+    </view>
+  </view>
+</view>
+
+<!-- 特推商品 -->
+<view class="shopCart-special" wx:if="{{specialRecords.length > 0}}">
+  <view class="shopCart-special-title">
+    <text></text>
+    <view>你可能还喜欢</view>
+    <text></text>
+  </view>
+  <view class="shopCart-special-item" 
+    bindtap="jumpProductDetail" 
+    data-columnid="{{item.columnId}}" 
+    data-id="{{item.id}}" 
+    data-isrx="{{item.isRx}}" 
+    wx:for="{{specialRecords}}" 
+    wx:for-index="index" 
+    wx:key="index" 
+    wx:for-item="item">
+    <view class="shopCart-special-padding"> 
+      <image class="shopCart-special-pic" src="{{item.imgUrl}}"></image> 
+      <view class="shopCart-special-word">
+        <view class="shopCart-special-name">
+          <text class="chu" wx:if="{{item.isRx == 1}}">处方药</text>
+          <text>{{item.name}}</text>
+        </view>
+        <view class="shopCart-special-tip">
+          <text wx:for="{{item.labelArr}}" wx:for-item="list" wx:for-index="i" wx:key="i" wx:if="{{list}}">{{list}}</text>
+        </view>
+      </view>
+      <view class="shopCart-special-wrap">
+        <view class="shopCart-special-price" wx:if="{{item.columnId && item.specialPrice}}">
+          <text>{{item.specialPricePre}}</text>
+          <text>{{item.specialPriceNext}}</text>
+        </view>
+         <view class="shopCart-special-price" wx:if="{{item.columnId && !item.specialPrice}}">
+          <text>{{item.pricePre}}</text>
+          <text>{{item.priceNext}}</text>
+        </view>
+         <view class="shopCart-special-price" wx:if="{{!item.columnId && item.salePrice}}">
+          <text>{{item.salePricePre}}</text>
+          <text>{{item.salePriceNext}}</text>
+        </view>
+         <view class="shopCart-special-price" wx:if="{{!item.columnId && !item.salePrice}}">
+          <text>{{item.pricePre}}</text>
+          <text>{{item.priceNext}}</text>
+        </view>
+        <view class="shopCart-special-sale">销量 {{item.sumVolume}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 固定栏 -->
+<view wx:if="{{!isNoData}}" class="shopCart-view-height"></view>
+<view wx:if="{{!isNoData}}" class="shopCart-fixed">
+  <view class="shopCart-fixed-all" bindtap="chooseAll">
+    <image wx:if="{{chooseAllFlag}}" src="https://nfys-static.kinglian.cn/xcx/mall/cart-select.png"></image>
+    <image wx:if="{{!chooseAllFlag}}" src="https://nfys-static.kinglian.cn/xcx/mall/cart-nor.png"></image>
+    <text>全选</text>
+  </view>
+  <view class="shopCart-option" wx:if="{{overFlag}}">
+    <text bindtap="cancelShopCartProduct">快速清理失效商品</text>
+    <text bindtap="cancelProduct">删除</text>
+  </view>
+  <view class="shopCart-fixed-price" wx:if="{{!overFlag}}">
+    <text>总计</text>
+    <text>{{choooseCount}}</text>
+  </view>
+  <view wx:if="{{!overFlag}}" class="shopCart-fixed-pay" bindtap="jumpOrderConfirm">去下单</view>
+</view>

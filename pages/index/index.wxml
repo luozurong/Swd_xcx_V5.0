@@ -1,0 +1,125 @@
+<!-- <view class="index-download">
+  <view class="index-download-pic">
+    <image src="http://yun-test.kinglian.net/xcx/doctor/app_logo.png"></image>
+    <text>打开南风医生APP，体验更多服务</text>
+  </view>
+  <text class="index-download-btn">立即打开</text>
+  <button open-type="launchApp" app-parameter="wechat" binderror="launchAppError"></button>
+</view> -->
+<skeleton wx:if="{{showSkeleton}}"></skeleton>
+<view class="skeleton">
+  <view class="orderTips" wx:if="{{orderNum >0 }}" bindtap="goToChatOrDoctor">
+    <view class="orderTipsLeft">
+      <view>
+        <image src="../images/index/notice_icon.png"></image>
+      </view>
+      <view>
+        你有{{orderNum}}个<text class="indexOrderStatus">问诊中</text>订单
+      </view>
+    </view>
+    <view class="orderTipsRight">
+      点击查看
+      <image src="../images/index/arrow_orange.png"></image>
+    </view>
+  </view>
+  <swiper class="swiper-wrap" indicator-active-color="rgba(255, 255, 255, .3)" indicator-dots="{{indicatorDots}}" circular="{{circular}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+      <swiper-item>
+        <image mode='aspectFill' bindtap="jumpLink" data-linkurl="{{item.linkUrl}}" src="{{item.picUrl}}" class="slide-image skeleton-rect" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="index-service-wrap" wx:if="isLoadingOver">
+    <view class="index-service">
+      <navigator url='/pages/mall/drug/drug?parentId=1000000018&paramsIndex=1' hover-class="none" class="index-service-item">
+        <view>
+          <image class="skeleton-rect" src="http://yun-test.kinglian.net/xcx/doctor/dyf_menu_icon.png"></image>
+          <text class="skeleton-rect">南风医生药房</text>
+        </view>
+      </navigator>
+      <navigator url='/pages/mall/classifyProduct/classifyProduct?classifyId=1000000024&title=服务商城' hover-class="none" class="index-service-item">
+        <view>
+          <image class="skeleton-rect" src="http://yun-test.kinglian.net/xcx/doctor/fwsc_menu_icon.png"></image>
+          <text class="skeleton-rect">服务商城</text>
+        </view>
+      </navigator>
+
+      <navigator url='/pages/mall/classifyProduct/classifyProduct?classifyId=1000000025&title=便捷服务' hover-class="none" class="index-service-item">
+        <view>
+          <image class="skeleton-rect" src="http://yun-test.kinglian.net/xcx/doctor/bjfw_menu_icon.png"></image>
+          <text class="skeleton-rect">便捷服务</text>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <view class="index-subject">
+    <view class="index-subject-tip">
+      <text></text>
+      <text class="skeleton-rect">名医堂</text>
+      <text></text>
+    </view>
+    <view class="index-subject-word">
+      <text wx:for="{{administrative}}" wx:for-item="item" wx:for-index="index" wx:key="index" bindtap="changeDepartmentId" data-id="{{item.departmentId}}" class="skeleton-rect">{{item.departmentName}}</text>
+    </view>
+  </view>
+  <view class="index-doctor skeleton">
+    <view class="index-doctor-item" wx:for="{{doctorList}}" wx:for-item="item" wx:for-index="index" wx:key="index" data-id="{{item.doctorId}}" bindtap="jumpDoctorPage">
+      <view class="index-doctor-absolute">
+        <view catchtap="shareName">
+          <button data-id="{{item.doctorId}}" data-name="{{item.name}}" data-avatarurl="{{item.avatarUrl}}" class="productDetail-share-button" open-type="share"></button>
+          <image class="skeleton-rect" src="http://yun-test.kinglian.net/xcx/doctor/share_btn_36x36.png"></image>
+          <view class="skeleton-rect">分享</view>
+        </view>
+        <view wx:if="{{false}}">
+          <button wx:if="{{!isLoginFlag}}" open-type="getPhoneNumber" plain="true" size='20' hover-class="none" bindgetphonenumber="getPhoneNumber"> </button>
+          <image class="skeleton-rect" src="http://yun-test.kinglian.net/xcx/doctor/follow_btn_36x36.png"></image>
+          <image class="skeleton-rect" src="http://yun-test.kinglian.net/xcx/doctor/follow_orange_btn_36x36.png"></image>
+          <view class="skeleton-rect">关注</view>
+        </view>
+      </view>
+      <image mode="aspectFill" class="index-doctor-item-pic skeleton-radius" wx:if="{{item.imgUrl}}" src="{{item.imgUrl}}"></image>
+      <image mode="aspectFill" class="index-doctor-item-pic skeleton-radius" wx:if="{{!item.imgUrl}}" src="https://nfys-static.kinglian.cn/xcx/mall/doctor_profile_photo@2x.png"></image>
+      <view class="index-doctor-name skeleton-rect">{{item.doctorName}}</view>
+      <view class="index-doctor-info skeleton-rect">{{item.title}}</view>
+      <view class="index-doctor-hospital">
+        <text class="skeleton-rect">{{item.hospital}}</text>
+        <text class="skeleton-rect">{{item.departmentName}}</text>
+      </view>
+      <view class="index-doctor-tip">
+        <view>
+          <image class="skeleton-rect" src="http://yun-test.kinglian.net/xcx/doctor/tag_bg.png"></image>
+          <text class="skeleton-rect">十强医院</text>
+        </view>
+        <view>
+          <image class="skeleton-rect" src="http://yun-test.kinglian.net/xcx/doctor/tag_bg.png"></image>
+          <text class="skeleton-rect">特色科室</text>
+        </view>
+        <view>
+          <image class="skeleton-rect" src="http://yun-test.kinglian.net/xcx/doctor/tag_bg.png"></image>
+          <text class="skeleton-rect">专科名医</text>
+        </view>
+      </view>
+      <view class="index-doctor-number">
+        <view class="skeleton-rect">
+          <text>接诊量</text>
+          <text>{{item.receiveCount}}</text>
+        </view>
+        <view class="skeleton-rect">
+          <text>用户评分</text>
+          <text>{{item.userEvaluatedScore}}</text>
+        </view>
+      </view>
+      <view class="index-doctor-btn">
+        <view class="skeleton-rect" catchtap="jumpFilloutInfo" data-id="{{item.doctorId}}">
+          <text>咨询</text>
+        </view>
+        <view class="skeleton-rect">诊后指导</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- <view wx:if="{{runUionidComponent}}">
+  <union-id></union-id>
+</view> -->

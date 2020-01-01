@@ -1,0 +1,9 @@
+<view class="shop-cart-pic">
+  <view bindtap='jumpShopCart'>
+    <image src="https://nfys-static.kinglian.cn/xcx/mall/cart_num_btn.png" alt=""></image>
+    <text>{{shopCartNum}}</text>
+  </view>
+</view>
+<view class="my-order">
+  <view bindtap="jumpMy">我的</view>
+</view>

@@ -1,0 +1,126 @@
+page{
+  margin: 0;
+  padding: 0;
+  background:#f5f7fa;
+}
+.balance-header{
+  height: 164rpx;
+  position:relative;
+}
+.balance-header image{
+  height: 164rpx;
+  width: 100%;
+}
+.balance-header view{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  width:100%;
+  height: 164rpx;
+  margin: auto;
+  text-align: center;
+  line-height: 164rpx;
+  font-size: 60rpx;
+  color: #fff;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.balance-header view text:first-child{
+  font-size: 36rpx;
+  margin-top: -6rpx; 
+}
+.van-tab__title{
+  font-size: 28rpx;
+  color: #666;
+}
+.van-tab--active .van-tab__title{
+  color: #333333;
+  font-weight: 600;
+}
+.van-tabs__line{
+  width: 30rpx !important;
+	height: 4rpx !important;
+  background-color: #3ac756 !important;
+  bottom: 20rpx !important;
+  left: 70rpx !important;
+}
+.van-tabs__nav{
+  padding: 0 47rpx;
+}
+.balance-wrap{
+  background: #fff;
+  padding: 0 30rpx;
+  margin-top: 20rpx;
+}
+.balance-wrap-item{
+  display: flex;
+  padding: 24rpx 0;
+  border-bottom: 1rpx solid #ebebeb;
+}
+.balance-wrap-item:last-child{
+  border: none;
+}
+.balance-item-left{
+  flex-grow: 2;
+}
+.balance-item-left view:first-child{
+  color: #333333;
+  font-size: 28rpx;
+}
+.balance-item-left view:last-child{
+  margin-top: 4rpx;
+  color: #666666;
+  font-size: 24rpx;
+}
+.balance-item-color{
+  color: #333;
+  font-size: 42rpx;
+  flex-shrink: 0;
+  display: flex;
+}
+.balance-item-right{
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  font-size: 42rpx;
+  color: #3ac756;
+}
+.van-hairline{
+  border: none !important;
+}
+.balance-wrap-time{
+  display: flex;
+  padding:16rpx 0;
+}
+.balance-wrap-time>view{
+  width: 50%;
+  box-sizing: border-box;
+  padding-top: 6rpx;
+  padding-bottom: 2rpx;
+}
+.balance-wrap-time>view:first-child{
+  width: 50%;
+  box-sizing: border-box;
+  border-right: 1rpx solid #ebebeb;
+}
+.balance-wrap-time>view view{
+  text-align: center;
+}
+.balance-wrap-time view view:first-child{
+  text-align: center;
+  color: #333;
+  font-size: 24rpx;
+}
+.balance-wrap-time view view:last-child{
+  text-align: center;
+  color: #3ac756;
+  margin-top: 10rpx;
+  font-size: 28rpx;
+}
+.balance-border{
+  border-bottom: 1rpx solid #ebebeb;
+}

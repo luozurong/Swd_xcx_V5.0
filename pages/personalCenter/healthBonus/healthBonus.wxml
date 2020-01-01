@@ -1,0 +1,24 @@
+<view class="contain">
+  <view class="nav-bg">
+    <view class="nav-price">
+      <text>￥</text>
+      <text>{{totalBonus}}</text>
+    </view>
+    <view class="nav-title">我的健康奖金</view>
+  </view>
+  <view class="content">
+    <view class="section" wx:if="{{dataSource.length > 0}}" wx:for="{{dataSource}}" wx:key="index">
+      <view class="type">
+        <view class="type-name">{{item.name}}</view>
+        <view class="type-time">{{item.rebateTime}}</view>
+      </view>
+      <view class="price">
+        <view class="price-total">商品价格：¥{{item.price}}</view>
+        <view class="price-add">
+          <text>奖金</text>
+          <text>+{{item.bonus}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

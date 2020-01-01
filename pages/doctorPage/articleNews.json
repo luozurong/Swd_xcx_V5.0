@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-popup": "vant-weapp/popup",
+    "no-data": "../component/noData/noData"
+  },
+  "navigationBarTitleText": "文章详情"
+}

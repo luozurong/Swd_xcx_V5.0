@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "no-data": "../../../component/noData/noData"
+  },
+  "navigationBarTitleText": "我的医生"
+}

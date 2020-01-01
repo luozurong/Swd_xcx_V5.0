@@ -1,0 +1,304 @@
+page{
+  padding: 0;
+  margin: 0;
+}
+.orderConfirm-address{
+  display: flex;
+  align-items: center;
+  margin: 20rpx 30rpx 0;
+  background-color: #fff;
+  padding: 33rpx 0 22rpx 0;
+  border-radius: 8rpx;
+}
+.orderConfirm-address>view{
+  flex-grow: 2;
+  border-left: 1rpx solid #ebebeb;
+  padding-left: 22rpx;
+}
+.orderConfirm-address image:first-child{
+  width: 31rpx;
+	height: 32rpx;
+  flex-shrink: 0;
+  padding: 0 23rpx 0 20rpx; 
+}
+.orderConfirm-address image:last-child{
+  width: 14rpx;
+	height: 26rpx;
+  flex-shrink: 0;
+  margin: 0 24rpx;
+}
+.orderCofirm-address-name{
+  margin-top: -8rpx;
+}
+.orderCofirm-address-name text:first-child{
+  font-size: 32rpx;
+  color: #333;
+  font-weight: 600;
+}
+.orderCofirm-address-name text:last-child{
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 600;
+  margin-left: 17rpx;
+}
+.orderCofirm-address-detail{
+  margin-top: 12rpx;
+}
+.orderCofirm-address-detail text.orderCofirm-address-default{
+  display: inline-block;
+  width: 72rpx;
+	height: 40rpx;
+	background-color: rgba(255, 175, 65, 0.1);
+	border-radius: 8rpx;
+  font-size: 24rpx;
+  color: #ffaf41;
+  text-align: center;
+  line-height: 40rpx;
+  margin-right: 9rpx;
+}
+.orderCofirm-address-detail text.orderCofirm-address-detail{
+  font-size: 28rpx;
+  color: #666666;
+} 
+.orderConfirm-address-empty{
+  font-size: 28rpx;
+  color: #666;
+}
+.orderConfirm-product{
+  margin: 0 30rpx;
+  border-radius: 8rpx;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+.orderConfirm-product-word{
+  padding: 26rpx 23rpx;
+  color: #333;
+}
+.orderConfirm-product-item{
+  display: flex;
+  padding-bottom: 36rpx;
+}
+.orderConfirm-product-pic{
+  flex-shrink: 0; 
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 8rpx;
+  margin: 0 16rpx 0 23rpx;
+}
+.orderConfirm-product-wrap{
+  flex-grow: 2;
+}
+.orderConfirm-product-name{
+  font-size: 28rpx;
+  line-height: 36rpx;
+  height: 72rpx;
+  color: #333333;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.orderConfirm-product-name text {
+  word-break: break-all;
+}
+.orderConfirm-product-name text.chu {
+  width: 72rpx;
+  height: 28rpx;
+  font-size: 20rpx;
+  line-height: 28rpx;
+  background-color: #ff6e26;
+  border-radius: 4rpx;
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  margin-top: 4rpx;
+  margin-right: 10rpx;
+}
+.orderConfirm-product-store text{
+  font-size: 24rpx;
+	color: #aeafb2;
+}
+.orderConfirm-product-store text:last-child{
+  margin-left: 20rpx;
+}
+.orderConfirm-product-num{
+  overflow: hidden;
+  margin-top: 6rpx;
+}
+.orderConfirm-product-price text{
+  color: #ff6e26;
+}
+.orderConfirm-product-price text:first-child{
+  font-size: 36rpx;
+}
+.orderConfirm-product-price text:first-child::before{
+  content: "￥";
+  font-size: 24rpx;
+  margin-right: -4rpx;
+}
+.orderConfirm-product-price text:last-child{
+  font-size: 24rpx;
+}
+.orderConfirm-product-ipt{
+  float: right;
+  display: flex;
+  margin-right: 26rpx;
+}
+.orderConfirm-product-ipt text{
+  height: 46rpx;
+  width: 46rpx;
+  border: 1rpx solid #d2d2d4;
+  text-align: center;
+  color: #d2d2d4;
+  box-sizing: border-box;
+}
+.orderConfirm-product-ipt text:first-child{
+  border-radius: 8rpx 0 0 8rpx;
+}
+.orderConfirm-product-ipt text:last-child{
+  border-radius: 0 8rpx 8rpx 0;
+}
+.orderConfirm-product-ipt input{
+  border-top: 1rpx solid #d2d2d4;
+  border-bottom: 1rpx solid #d2d2d4;
+  width: 77rpx;
+  height: 46rpx;
+  box-sizing: border-box;
+  padding: 0;
+  text-align: center;
+  color: #666;
+}
+.orderConfirm-note{
+  background: #fff;
+  margin: 20rpx 30rpx;
+  padding: 28rpx 24rpx 0;
+  color: #333333;
+  font-size: 28rpx;
+  border-radius: 8rpx;
+}
+.orderConfirm-note textarea{
+  width: 100%;
+  margin-top: 9rpx;
+  padding: 0;
+  min-height: 80rpx;
+  padding-bottom: 27rpx;
+  text-align: justify;
+}
+.text-placeholder{
+  color: #aeafb2;
+}
+.orderConfirm-other{
+  background: #fff;
+  border-radius: 8rpx;
+  margin: 0 30rpx;
+  line-height: 53rpx;
+  font-size: 28rpx;
+  padding: 15rpx 25rpx 15rpx 22rpx;
+}
+.orderConfirm-other view text:first-child{
+  color: #666;
+}
+.orderConfirm-other view text:last-child{
+  float: right;
+  color: #ff6e26;
+}
+.orderConfirm-other  view text.orderConfirm-other-kuai{
+  color: #333;
+}
+.orderConfirm-bottom-height{
+  height: 169rpx;
+}
+.orderConfirm-fixed{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width:100%;
+  z-index: 10;
+  height: 112rpx;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+.orderConfirm-fixed view:first-child{
+  flex-grow: 2;
+  margin-left: 30rpx;
+  color: #333333;
+  font-size: 28rpx;
+}
+.orderConfirm-fixed view:nth-child(2){
+  display: flex;
+  align-items: center;
+}
+.orderConfirm-fixed view:nth-child(2) text{
+  flex-shrink: 0;
+  font-size: 28rpx;
+  color: #666
+}
+.orderConfirm-fixed view:nth-child(2) text:last-child{
+  font-size: 36rpx;
+	color: #ff6e26;
+  margin-right: 19rpx;
+}
+.orderConfirm-fixed view:last-child{
+  flex-shrink: 0;
+  width: 180rpx;
+	height: 80rpx;
+	background-image: linear-gradient(90deg, 
+		#ffaf41 0%, 
+		#ff8441 100%), 
+	linear-gradient(
+		#f89283, 
+		#f89283);
+	background-blend-mode: normal, 
+		normal;
+	border-radius: 40rpx;
+  text-align: center;
+  color: #fff;
+  line-height: 80rpx;
+  margin-right: 30rpx;
+}
+
+.confirm-patient {
+  display: flex;
+  align-items: center;
+  margin: 20rpx 30rpx 0;
+  padding: 36rpx 0;
+  border-radius: 8rpx;
+  background: #fff;
+}
+.confirm-patient .confirm-patient-icon {
+  width: 30rpx;
+  height: 30rpx;
+  flex-shrink: 0;
+  margin-left: 24rpx;
+  margin-right: 24rpx;
+}
+.confirm-patient .confirm-patient-wrap {
+  flex-grow: 2;
+  border-left: 1rpx solid #ebebeb;
+  padding-left: 21rpx;
+}
+.confirm-patient .confirm-patient-wrap .confirm-patient-tip {
+  color: #999;
+}
+.confirm-patient .confirm-patient-wrap > view:first-child {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333333;
+}
+.confirm-patient .confirm-patient-wrap > view:last-child {
+  font-size: 28rpx;
+  color: #333333;
+  padding-top: 10rpx;
+}
+.confirm-patient .confirm-patient-wrap > view:last-child text {
+  margin-right: 10rpx;
+}
+.confirm-patient .confirm-patient-more {
+  width: 14rpx;
+  height: 26rpx;
+  flex-shrink: 0;
+  margin-right: 30rpx;
+}
+

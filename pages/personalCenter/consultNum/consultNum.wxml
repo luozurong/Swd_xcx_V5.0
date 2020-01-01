@@ -1,0 +1,84 @@
+<!--pages/personalCenter/consultNum/consultNum.wxml-->
+<view class="consultNum">
+  <van-tabs sticky bind:change="onChange">
+    <van-tab title="未使用">
+      <view class="list_con" wx:if="{{listData}}">
+        <scroll-view style="height: 84vh;" scroll-y bindscrolltoupper="mallOrderUpper" bindscrolltolower="mallOrderLower" wx:if="{{!noDatashow}}">
+          <view class="list_con_li" wx:for="{{listData}}" wx:for-item="item" wx:key="item.id">
+            <view class="list_title">
+              <text class="list_title_left">{{item.serviceName}}</text>
+              <text class="list_title_right">
+              <text>{{item.serviceTimes}}</text> 次
+              </text>
+            </view>
+            <view class="list_date">
+              <text class="tag">有效期</text>
+              <text>{{item.startTime}}至{{item.endTime}}</text>
+            </view>
+            <view class="list_btn">
+              <button open-type='share' class="btn" data-serviceName="{{item.serviceName}}" data-columnId="{{item.columnId}}" data-commodityId="{{item.commodityId}}">微信转赠</button>
+              <view class="line"></view>
+              <button class="btn" bindtap="shareFriend" data-columnId="{{item.columnId}}" data-commodityId="{{item.commodityId}}">转赠亲友</button>
+              <view class="line"></view>
+              <view class="use">
+                <text>去使用</text>
+                <image src="../../../images/personalCenter/icon_use.png" mode="aspectFit" class="img_use"></image>
+              </view>
+            </view>
+          </view>
+          <view wx:if="{{nomoreShow}}" class="no_more_show">~没有更多啦~</view>
+        </scroll-view>
+      </view>
+      <view style="height: 84vh;" wx:if="{{noDatashow}}">
+        <no-data scene="noData"></no-data>
+      </view>
+    </van-tab>
+    <van-tab title="已使用">
+      <view class="list_con useful" wx:if="{{listData}}">
+        <scroll-view style="height: 84vh;" scroll-y bindscrolltoupper="mallOrderUpper" bindscrolltolower="mallOrderLower" wx:if="{{!noDatashow}}">
+          <view class="list_con_li" wx:for="{{listData}}" wx:for-item="item" wx:key="item.id">
+            <view class="list_title">
+              <text class="list_title_left">{{item.serviceName}}</text>
+              <text class="list_title_right">
+              <text>{{item.serviceTimes}}</text> 次
+              </text>
+            </view>
+            <view class="list_date">
+              <text class="tag">有效期</text>
+              <text>{{item.startTime}}至{{item.endTime}}</text>
+            </view>
+            <view class="useful_type">使用类型：转赠亲友</view>
+            <image src="../../../images/personalCenter/icon_used.png" mode="aspectFit" class="img_used"></image>
+          </view>
+          <view wx:if="{{nomoreShow}}" class="no_more_show">~没有更多啦~</view>
+        </scroll-view>
+      </view>
+      <view style="height: 84vh;" wx:if="{{noDatashow}}">
+        <no-data scene="noData"></no-data>
+      </view>
+    </van-tab>
+    <van-tab title="已过期">
+      <view class="list_con useful" wx:if="{{listData}}">
+        <scroll-view style="height: 84vh;" scroll-y bindscrolltoupper="mallOrderUpper" bindscrolltolower="mallOrderLower" wx:if="{{!noDatashow}}">
+        <view class="list_con_li" wx:for="{{listData}}" wx:for-item="item" wx:key="item.id">
+          <view class="list_title">
+            <text class="list_title_left">{{item.serviceName}}</text>
+            <text class="list_title_right">
+              <text>{{item.serviceTimes}}</text> 次
+            </text>
+          </view>
+          <view class="list_date">
+            <text class="tag">有效期</text>
+            <text>2017-05-16至2019-05-16</text>
+          </view>
+          <view class="useful_type">已过期</view>
+        </view>
+        <view wx:if="{{nomoreShow}}" class="no_more_show">~没有更多啦~</view>
+        </scroll-view>
+      </view>
+      <view style="height: 84vh;" wx:if="{{noDatashow}}">
+        <no-data scene="noData"></no-data>
+      </view>
+    </van-tab>
+  </van-tabs>
+</view>

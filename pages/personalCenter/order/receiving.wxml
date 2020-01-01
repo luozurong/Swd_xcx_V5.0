@@ -1,0 +1,13 @@
+<!--pages/personalCenter/order/receiving.wxml-->
+<view class="receiving">
+  <view class="img">
+    <image src="../../../images/personalCenter/receiving.png" mode="aspectFit"></image>
+  </view>
+  <view class="text">
+    <text>确认收货成功!</text>
+  </view>
+  <view class="btn">
+    <van-button round type="default" class="btn_left" bindtap="gotoOrDetail">返回订单详情</van-button>
+    <van-button round type="default" class="btn_right" bindtap="gotoEvaluate">去评价</van-button>
+  </view>
+</view>

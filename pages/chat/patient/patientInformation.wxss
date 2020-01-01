@@ -1,0 +1,66 @@
+.bgImg {
+  width: 100%;
+  height: 231rpx;
+}
+.patientImg{
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 48rpx;
+  position: absolute;
+  left: 327rpx;
+  top: 38rpx;
+  z-index: 999;
+}
+.patientContent {
+  width: 690rpx;
+  height: 1057rpx;
+  background-color: #fff;
+  border-radius: 8rpx;
+  position: absolute;
+  top: 87rpx;
+  left: 30rpx;
+  padding-top: 38rpx;
+}
+.patientDetails{
+  margin-top: 35rpx;
+  text-align: center;
+  line-height: 70rpx;
+}
+.patientName{
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-right: 14rpx;
+}
+.patientAge{
+  font-size: 24rpx;
+}
+.patientCell text{
+  display: inline-block;
+}
+.patientCell{
+  border-top: 1rpx solid #ebebeb;
+  margin: 0 23rpx;
+  padding: 28rpx 0;
+}
+.cellTitle{
+  width: 130rpx;
+  color:#666666 ;
+  vertical-align: top
+}
+.cellContent{
+  width: 480rpx;
+  margin-left: 34rpx;
+  line-height: 36rpx;
+}
+.patientImgBox{
+  border-top: 1rpx solid #ebebeb;
+  padding-top: 30rpx;
+  margin: 0 30rpx ;
+}
+.patientImgBox image{
+  width: 145rpx;
+	height: 145rpx;
+  margin-right: 20rpx;
+  margin-bottom: 10rpx;
+  border-radius: 8rpx;
+}

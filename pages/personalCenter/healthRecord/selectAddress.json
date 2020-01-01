@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "选择所在区域",
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "van-button": "vant-weapp/button/index",
+    "van-cell": "vant-weapp/cell/index",
+    "van-cell-group": "vant-weapp/cell-group/index"
+  }
+}

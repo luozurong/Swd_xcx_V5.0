@@ -1,0 +1,38 @@
+<!--pages/personalCenter/healthRecord/healthRecord.wxml-->
+<view class="healthRecord">
+  <view class="healthRecord_top">
+    <view class="pic_con">
+      <image src="http://yun.kinglian.cn:8080/filepath/90000/medical/2018/07/95412b07-21d3-4ae4-babb-3293322b5a5a.jpg" mode="aspectFit"></image>
+    </view>
+    <view class="info">
+      <text class="name">张萌萌</text>
+      <text class="sex">女/32岁</text>
+    </view>
+    <view class="tag">
+      <text class="first">企业VIP</text>
+      <text class="second">医保签约</text>
+      <text class="third">一级高血压</text>
+    </view>
+    <view class="text_li">身份证：421002198606140014</view>
+    <view class="text_li">现住址：黄埔区大沙东路428号</view>
+    <view class="text_li">所属居委：林和西居委</view>
+    <view class="text_li">医疗费用支付方式：城镇职工基本医疗保险</view>
+  </view>
+  <view class="healthRecord_bottom">
+    <view class="title">更多档案</view>
+    <view class="flex">
+      <view class="flex_li" bindtap="gotoBasicInfo">
+        <image src="../../../images/personalCenter/icon_healthRecord_1.png" mode="aspectFit"></image>
+        <view>基本信息</view>
+      </view>
+      <view class="flex_li" bindtap="gotoBingli">
+        <image src="../../../images/personalCenter/icon_healthRecord_2.png" mode="aspectFit"></image>
+        <view>我的病历</view>
+      </view>
+      <view class="flex_li" bindtap="gotoBuyMedicineRecord">
+        <image src="../../../images/personalCenter/icon_healthRecord_3.png" mode="aspectFit"></image>
+        <view>购药记录</view>
+      </view>
+    </view>
+  </view>
+</view>

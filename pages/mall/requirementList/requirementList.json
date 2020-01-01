@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-swipe-cell": "vant-weapp/swipe-cell",
+    "van-dialog": "vant-weapp/dialog",
+    "no-data": "../../../component/noData/noData"
+  },
+  "navigationBarTitleText": "需求清单",
+  "onReachBottomDistance": 100
+}

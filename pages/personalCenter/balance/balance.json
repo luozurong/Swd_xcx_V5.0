@@ -1,0 +1,8 @@
+{
+ "navigationBarTitleText": "余额",
+ "usingComponents": {
+   "van-tab": "vant-weapp/tab",
+   "van-tabs": "vant-weapp/tabs",
+   "no-data": "../../component/noData/noData"
+ }
+}

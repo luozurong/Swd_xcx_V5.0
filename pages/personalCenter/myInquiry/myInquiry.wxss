@@ -1,0 +1,106 @@
+.inquiryBox {
+  width: 690rpx;
+  height: 241rpx;
+  background-color: #fff;
+  border-radius: 8rpx;
+  margin: 30rpx 30rpx 0;
+}
+
+.inquiryTitle {
+  height: 88rpx;
+  position: relative;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.inquiryTitle text {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 32rpx;
+  margin: 25rpx 0 25rpx 30rpx;
+}
+
+.inquiryStatus {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 48rpx;
+  font-size: 24rpx;
+  padding: 13rpx 24rpx 0 27rpx;
+  border-radius: 0rpx 8rpx 0rpx 24rpx;
+}
+
+.inquirying {
+  background-color: rgba(255, 110, 38, 0.1);
+  color: #ff6e26;
+}
+
+.inquiryClosed {
+  background-color: rgba(102,102,102,0.1);
+  color: #aeafb2;
+}
+
+.inquiryCompleted {
+  background-color: rgba(58,199,86, 0.1);
+  color: #3ac756;
+}
+
+.doctorImg {
+  display: inline-block;
+}
+
+.doctorImg {
+  width: 104rpx;
+  height: 104rpx;
+  border-radius: 52rpx;
+  vertical-align: top;
+  margin: 20rpx 10rpx 0 24rpx;
+}
+
+.patientMessage {
+  display: inline-block;
+  width: 528rpx;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+  color: #666;
+}
+
+.patientContent {
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.patientDetails {
+  display: inline-block;
+  width: 360rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.inquiryDate {
+  display: inline-block;
+  font-size: 24rpx;
+  margin-left: 20rpx;
+  color: #aeafb2;
+}
+
+.patientName, .patientAge, .mainSuit {
+  color: #333;
+}
+
+.mainSuit {
+  display: inline-block;
+  width: 409rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: -8rpx;
+}
+
+.aaa {
+  width: 200rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

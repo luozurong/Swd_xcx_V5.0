@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "物流状态",
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "van-button": "vant-weapp/button/index",
+    "van-icon": "vant-weapp/icon/index",
+    "van-steps": "vant-weapp/steps/index"
+  }
+}

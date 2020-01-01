@@ -1,0 +1,23 @@
+<!--pages/personalCenter/healthRecord/buyMedicineRecord.wxml-->
+<view class="buyMedicineRecord">
+  <view class="record_li" bindtap="gotoDetail">
+    <view class="title">
+      <view class="title_left">
+        <image src="https://nfys-static.kinglian.cn/xcx/personalCenter/icon_buyMedicineRecord.png" mode="aspectFit"></image>
+        <text>快速问诊</text>
+      </view>
+      <text class="time">2018/08/26</text>
+    </view>
+    <view class="drugs_text">阿莫西林胶囊、999感冒灵</view>
+  </view>
+  <view class="record_li" bindtap="gotoDetail">
+    <view class="title">
+      <view class="title_left">
+        <image src="https://nfys-static.kinglian.cn/xcx/personalCenter/icon_buyMedicineRecord.png" mode="aspectFit"></image>
+        <text>快速问诊</text>
+      </view>
+      <text class="time">2018/08/26</text>
+    </view>
+    <view class="drugs_text">阿莫西林胶囊、999感冒灵</view>
+  </view>
+</view>

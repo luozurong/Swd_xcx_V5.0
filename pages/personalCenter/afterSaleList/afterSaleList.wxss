@@ -1,0 +1,313 @@
+/* pages/personalCenter/afterSaleList/afterSaleList.wxss */
+/* pages/personalCenter/order/order.wxss */
+
+.order {
+  background: #fff;
+}
+
+/* 以下是内容区 */
+
+.order .order_con {
+  background: #f6f8fa;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+
+.order .order_con .order_li {
+  width: 690rpx;
+  height: auto;
+  line-height: 1;
+  margin: 20rpx auto 0rpx;
+  background-color: #fff;
+  border-radius: 8rpx;
+}
+
+.order .order_con .order_li:last-child {
+  margin-bottom: 20rpx;
+}
+
+.order .order_con .order_li .title {
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 20rpx 30rpx 25rpx;
+  color: #666;
+  border-bottom: 1rpx solid #ebebeb;
+}
+.order .order_con .order_li .title_left {
+  display: flex;
+}
+.title_left .title_left_l {
+  display: inline-block;
+  white-space: nowrap;
+}
+.title_left .title_left_l:last-child {
+  text-overflow:ellipsis; 
+  overflow: hidden;
+  width: 380rpx;
+}
+
+.order .order_con .order_li .title .state {
+  color: #ff6e26;
+}
+
+.order .order_con .order_li .pic_con {
+  display: flex;
+  padding: 24rpx 20rpx 32rpx 25rpx;
+}
+
+.order .order_con .order_li .pic_con .goods_pic {
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 16rpx;
+  background-color: #fff;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+
+.order .order_li .pic_con .goods_pic image {
+  width: 100%;
+  height: 100%;
+  border-radius: 8rpx;
+}
+.order .order_li .pic_con .goods_right {
+  width: 470rpx;
+}
+.order .order_con .order_li .pic_con .name {
+  height: 140rpx;
+  font-size: 14px;
+  line-height: 18px;
+  color: #333;
+}
+.order .order_con .order_li .pic_con .name text.chu{
+  float: left;
+  background: #ff6e26;
+  color: #fff;
+  border-radius: 4rpx;
+  line-height: 1;
+  padding: 4rpx 6rpx;
+  margin-top: 4rpx;
+  font-size: 20rpx;
+}
+
+.order .order_con .order_li .pic_con .price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.order .order_con .order_li .pic_con .number {
+  color: #aeafb2;
+}
+
+.order .order_con .order_li .order_bottom {
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  height: 106rpx;*/
+  padding: 0rpx 20rpx 32rpx 25rpx;
+  color: #aeafb2;
+  border-top: 1rpx solid #ebebeb;
+  text-align: right;
+}
+.order .order_con .order_li .order_bottom .order_bottom_disc{
+  text-align: left;
+  margin-top: 32rpx;
+  white-space: nowrap;      /*超出的空白区域不换行*/
+  overflow: hidden;         /*超出隐藏*/
+  text-overflow: ellipsis;  /*文本超出显示省略号*/
+}
+
+.order .order_con .order_li .order_bottom .van-button {
+  width: 140rpx;
+  height: 56rpx;
+  line-height: 54rpx;
+  padding: 0;
+  font-size: 12px;
+  color: #aeafb2;
+  border-radius: 28rpx;
+  border: solid 1rpx #aeafb2;
+}
+
+.order .order_con .order_li .order_bottom .text_color {
+  color: #ff6e26;
+}
+
+.order .order_con .order_li .order_bottom .btn_color .van-button {
+  width: 144rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-left: 20rpx;
+  color: #fff;
+  background-image: linear-gradient(90deg, #ffaf41 0%, #ff8441 100%),
+                      linear-gradient(#f89283, #f89283);
+  background-blend-mode: normal, normal;
+  border: none;
+  border-radius: 28rpx;
+}
+.order .order_con .order_li .order_bottom .second .van-button {
+  margin-left: 20rpx;
+}
+
+/* 问诊订单 */
+
+.order .order_con .order_li .portrait_con {
+  padding: 20rpx 22rpx 32rpx 25rpx;
+}
+
+.order .order_con .order_li .portrait_con .name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.order .order_con .order_li .portrait_con .left {
+  font-size: 16px;
+}
+
+.order .order_con .order_li .portrait_con .detail {
+  display: flex;
+  align-items: center;
+  margin-top: 24rpx;
+}
+
+.order .order_con .order_li .portrait_con .detail_pic {
+  width: 96rpx;
+  height: 96rpx;
+  margin-right: 14rpx;
+  background-color: #fff;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.order .order_con .portrait_con .detail_pic image {
+  width: 100%;
+  height: 100%;
+}
+.order .order_con .portrait_con .detail_right {
+  width: 530rpx;
+}
+
+.order .order_con .portrait_con .patient {
+  display: flex;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 22rpx;
+}
+.order .order_con .portrait_con .patient:last-child {
+  margin-bottom: 0rpx;
+}
+
+.order .order_con .portrait_con .patient .name {
+  display: inline-block;
+  width: 45px;
+  color: #333;
+  text-align: justify;
+  text-align-last: justify;
+}
+
+.order .order_con .portrait_con .patient .text_con {
+  display: block;
+  width: 428rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.order .order_con .border_top {
+  border-top: solid 1rpx #ebebeb;
+}
+.order .no_more_show {
+  padding-top: 20rpx;
+  padding-bottom: 10rpx;
+  font-size: 24rpx;
+  text-align: center;
+  color: #999999;
+}
+.order_num_price{
+  /* width: 100%; */
+  line-height: 74rpx;
+}
+.order-cancel{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background: rgba(0,0,0,0.5);
+}
+.order-cancel-wrap{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 101;
+  height: 656rpx;
+  width: 100%;
+  background: #fff;
+  border-radius: 32rpx 32rpx 0 0;
+}
+.order-cancel-title{
+  text-align: center;
+  margin-top: 26rpx;
+  color: #333;
+  font-size: 32rpx;
+}
+.order-cancel-disc{
+  margin-left: 30rpx;
+  color: #aeafb2;
+  margin-top: 25rpx;
+}
+.order-cancel-main{
+  margin-top: 28rpx;
+}
+.order-cancel-main view{
+  height: 95rpx;
+  display: flex;
+  align-items: center;
+  margin: 0 0 0 30rpx;
+  padding-right: 30rpx;
+  border-top: 1rpx solid #ebebeb;
+}
+.order-cancel-main view:last-child{
+  border-bottom: 1rpx solid #ebebeb;
+}
+.order-cancel-main view text{
+  flex-grow: 2;
+}
+.order-cancel-main view image{
+  flex-shrink: 0; 
+  width: 44rpx;
+	height: 44rpx;
+}
+.order-cancel-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 118rpx;
+}
+.order-cancel-btn text{
+  width: 200rpx;
+	height: 80rpx;
+  border-radius: 40rpx;
+  margin: 0 20rpx;
+}
+.order-cancel-btn text:first-child{
+  border: 1px solid #ff8441;
+  line-height: 78rpx;
+  color: #ff8441;
+  text-align: center;
+}
+.order-cancel-btn text:last-child{
+  background-image: linear-gradient(90deg, 
+		#ffaf41 0%, 
+		#ff8441 100%), 
+	linear-gradient(
+		#f89283, 
+		#f89283);
+	background-blend-mode: normal, 
+		normal;
+  color: #fff;
+  text-align: center;
+  line-height: 80rpx;
+}

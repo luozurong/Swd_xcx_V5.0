@@ -1,0 +1,103 @@
+  <view wx:if="{{noDataFlag == true}}">
+    <no-data  scene="noData" ></no-data>
+  </view>
+<view class="contain" wx:elif="{{noDataFlag == false}}">
+  <view class="header">
+    <view class="header-title">{{dataSource.title}}</view>
+    <view class="header-card" wx:if="{{!dataSource.authorObject.isShow}}">
+      <view class="information">
+        <view class="pic">
+          <!-- <image src="http://yun-test.kinglian.net/xcx/doctor/defaultIcon.png" /> -->
+          <image src="{{dataSource.authorObject.imgUrl}}" />
+        </view>
+        <view class="base-msg">
+          <view class="source">
+            <view class="source-name">{{dataSource.authorObject.employeeName}}</view>
+            <view class="source-job">{{dataSource.authorObject.hospitalName}} / {{dataSource.authorObject.departmentName}}</view>
+          </view>
+          <view class="type">
+            <view class="type-time">{{dataSource.createTime}}</view>
+            <view class="type-job">{{dataSource.authorObject.title}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="line"></view>
+      <view class="tips">
+        <view class="tips-title">
+          <!-- <view>您可以关注医生微信公众号：</view>
+          <view>1、请打开微信搜索公众号“南风医生”点关注</view>
+          <view>2、点击打开二维码，通过微信扫一扫关注</view> -->
+          <rich-text nodes="{{dataSource.authorObject.followExplain}}">
+            
+          </rich-text>
+            
+        </view>
+        <view class="tips-pic">
+          <image src="{{dataSource.authorObject.qrCode}}" />
+        </view>
+      </view>
+    </view>
+    <view class="header-card" wx:else>
+      <view class="information" style="margin-bottom:0;padding-bottom:10rpx;">
+        <view class="pic">
+          <!-- <image src="http://yun-test.kinglian.net/xcx/doctor/defaultIcon.png" /> -->
+          <image src="{{dataSource.authorObject.imgUrl	}}" />
+        </view>
+        <view class="base-msg">
+          <view class="source">
+            <view class="source-name">{{dataSource.author}}</view>
+          </view>
+          <view class="type">
+            <view class="type-time">{{dataSource.createTime}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 内容区 -->
+  <view class="content">
+    <rich-text nodes="{{content}}">
+    </rich-text>
+  </view>
+  <!-- <view style="color:rgba(246,248,250,1);height:20rpx;width:100%;"></view> -->
+  <!-- 相关阅读 -->
+  <view class="special-column">
+    <view class="column-title">相关阅读</view>
+    <view class="column-list">
+      <view class="column-item" data-id="{{item.id}}" wx:for="{{relationList}}" bindtap="tojumb"  wx:key="index">
+        <view class="item-des">
+          <view class="item-title">{{item.title}}</view>
+          <view class="item-data">
+            <text>{{item.createTime}}</text>
+            <text>浏览 {{item.viewNum}}</text>
+            <text>点赞 {{item.praise}}</text>
+          </view>
+        </view>
+        <view class="item-pic">
+          <image src="{{item.imgUrl}}"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="like">
+    <view class="like-section like-section1">
+      <image src="../../images/doctor/doctor_view.png" />
+      <block>{{dataSource.pageView}}</block>
+    </view>
+    <view class="like-section like-section2 {{isLike==1?'setcolor':''}}" data-type="{{isLike}}" bind:tap="changeLike">
+      <image src="../../images/doctor/doctor_like_active.png" wx:if="{{isLike == 1}}"/>
+      <image src="../../images/doctor/doctor_like.png" wx:if="{{isLike == 0}}"/>
+      <block>{{likeNum}}</block>
+    </view>
+    <view class="like-section like-section3 small-size {{isShare==1?'setcolor':''}}" data-type="{{isShare}}" bind:tap="changeShare">
+      <image src="../../images/doctor/doctor_collect_active.png" wx:if="{{isShare == 1}}"/>
+      <image src="../../images/doctor/doctor_collect.png" wx:if="{{isShare == 0}}"/>
+      <block>收藏</block>
+    </view>
+    <view class="like-section like-section4 small-size like-share">
+      <button class="share-button"  open-type='share'>anniu</button>
+      <image src="../../images/doctor/doctor_share.png" />
+      <block>分享</block>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,106 @@
+/* pages/personalCenter/healthRecord/healthRecord.wxss */
+image {
+  width: 100%;
+  height: 100%;
+}
+.healthRecord {
+  line-height: 1;
+}
+.healthRecord_top {
+  position: relative;
+  width: 690rpx;
+	height: auto;
+  margin: 72rpx auto 0;
+  padding-bottom: 40rpx;
+	background-color: #ffffff;
+	border-radius: 8rpx;
+}
+.healthRecord_top .info {
+  padding-top: 82rpx;
+  text-align: center
+}
+.healthRecord_top .info .name {
+  margin-right: 14rpx;
+  font-weight: bold;
+	font-size: 18px;
+	color: #333333;
+}
+.healthRecord_top .info .sex {
+  font-size: 12px;
+	color: #333333;
+}
+.healthRecord_top .pic_con {
+  position: absolute;
+  top: -51rpx;
+  left: 294rpx;
+  width: 96rpx;
+	height: 96rpx;
+	border: solid 6rpx #ffffff;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.healthRecord_top .tag {
+  margin-top: 28rpx;
+  margin-bottom: 30rpx;
+  text-align: center;
+}
+.healthRecord_top .tag .first, .healthRecord_top .tag .second, .healthRecord_top .tag .third { 
+  display: inline-block;
+  padding: 6rpx 8rpx;
+  font-size: 10px;
+	color: #ffffff;
+	border-radius: 4rpx;
+  margin-right: 10rpx;
+}
+.healthRecord_top .tag .first {
+  background-color: #ebb33c;
+}
+.healthRecord_top .tag .second {
+  background-color: #30d952;
+}
+.healthRecord_top .tag .third {
+  background-color: #6088f6;
+  margin-right: 0rpx;
+}
+.healthRecord_top .text_li {
+  margin-bottom: 36rpx;
+  padding: 0 18rpx;
+  font-size: 14px;
+	color: #333333;
+}
+.healthRecord_top .text_li:last-of-type {
+  margin-bottom: 0rpx;
+}
+
+/* 底部更多 */
+.healthRecord_bottom {
+  width: 690rpx;
+	height: auto;
+  margin: 20rpx auto 0;
+  padding-bottom: 64rpx;
+	background-color: #ffffff;
+	border-radius: 10rpx;
+}
+.healthRecord_bottom .title {
+  padding: 36rpx 0 40rpx 0;
+  text-align: center;
+  font-weight: bold;
+	font-size: 14px;
+	color: #333333;
+}
+.healthRecord_bottom .flex {
+  padding: 0 40rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.healthRecord_bottom .flex .flex_li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120rpx;
+}
+.healthRecord_bottom .flex image {
+  width: 72rpx;
+	height: 72rpx;
+  margin-bottom: 18rpx;
+}

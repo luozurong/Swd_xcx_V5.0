@@ -1,0 +1,46 @@
+<view class="pay-order">
+  <view>
+    <text>订单编号</text>
+    <text>{{payInfo.orderNum}}</text>
+  </view>
+  <view>
+    <text>订单时间</text>
+    <text>{{payInfo.orderDate}}</text>
+  </view>
+  <view>
+    <text>订单金额</text>
+    <text class="pay-order-price">￥{{payInfo.orderPrice}}</text>
+  </view>
+</view>
+<view class="pay-serve" wx:if="{{payInfo.doctorConsultRemainCount > 0}}">
+  <view>
+    <view>名医咨询尊享免费特权{{payInfo.doctorConsultTotalCount}}次</view>
+    <view>(当前剩余{{payInfo.doctorConsultRemainCount}}次)</view>
+  </view>
+  <image  bindtap="choosePay" data-index="4" wx:if="{{payType != 4}}" src="http://yun-test.kinglian.net/xcx/mall/cart-nor.png"></image>
+  <image  bindtap="choosePay" data-index="4" wx:if="{{payType == 4}}" src="http://yun-test.kinglian.net/xcx/mall/cart-select.png"></image>
+</view>
+<view class="pay-type">
+  <view class="pay-type-word">选择支付方式</view>
+  <view class="pay-type-item">
+    <view>
+      <image class="pay-type-icon" src="http://yun-test.kinglian.net/xcx/mall/yue.png"></image>
+      <text>余额</text>
+      <text class="ye">（当前余额{{balance}}元）</text>
+    </view>
+    <text class="yue" wx:if="{{orderPrice > balance}}">余额不足</text>
+    <image wx:if="{{orderPrice <= balance && payType == 3}}" bindtap="choosePay" data-index="3" src="http://yun-test.kinglian.net/xcx/mall/cart-select.png"></image>
+    <image wx:if="{{orderPrice <= balance && payType != 3}}"  bindtap="choosePay" data-index="3" src="http://yun-test.kinglian.net/xcx/mall/cart-nor.png"></image>
+  </view>
+  <view class="pay-type-item">
+    <view>
+      <image class="pay-type-icon" src="http://yun-test.kinglian.net/xcx/mall/wechatpay.png"></image>
+      <text>微信支付</text>
+    </view>
+    <image  bindtap="choosePay" data-index="2" src="http://yun-test.kinglian.net/xcx/mall/cart-select.png" wx:if="{{payType == 2}}"></image>
+    <image  bindtap="choosePay" data-index="2" src="http://yun-test.kinglian.net/xcx/mall/cart-nor.png" wx:if="{{payType != 2}}"></image>
+  </view>
+</view>
+<view class="pay-fixed">
+  <text bindtap="goPay">去支付</text>
+</view>

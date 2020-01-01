@@ -1,0 +1,13 @@
+<!--pages/personalCenter/consultNum/share.wxml-->
+<view class="consultNum_share">
+  <view class="share_li" wx:for="{{memberList}}" wx:for-item="item" wx:key="item.id">
+    <view class="share_li_left">
+      <image src="https://nfys-static.kinglian.cn/xcx/personalCenter/user.png" mode="aspectFit" class="portrait"></image>
+      <view>
+        <view class="name">{{item.patientName}}</view>
+        <view>{{item.relation}}</view>
+      </view>
+    </view>
+    <van-button type="default" bindtap="share" data-id="{{item.patientId}}" data-name="{{item.patientName}}">转赠</van-button>
+  </view>
+</view>

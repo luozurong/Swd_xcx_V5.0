@@ -1,0 +1,91 @@
+/* pages/authorization/authorization.wxss */
+page{
+  background: #D2EFFE
+}
+.downloadAPP image {
+  width: 100%;
+  height: 100%;
+}
+
+.downloadAPP {
+  height: 100vh;
+  position: relative;
+  background-image: url("https://nfys-static.kinglian.cn/xcx/download/bj.png");
+  background-repeat: no-repeat;
+  background-size: 794rpx 1414rpx;
+  background-position: -20rpx -100rpx;
+}
+
+.downloadAPP .logo {
+  width: 174rpx;
+  height: 100rpx;
+  margin: 0 auto;
+  padding-top: 98rpx;
+}
+
+.downloadAPP .title {
+  width: 514rpx;
+  height: 58rpx;
+  margin: 0 auto;
+  padding-top: 28rpx;
+}
+
+.downloadAPP .content {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 68rpx;
+  margin: 0 114rpx;
+}
+
+.downloadAPP .content .li {
+  width: 126rpx;
+  height: 126rpx;
+  margin-right: 72rpx;
+  margin-bottom: 42rpx;
+  position: relative;
+}
+
+.downloadAPP .content .li:nth-child(3n) {
+  margin-right: 0rpx;
+}
+
+.downloadAPP .content .li text {
+  position: absolute;
+  top: 31rpx;
+  left: 33rpx;
+  width: 60rpx;
+  font-size: 28rpx;
+  line-height: 34rpx;
+  color: #00a2e9;
+}
+
+.downloadAPP .btn_box {
+  padding-top: 46rpx;
+}
+
+.downloadAPP .btn_box button {
+  width: 400rpx;
+  height: 80rpx;
+  margin: 0 auto;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  color: #fff;
+  background-image: linear-gradient(90deg, #73e539 0%, #3ac756 100%),
+                      linear-gradient(#3ac756, #3ac756);
+  background-blend-mode: normal, normal;
+  border-radius: 40px;
+}
+
+.downloadAPP .bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 285rpx;
+  overflow: hidden;
+}
+
+.downloadAPP .bottom image {
+  width: 810rpx;
+  height: 286rpx;
+  margin-left: -32rpx;
+}
